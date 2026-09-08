@@ -2,8 +2,8 @@
 # Ga naar /admin/ → ⚙️ Paginateksten
 
 homepage:
-  hero_label: "Nederland-Bewust"
-  hero_titel: "Dé startpagina voor holistische therapie en welzijn in Nederland"
+  hero_label: "Drenthe-Bewust"
+  hero_titel: "Dé startpagina voor holistische therapie en welzijn in Drenthe en omgeving"
   hero_subtitel: "Vind de juiste coach, therapeut of behandelaar bij jou in de buurt"
   hero_tekst: "Van massage en coaching tot voeding en energetische begeleiding — hier vind je de bewust-maker die écht bij jou past."
   hero_knop1: "Vind een bewust-maker"
@@ -21,14 +21,14 @@ homepage:
   intake_tekst: "In een persoonlijk gesprek met Marcella of Elsemarie bespreken we jouw situatie. We bepalen samen welke bewust-maker het beste bij jouw verhaal past. Gratis, en zonder verplichtingen."
   intake_knop: "Ja, ik wil een gratis adviesgesprek"
   cta_titel: "Word jij de volgende bewust-maker?"
-  cta_tekst: "Zichtbaarheid voor je praktijk, een eigen profielpagina en verbinding met gelijkgestemden in heel Nederland."
+  cta_tekst: "Zichtbaarheid voor je praktijk, een eigen profielpagina en verbinding met gelijkgestemden in Drenthe en omgeving."
 
 over:
-  titel: "Over Nederland-bewust"
+  titel: "Over Drenthe-bewust"
   subtitel: "Startpagina met een bewuste missie"
   intro: "Kan jouw innerlijk welzijn en/of fysieke gezondheid wel een steuntje in de rug gebruiken? Kom gemakkelijk in contact met aanbieders uit de regio."
   missie_titel: "Missie"
-  missie_tekst: "Nederland-bewust brengt jou in verbinding met de Bewust-makers in jouw regio, professionals die je vanuit een holistische visie begeleiden naar een leven in balans."
+  missie_tekst: "Drenthe-bewust brengt jou in verbinding met de Bewust-makers in jouw regio, professionals die je vanuit een holistische visie begeleiden naar een leven in balans."
   visie_titel: "Visie"
   visie_tekst: "Wij dromen van een samenleving waarin zelfbewustzijn vanzelfsprekend is. Een wereld waarin toekomstige generaties opgroeien met ruimte en aandacht om zichzelf écht te leren kennen."
   visie_quote: "Een nieuwe generatie die leeft van binnenuit — vol vertrouwen, verbonden en bruisend van levenslust"

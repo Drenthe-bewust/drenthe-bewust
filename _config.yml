@@ -1,7 +1,7 @@
-title: "Nederland-Bewust"
-description: "Dé startpagina voor alternatieve zorg, holistische therapie, natuurlijke gezondheid én welzijn in Nederland."
-baseurl: "/nederland-bewust"
-url: "https://hands4flownl.github.io"
+title: "Drenthe-Bewust"
+description: "Dé startpagina voor alternatieve zorg, holistische therapie, natuurlijke gezondheid én welzijn in Drenthe en omgeving."
+baseurl: "/drenthe-bewust"
+url: "https://drenthe-bewust.github.io"
 
 lang: nl
 timezone: Europe/Amsterdam
@@ -16,7 +16,7 @@ formspree_meemaker:     "https://formspree.io/f/mzdqwpwv"
 contact:
   marcella: "06-21312490"
   elsemarie: "06-59111456"
-  email: "info@nederland-bewust.nl"
+  email: "info@drenthe-bewust.nl"
   facebook: "https://www.facebook.com/share/1NK76U1wML/"
   instagram: "https://instagram.com/nederlandbewust2026"
   whatsapp: "https://wa.me/31659111456"

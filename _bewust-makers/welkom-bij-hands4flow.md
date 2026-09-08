@@ -53,7 +53,7 @@ opleidingen:
 verenigingen:
   - Reiki vereniging Cirkel
   - Beroepsvereniging voor Stoelmasseurs
-bio: Initiatiefnemer van Nederland-Bewust en praktijkhoudster van Hands4Flow.
+bio: Initiatiefnemer van Drenthe-Bewust en praktijkhoudster van Hands4Flow.
   Elsemarie werkt met voetreflex, diverse massagetechnieken, REIKI, Access Bars
   en aromatherapie. Tevens ben ik gecertificeerd Happy Soul coach
 wat_zeggen_clienten: ""

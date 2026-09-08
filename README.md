@@ -1,13 +1,13 @@
-# Nederland-Bewust – Jekyll/GitHub Pages Website
+# Drenthe-Bewust – Jekyll/GitHub Pages Website
 
-Een statische kopie van [nederland-bewust.nl](https://nederland-bewust.nl), gebouwd met **Jekyll** voor hosting op **GitHub Pages**.
+Een statische kopie van [drenthe-bewust.nl](https://drenthe-bewust.nl), gebouwd met **Jekyll** voor hosting op **GitHub Pages**.
 
 ---
 
 ## Mappenstructuur
 
 ```
-nederland-bewust/
+drenthe-bewust/
 ├── _config.yml              ← Site-instellingen (URL, contactgegevens, Formspree)
 ├── _layouts/
 │   └── standaard.html       ← Hoofd HTML-layout (alle pagina's)
@@ -19,7 +19,7 @@ nederland-bewust/
 │   ├── css/stijl.css        ← Alle styling (kleuren, layout, componenten)
 │   └── js/hoofd.js          ← JavaScript (menu, tellers, formulieren)
 ├── pages/                   ← Alle pagina's
-│   ├── over-nederland-bewust.html
+│   ├── over-drenthe-bewust.html
 │   ├── onze-bewust-makers.html
 │   ├── mee-maker.html
 │   ├── agenda.html
@@ -39,7 +39,7 @@ nederland-bewust/
 ## Stap 1: GitHub repository aanmaken
 
 1. Ga naar [github.com](https://github.com) en maak een nieuw repository aan
-2. Noem het bijv. `nederland-bewust` of `nederland-bewust.nl`
+2. Noem het bijv. `drenthe-bewust` of `drenthe-bewust.nl`
 3. Zet het op **Public** (gratis GitHub Pages werkt alleen met public repo's)
 4. Upload alle bestanden uit deze map naar de repository
 
@@ -51,10 +51,10 @@ nederland-bewust/
 2. Kies bij *Source*: **Deploy from a branch**
 3. Branch: `main` / `root`
 4. Klik **Save**
-5. Je site is binnen enkele minuten live op `https://jouwgebruikersnaam.github.io/nederland-bewust`
+5. Je site is binnen enkele minuten live op `https://jouwgebruikersnaam.github.io/drenthe-bewust`
 
-Voor een eigen domein (bijv. nederland-bewust.nl):
-- Voeg een `CNAME`-bestand toe met daarin `nederland-bewust.nl`
+Voor een eigen domein (bijv. drenthe-bewust.nl):
+- Voeg een `CNAME`-bestand toe met daarin `drenthe-bewust.nl`
 - Stel bij je domeinnaamregistrar de DNS in (A-records naar GitHub IP's)
 
 ---
@@ -78,7 +78,7 @@ Open `_config.yml` en pas aan:
 contact:
   marcella: "06-21312490"
   elsemarie: "06-59111456"
-  email: "info@nederland-bewust.nl"
+  email: "info@drenthe-bewust.nl"
   facebook: "https://www.facebook.com/share/1NK76U1wML/"
   instagram: "https://instagram.com/nederlandbewust2026"
   whatsapp: "https://wa.me/31659111456"
@@ -141,7 +141,7 @@ De animerende tellers staan in `index.html` en `pages/meld-je-aan.html`. Pas het
 gem install bundler jekyll
 
 # Ga naar de map
-cd nederland-bewust
+cd drenthe-bewust
 
 # Installeer dependencies
 bundle install
@@ -172,9 +172,9 @@ Open `assets/css/stijl.css` en pas de CSS-variabelen bovenaan aan:
 
 ## Afbeeldingen
 
-De afbeeldingen zijn nu direct van nederland-bewust.nl gelinkt. Voor een volledig zelfstandige site:
+De afbeeldingen zijn nu direct van drenthe-bewust.nl gelinkt. Voor een volledig zelfstandige site:
 
-1. Download de afbeeldingen van nederland-bewust.nl
+1. Download de afbeeldingen van drenthe-bewust.nl
 2. Sla ze op in `assets/images/`
 3. Vervang de URL's in de HTML bestanden
 

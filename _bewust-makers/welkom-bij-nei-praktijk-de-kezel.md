@@ -72,7 +72,7 @@ opleidingen:
 verenigingen:
   - VVNT
 bio: >-
-  Mijn naam is Marcella en ik ben Initiatiefnemer van Nederland-Bewust (het
+  Mijn naam is Marcella en ik ben Initiatiefnemer van Drenthe-Bewust (het
   platform waar je nu op kijkt) en praktijkhoudster van NEI Praktijk de Kezel en
   coach bij www.jouwcoachlijn.com 
 
