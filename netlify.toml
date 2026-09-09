@@ -17,6 +17,12 @@
   status = 301
 
 [[redirects]]
+  from = "https://drenthe-bewust.nl/*"
+  to = "https://www.drenthe-bewust.nl/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
