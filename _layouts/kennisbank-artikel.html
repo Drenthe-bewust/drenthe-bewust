@@ -2,6 +2,24 @@
 layout: standaard
 ---
 {% assign a = page %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ a.titel | default: a.title | escape }}",
+  "description": "{{ a.inleiding | escape | truncate: 200 }}",
+  "keywords": "{{ a.categorie | escape }}, holistische zorg, Drenthe",
+  "url": "{{ site.url }}{{ page.url }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Drenthe-Bewust",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.drenthe-bewust.nl/assets/images/logo-compleet.png"
+    }
+  }
+}
+</script>
 
 <div class="pagina-header">
   <h1>{{ a.titel | default: a.title }}</h1>

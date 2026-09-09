@@ -2,6 +2,23 @@
 layout: standaard
 ---
 {% assign m = page %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "{{ m.naam | escape }}{% if m.praktijk %} — {{ m.praktijk | escape }}{% endif %}",
+  "description": "{{ m.omschrijving | escape | truncate: 200 }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{ m.stad | escape }}",
+    "addressRegion": "{{ m.provincie | escape }}",
+    "addressCountry": "NL"
+  },
+  "url": "{{ site.url }}{{ page.url }}"{% if m.website %},
+  "sameAs": "{{ m.website }}"{% endif %}{% if m.telefoon %},
+  "telephone": "{{ m.telefoon }}"{% endif %}
+}
+</script>
 
 <div class="pagina-header">
   <h1>{{ m.naam }}</h1>
