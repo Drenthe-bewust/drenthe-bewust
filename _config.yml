@@ -1,5 +1,8 @@
 title: "Drenthe-Bewust"
-description: "Dé startpagina voor alternatieve zorg, holistische therapie, natuurlijke gezondheid én welzijn in Drenthe en omgeving."
+description: "Vind coaches, therapeuten en behandelaars in Drenthe, Groningen en Friesland. Holistische zorg, massage, coaching en energetische begeleiding bij jou in de buurt."
+
+plugins:
+  - jekyll-sitemap
 baseurl: "/drenthe-bewust"
 url: "https://drenthe-bewust.github.io"
 

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /maker-beheer/
+
+Sitemap: https://www.drenthe-bewust.nl/sitemap.xml
