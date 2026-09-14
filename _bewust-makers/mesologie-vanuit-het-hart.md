@@ -31,9 +31,9 @@ kaart_tags:
   - Voeding
   - Diagnostiek
 volgorde: 12
-website: ""
-email_zichtbaar: ""
-telefoon: ""
+website: "https://www.mesologievanuithethart.nl/"
+email_zichtbaar: "linda@mesologievanuithethart.nl"
+telefoon: "06 20551410"
 online: Nee
 sessieduur: "1,5 uur (nieuw) · 1 uur (herhaal)"
 tarief: "€100 – €130 per consult"
