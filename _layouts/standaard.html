@@ -12,6 +12,7 @@
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:image" content="{{ site.url }}/assets/images/logo-compleet.png">
   <meta name="twitter:card" content="summary_large_image">
+  {% if page.noindex %}<meta name="robots" content="noindex, follow">{% endif %}
   <meta name="google-site-verification" content="Gvmsr7rui9i2f1ieoPsBe6gmUe7v6Ybiigvw81nkgLM" />
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <link rel="icon" href="{{ '/assets/images/logo-icoon.png' | relative_url }}" type="image/png">

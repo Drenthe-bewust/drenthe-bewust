@@ -1,8 +1,7 @@
 title: "Drenthe-Bewust"
 description: "Vind coaches, therapeuten en behandelaars in Drenthe, Groningen en Friesland. Holistische zorg, massage, coaching en energetische begeleiding bij jou in de buurt."
 
-plugins:
-  - jekyll-sitemap
+plugins: []
 baseurl: "/drenthe-bewust"
 url: "https://drenthe-bewust.github.io"
 
@@ -50,6 +49,8 @@ defaults:
     values:
       layout: "mee-maker"
       gepubliceerd: true
+      sitemap: false
+      noindex: true
   - scope:
       path: ""
       type: "kennisbank"
