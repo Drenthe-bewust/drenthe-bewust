@@ -2,8 +2,8 @@
 naam: Martine Stoffers
 praktijk: Change Your Lifestyle
 foto: /assets/images/makers/martine-stoffers.jpg
-provincie: ""
-stad: ""
+provincie: "Drenthe"
+stad: "Nieuw-Amsterdam"
 categorieen:
   - Voeding
 methoden:
@@ -25,7 +25,7 @@ kaart_tags:
 volgorde: 11
 website: ""
 email_zichtbaar: "changeyourlifestyle.08@outlook.com"
-telefoon: ""
+telefoon: "06 81656576"
 online: "Ja — intake, coaching en Human Design sessies"
 sessieduur: "Verschilt per begeleiding"
 tarief: "Vanaf €90 per sessie"
