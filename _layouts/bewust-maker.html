@@ -90,6 +90,7 @@ layout: standaard
       <div style="background:var(--wit);border-radius:var(--radius);padding:0.8rem 1rem;border:1px solid var(--border);">
         <div style="font-size:0.72rem;color:var(--tekst-licht);text-transform:uppercase;letter-spacing:0.06em;">Tarief</div>
         <div style="font-weight:600;font-size:0.95rem;margin-top:0.2rem;">{{ m.tarief }}</div>
+        {% if m.tarief_detail %}<div style="margin-top:0.4rem;"><a href="#tarieven" style="font-size:0.8rem;color:var(--groen-donker);">↓ zie abonnementen</a></div>{% endif %}
       </div>
       {% endif %}
       {% if m.online %}
@@ -117,6 +118,14 @@ layout: standaard
       </div>
       {% endif %}
     </div>
+
+    <!-- TARIEVEN DETAIL -->
+    {% if m.tarief_detail %}
+    <div id="tarieven" style="background:var(--creme);border-radius:var(--radius-groot);padding:1.8rem 2rem;margin-bottom:2rem;border:1px solid var(--goud);">
+      <h3 style="margin-bottom:1rem;font-size:1rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--goud-donker);">Abonnementen &amp; tarieven</h3>
+      {{ m.tarief_detail | markdownify }}
+    </div>
+    {% endif %}
 
     <!-- BIO -->
     {% if m.bio %}
