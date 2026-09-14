@@ -141,35 +141,35 @@ layout: standaard
       {% if m.waarom %}
       <div style="border-left:4px solid var(--goud);padding:1.2rem 1.5rem;background:var(--wit);border-radius:0 var(--radius) var(--radius) 0;box-shadow:var(--schaduw);">
         <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--goud-donker);margin-bottom:0.5rem;">Waarom is dit mijn werk?</p>
-        <p style="margin:0;line-height:1.75;">{{ m.waarom }}</p>
+        <div style="margin:0;line-height:1.75;">{{ m.waarom | markdownify }}</div>
       </div>
       {% endif %}
 
       {% if m.onderscheid %}
       <div style="border-left:4px solid var(--groen);padding:1.2rem 1.5rem;background:var(--wit);border-radius:0 var(--radius) var(--radius) 0;box-shadow:var(--schaduw);">
         <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--groen-donker);margin-bottom:0.5rem;">Wat maakt mij anders?</p>
-        <p style="margin:0;line-height:1.75;">{{ m.onderscheid }}</p>
+        <div style="margin:0;line-height:1.75;">{{ m.onderscheid | markdownify }}</div>
       </div>
       {% endif %}
 
       {% if m.voor_wie %}
       <div style="border-left:4px solid var(--goud-donker);padding:1.2rem 1.5rem;background:var(--wit);border-radius:0 var(--radius) var(--radius) 0;box-shadow:var(--schaduw);">
         <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--goud-donker);margin-bottom:0.5rem;">Waarvoor bel je mij wél — en waarvoor niet?</p>
-        <p style="margin:0;line-height:1.75;">{{ m.voor_wie }}</p>
+        <div style="margin:0;line-height:1.75;">{{ m.voor_wie | markdownify }}</div>
       </div>
       {% endif %}
 
       {% if m.wat_zeggen_clienten %}
       <div style="border-left:4px solid var(--groen-licht);padding:1.2rem 1.5rem;background:var(--wit);border-radius:0 var(--radius) var(--radius) 0;box-shadow:var(--schaduw);">
         <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--groen-donker);margin-bottom:0.5rem;">Wat zeggen cliënten over mij?</p>
-        <p style="margin:0;line-height:1.75;font-style:italic;">{{ m.wat_zeggen_clienten }}</p>
+        <div style="margin:0;line-height:1.75;font-style:italic;">{{ m.wat_zeggen_clienten | markdownify }}</div>
       </div>
       {% endif %}
 
       {% if m.na_sessie %}
       <div style="border-left:4px solid var(--border);padding:1.2rem 1.5rem;background:var(--wit);border-radius:0 var(--radius) var(--radius) 0;box-shadow:var(--schaduw);">
         <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--tekst-licht);margin-bottom:0.5rem;">Wat neem je mee na een sessie?</p>
-        <p style="margin:0;line-height:1.75;">{{ m.na_sessie }}</p>
+        <div style="margin:0;line-height:1.75;">{{ m.na_sessie | markdownify }}</div>
       </div>
       {% endif %}
 
