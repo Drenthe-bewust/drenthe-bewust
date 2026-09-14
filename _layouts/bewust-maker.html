@@ -16,7 +16,12 @@ layout: standaard
   },
   "url": "{{ site.url }}{{ page.url }}"{% if m.website %},
   "sameAs": "{{ m.website }}"{% endif %}{% if m.telefoon %},
-  "telephone": "{{ m.telefoon }}"{% endif %}
+  "telephone": "{{ m.telefoon }}"{% endif %}{% if m.methoden and m.methoden.size > 0 %},
+  "knowsAbout": [{% for methode in m.methoden %}"{{ methode }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]{% endif %}{% if m.categorieen and m.categorieen.size > 0 %},
+  "serviceType": [{% for cat in m.categorieen %}"{{ cat }}"{% unless forloop.last %}, {% endunless %}{% endfor %}]{% endif %},
+  "priceRange": "€€",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Cash, Bankoverschrijving"
 }
 </script>
 

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
+  <title>{% if page.seo_titel %}{{ page.seo_titel }}{% elsif page.title and page.title != "Home" %}{{ page.title }} – {{ site.title }}{% else %}{{ site.title }} – Holistische zorg en welzijn in Drenthe{% endif %}</title>
   <meta name="description" content="{% if page.beschrijving %}{{ page.beschrijving }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}">
+  <meta property="og:title" content="{% if page.seo_titel %}{{ page.seo_titel }}{% elsif page.title and page.title != "Home" %}{{ page.title }} – {{ site.title }}{% else %}{{ site.title }} – Holistische zorg en welzijn in Drenthe{% endif %}">
   <meta property="og:description" content="{% if page.beschrijving %}{{ page.beschrijving }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nl_NL">
@@ -23,15 +23,31 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Drenthe-Bewust",
-    "url": "https://www.drenthe-bewust.nl",
-    "logo": "https://www.drenthe-bewust.nl/assets/images/logo-compleet.png",
-    "description": "Overzicht van coaches, therapeuten en behandelaars in Drenthe, Groningen en Friesland.",
-    "email": "info@drenthe-bewust.nl",
-    "areaServed": ["Drenthe", "Groningen", "Friesland", "Overijssel"],
-    "sameAs": ["https://www.facebook.com/share/1NK76U1wML/"]
-  }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Drenthe-Bewust",
+        "url": "https://www.drenthe-bewust.nl",
+        "logo": "https://www.drenthe-bewust.nl/assets/images/logo-compleet.png",
+        "description": "Platform voor alternatieve zorg, holistische therapie en welzijn in Drenthe, Groningen en Friesland.",
+        "email": "info@drenthe-bewust.nl",
+        "areaServed": ["Drenthe", "Groningen", "Friesland", "Overijssel"],
+        "sameAs": [
+          "https://www.facebook.com/share/1NK76U1wML/",
+          "https://instagram.com/nederlandbewust2026"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "Drenthe-Bewust",
+        "url": "https://www.drenthe-bewust.nl",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.drenthe-bewust.nl/onze-bewust-makers/?zoek={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
   </script>
   </head>
 <body>
