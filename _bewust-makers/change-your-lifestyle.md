@@ -23,7 +23,7 @@ kaart_tags:
   - Leefstijl
   - Human Design
 volgorde: 11
-website: ""
+website: "https://changelifestyle.nl/"
 email_zichtbaar: "changeyourlifestyle.08@outlook.com"
 telefoon: "06 81656576"
 online: "Ja — intake, coaching en Human Design sessies"
