@@ -96,8 +96,8 @@ const STEDEN_COORDS = {
   <div class="container">
     <div class="grid-3" id="makers-grid">
 
-      {% assign uitgelicht_makers = site.bewust-makers | where: "gepubliceerd", true | where: "uitgelicht", true | sort: "volgorde" %}
-      {% for maker in uitgelicht_makers %}
+      {% assign alle_makers = site.bewust-makers | where: "gepubliceerd", true | sort: "volgorde" %}
+      {% for maker in alle_makers %}
       {% assign kaart_tags = maker.kaart_tags | default: maker.methoden %}
       {% assign doelgroepen_tekst = maker.doelgroepen | join: ' ' %}
       {% assign categorieen_tekst = maker.categorieen | join: ' ' | downcase %}
@@ -217,13 +217,15 @@ const STEDEN_COORDS = {
         <a href="{{ '/contact/' | relative_url }}" class="knop knop--groen">{{ site.data.teksten_homepage.intake_knop }}</a>
       </div>
       <div>
+        {% assign n_bewust = site.bewust-makers | where: "gepubliceerd", true | size %}
+        {% assign n_mee = site.mee-makers | where: "gepubliceerd", true | size %}
         <div class="teller-rij" style="padding:1.5rem 0;">
           <div class="teller">
-            <div class="teller__getal" data-doel="{{ site.data.instellingen.teller_bewust_makers }}">{{ site.data.instellingen.teller_bewust_makers }}</div>
+            <div class="teller__getal" data-doel="{{ n_bewust }}">{{ n_bewust }}</div>
             <div class="teller__label">Bewust-makers</div>
           </div>
           <div class="teller">
-            <div class="teller__getal" data-doel="{{ site.data.instellingen.teller_mee_makers }}">{{ site.data.instellingen.teller_mee_makers }}</div>
+            <div class="teller__getal" data-doel="{{ n_mee }}">{{ n_mee }}</div>
             <div class="teller__label">Mee-makers</div>
           </div>
         </div>
@@ -302,7 +304,9 @@ const STEDEN_COORDS = {
         }
       }
 
+      var isGefilterd = naam || prov || tag !== 'alles' || actiefKlacht || locActief;
       var toon = naamMatch && provMatch && tagMatch && klachtMatch && afstandMatch;
+      if (!isGefilterd) toon = toon && item.dataset.initieel !== 'verborgen';
       item.style.display = toon ? '' : 'none';
       if (toon) zichtbaar++;
     });
@@ -354,6 +358,22 @@ const STEDEN_COORDS = {
     var locKnop      = document.getElementById('gebruik-locatie');
     var toonKlachten = document.getElementById('toon-klachten');
     var klachtFilters = document.getElementById('klacht-filters');
+
+    // Shuffle makers: toon 6 willekeurige bij elke paginalading
+    (function() {
+      var grid = document.getElementById('makers-grid');
+      if (!grid) return;
+      var els = Array.from(grid.querySelectorAll('.js-maker'));
+      for (var i = els.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        grid.insertBefore(els[j], els[i]);
+        var tmp = els[i]; els[i] = els[j]; els[j] = tmp;
+      }
+      els.forEach(function(el, idx) {
+        el.dataset.initieel = idx < 6 ? 'zichtbaar' : 'verborgen';
+        if (idx >= 6) el.style.display = 'none';
+      });
+    })();
 
     // Inklapbaar klacht-panel
     if (toonKlachten && klachtFilters) {
