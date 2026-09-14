@@ -119,14 +119,6 @@ layout: standaard
       {% endif %}
     </div>
 
-    <!-- TARIEVEN DETAIL -->
-    {% if m.tarief_detail %}
-    <div id="tarieven" style="background:var(--creme);border-radius:var(--radius-groot);padding:1.8rem 2rem;margin-bottom:2rem;border:1px solid var(--goud);">
-      <h3 style="margin-bottom:1rem;font-size:1rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--goud-donker);">Abonnementen &amp; tarieven</h3>
-      {{ m.tarief_detail | markdownify }}
-    </div>
-    {% endif %}
-
     <!-- BIO -->
     {% if m.bio %}
     <div style="background:var(--creme);border-radius:var(--radius-groot);padding:2rem;margin-bottom:2rem;">
@@ -224,6 +216,14 @@ layout: standaard
       {% endif %}
 
     </div>
+
+    <!-- TARIEVEN DETAIL -->
+    {% if m.tarief_detail %}
+    <div id="tarieven" style="background:var(--creme);border-radius:var(--radius-groot);padding:1.8rem 2rem;margin-bottom:2rem;border:1px solid var(--goud);">
+      <h3 style="margin-bottom:1rem;font-size:1rem;text-transform:uppercase;letter-spacing:0.07em;color:var(--goud-donker);">Abonnementen &amp; tarieven</h3>
+      {{ m.tarief_detail | markdownify }}
+    </div>
+    {% endif %}
 
     <!-- CONTACT DIRECT -->
     {% if m.email_zichtbaar or m.telefoon %}
