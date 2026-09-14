@@ -27,7 +27,7 @@ kaart_tags:
 volgorde: 7
 website: ""
 email_zichtbaar: ""
-telefoon: ""
+telefoon: "06 38634688"
 online: Nee
 sessieduur: "60 min / 90 min"
 tarief: "€155 – €200 per 4 weken"
