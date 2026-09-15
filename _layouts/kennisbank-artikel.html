@@ -21,6 +21,16 @@ layout: standaard
 }
 </script>
 
+{% if a.wat_te_verwachten or a.voor_wie or a.niet_voor %}
+{% assign faq_items = "" %}
+{% if a.wat_te_verwachten %}{% capture faq_item %}{"@type":"Question","name":"Wat kun je verwachten bij {{ a.titel | default: a.title | escape }}?","acceptedAnswer":{"@type":"Answer","text":"{{ a.wat_te_verwachten | strip_newlines | escape }}"}}{% endcapture %}{% assign faq_items = faq_items | append: faq_item %}{% endif %}
+{% if a.voor_wie %}{% capture faq_item %}{"@type":"Question","name":"Voor wie is {{ a.titel | default: a.title | escape }} geschikt?","acceptedAnswer":{"@type":"Answer","text":"{{ a.voor_wie | strip_newlines | escape }}"}}{% endcapture %}{% if faq_items != "" %}{% assign faq_items = faq_items | append: "," %}{% endif %}{% assign faq_items = faq_items | append: faq_item %}{% endif %}
+{% if a.niet_voor %}{% capture faq_item %}{"@type":"Question","name":"Wanneer is {{ a.titel | default: a.title | escape }} minder geschikt?","acceptedAnswer":{"@type":"Answer","text":"{{ a.niet_voor | strip_newlines | escape }}"}}{% endcapture %}{% if faq_items != "" %}{% assign faq_items = faq_items | append: "," %}{% endif %}{% assign faq_items = faq_items | append: faq_item %}{% endif %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ faq_items }}]}
+</script>
+{% endif %}
+
 <div class="pagina-header">
   <h1>{{ a.titel | default: a.title }}</h1>
   <p>{{ a.categorie }} &nbsp;·&nbsp; Holistische kennisbank</p>
