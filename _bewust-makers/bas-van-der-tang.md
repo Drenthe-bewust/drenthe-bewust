@@ -26,7 +26,7 @@ kaart_tags:
 citaat: "Elke sessie begint met een intake — een verkenning van wat er speelt. Dat kan via praten, lichaamswerk, human design, ademwerk, etc."
 volgorde: 8
 omschrijving: "Elke sessie begint met een intake, een verkenning van wat er speelt. We stellen samen een plan op: via praten, lichaamswerk, human design, ademwerk, etc."
-website: "basvandertang.nl"
+website: "https://basvandertang.nl"
 email_zichtbaar: ""
 telefoon: ""
 online: "Op aanvraag"
