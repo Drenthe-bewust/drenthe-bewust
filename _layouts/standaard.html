@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.seo_titel %}{{ page.seo_titel }}{% elsif page.title and page.title != "Home" %}{{ page.title }} – {{ site.title }}{% else %}{{ site.title }} – Holistische zorg en welzijn in Drenthe{% endif %}</title>
-  <meta name="description" content="{% if page.beschrijving %}{{ page.beschrijving }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{% if page.beschrijving %}{{ page.beschrijving }}{% elsif page.inleiding %}{{ page.inleiding | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:title" content="{% if page.seo_titel %}{{ page.seo_titel }}{% elsif page.title and page.title != "Home" %}{{ page.title }} – {{ site.title }}{% else %}{{ site.title }} – Holistische zorg en welzijn in Drenthe{% endif %}">
-  <meta property="og:description" content="{% if page.beschrijving %}{{ page.beschrijving }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" content="{% if page.beschrijving %}{{ page.beschrijving }}{% elsif page.inleiding %}{{ page.inleiding | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nl_NL">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
