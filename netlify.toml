@@ -36,7 +36,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     Permissions-Policy = "camera=(), microphone=(), payment=(), geolocation=(self)"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://identity.netlify.com https://api.netlify.com; frame-src https://identity.netlify.com; frame-ancestors 'none';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://identity.netlify.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://www.google-analytics.com; connect-src 'self' https://formspree.io https://identity.netlify.com https://api.netlify.com https://www.google-analytics.com https://analytics.google.com; frame-src https://identity.netlify.com; frame-ancestors 'none';"
 
 # Ruimere CSP voor het beheerpaneel (Decap CMS heeft meerdere externe bronnen nodig)
 [[headers]]
