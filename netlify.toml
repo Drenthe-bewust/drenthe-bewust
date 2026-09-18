@@ -22,6 +22,198 @@
   status = 301
   force = true
 
+# Oude WordPress-artikelen → kennisbank
+[[redirects]]
+  from = "/wat-is-nei-therapie/"
+  to = "/kennisbank/nei-therapie/"
+  status = 301
+
+[[redirects]]
+  from = "/familieopstelling/"
+  to = "/kennisbank/familieopstelling/"
+  status = 301
+
+[[redirects]]
+  from = "/wat-is-een-holistische-visie/"
+  to = "/kennisbank/holistische-visie/"
+  status = 301
+
+[[redirects]]
+  from = "/het-brein-vanuit-een-holistische-visie/"
+  to = "/kennisbank/holistische-visie/"
+  status = 301
+
+[[redirects]]
+  from = "/het-menselijk-lichaam-vanuit-een-holistisch-perspectief"
+  to = "/kennisbank/holistische-visie/"
+  status = 301
+
+[[redirects]]
+  from = "/introductie-tot-voetreflex-alles-wat-je-moet-weten/"
+  to = "/kennisbank/voetreflexologie/"
+  status = 301
+
+[[redirects]]
+  from = "/laat-een-paard-jouw-spiegel-zijn-en-groei/"
+  to = "/kennisbank/paardencoaching/"
+  status = 301
+
+# Oude WordPress-artikelen → bewust-makers
+[[redirects]]
+  from = "/welkom-bij-praktijk-heike-plomp/"
+  to = "/onze-bewust-makers/"
+  status = 301
+
+[[redirects]]
+  from = "/welkom-bij-nei-praktijk-de-kezel/"
+  to = "/onze-bewust-makers/"
+  status = 301
+
+[[redirects]]
+  from = "/12-manieren-om-aandacht-liefde-aan-je-kind-en-andere-te-tonen-praktijk-de-kezel/"
+  to = "/onze-bewust-makers/"
+  status = 301
+
+[[redirects]]
+  from = "/Energetische-ondersteuning-van-het-menselijk-lichaam/"
+  to = "/onze-bewust-makers/"
+  status = 301
+
+[[redirects]]
+  from = "/Energetische-ondersteuning-van-het-menselijk-lichaam"
+  to = "/onze-bewust-makers/"
+  status = 301
+
+[[redirects]]
+  from = "/welkom-als-mee-maker-van-drenthe-bewust/"
+  to = "/mee-maker/"
+  status = 301
+
+[[redirects]]
+  from = "/mee-maker/welkom-als-mee-maker-van-drenthe-bewust"
+  to = "/mee-maker/"
+  status = 301
+
+# Oude WordPress-artikelen → aanmelden
+[[redirects]]
+  from = "/zelf-bewust-maker-worden/"
+  to = "/meld-je-aan/"
+  status = 301
+
+[[redirects]]
+  from = "/zelf-aanbieder-worden/"
+  to = "/meld-je-aan/"
+  status = 301
+
+# Oude WordPress-artikelen → overig
+[[redirects]]
+  from = "/ja-ik-plan-een-intake-gesprek-in/"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/2025-een-jaar-vol-intuitie-en-groei/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/inspiratie-bewustwording-persoonlijke-ontwikkeling/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/fijn-dat-we-je-op-weg-mogen-helpen/"
+  to = "/"
+  status = 301
+
+# URL zonder trailing slash
+[[redirects]]
+  from = "/onze-bewust-makers"
+  to = "/onze-bewust-makers/"
+  status = 301
+
+# Oude WordPress tag-pagina's → kennisbank (specifiek)
+[[redirects]]
+  from = "/tag/nei-therapie/"
+  to = "/kennisbank/nei-therapie/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/nei/"
+  to = "/kennisbank/nei-therapie/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/neuro-emotionele-integratie/"
+  to = "/kennisbank/nei-therapie/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/yoga/"
+  to = "/kennisbank/yoga/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/reiki/"
+  to = "/kennisbank/reiki/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/reiki-therapie/"
+  to = "/kennisbank/reiki/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/voetreflexologie/"
+  to = "/kennisbank/voetreflexologie/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/familieopstellingen/"
+  to = "/kennisbank/familieopstelling/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/paardencoaching/"
+  to = "/kennisbank/paardencoaching/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/magnetiseren/"
+  to = "/kennisbank/magnetiseren/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/magnetiseur/"
+  to = "/kennisbank/magnetiseren/"
+  status = 301
+
+[[redirects]]
+  from = "/tag/reflexintegratie/"
+  to = "/kennisbank/reflexintegratie/"
+  status = 301
+
+# Oude WordPress wildcards (alle overige tags, categorieën, blog, media)
+[[redirects]]
+  from = "/tag/*"
+  to = "/onze-bewust-makers/"
+  status = 301
+
+[[redirects]]
+  from = "/category/*"
+  to = "/onze-bewust-makers/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/wp-content/*"
+  to = "/"
+  status = 301
+
 [[redirects]]
   from = "/*"
   to = "/404.html"
