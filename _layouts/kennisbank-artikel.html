@@ -94,14 +94,23 @@ layout: standaard
     </div>
     {% endif %}
 
-    <!-- BEWUST-MAKERS MET DEZE METHODE -->
+    <!-- BEWUST-MAKERS MET DEZE METHODE OF CATEGORIE -->
     {% assign methode_naam = a.titel | default: a.title %}
     {% assign makers_met_methode = site.bewust-makers | where_exp: "m", "m.methoden contains methode_naam" %}
+    {% assign kat = a.categorie %}
+    {% assign makers_op_categorie = site.bewust-makers | where_exp: "m", "m.categorieen contains kat" %}
     {% if makers_met_methode.size > 0 %}
+      {% assign toon_makers = makers_met_methode %}
+      {% assign toon_label = "Bewust-makers die " | append: methode_naam | append: " aanbieden" %}
+    {% elsif makers_op_categorie.size > 0 %}
+      {% assign toon_makers = makers_op_categorie %}
+      {% assign toon_label = "Bewust-makers in de categorie " | append: kat %}
+    {% endif %}
+    {% if toon_makers.size > 0 %}
     <div style="margin-bottom:2rem;">
-      <h3 style="margin-bottom:1rem;">Bewust-makers die {{ methode_naam }} aanbieden</h3>
+      <h3 style="margin-bottom:1rem;">{{ toon_label }}</h3>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;">
-        {% for maker in makers_met_methode %}
+        {% for maker in toon_makers %}
         {% if maker.gepubliceerd %}
         <a href="{{ maker.url | relative_url }}"
            style="display:flex;align-items:center;gap:0.8rem;padding:0.8rem 1rem;background:var(--creme);border-radius:var(--radius);text-decoration:none;border:1px solid var(--border);transition:border-color 0.2s;"
