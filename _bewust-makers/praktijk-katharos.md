@@ -72,7 +72,7 @@ onderscheid: >-
 voor_wie: >-
   Voor wie al van alles heeft geprobeerd en toch blijft vastlopen in angst,
   blokkades en/of onverklaarbare pijn.
-wat_zeggen_clienten: De google reviews spreken voor zich : )
+wat_zeggen_clienten: "De google reviews spreken voor zich : )"
 na_sessie: >-
   Iedereen reageert anders. Sommigen voelen direct een bevrijding, anderen hebben
   langer de tijd nodig om een sessie te verwerken. Maar een diepe innerlijke rust
