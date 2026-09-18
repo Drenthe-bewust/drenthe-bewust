@@ -1,7 +1,7 @@
 ---
 naam: Lydia van der Helm
 praktijk: Het Zonnepad
-foto: ""
+foto: /assets/images/makers/lydia-van-der-helm.jpg
 provincie: Drenthe
 stad: Klazienaveen
 categorieen:
