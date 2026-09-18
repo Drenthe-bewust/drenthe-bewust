@@ -2,7 +2,7 @@
 naam: "Sjouk"
 praktijk: "BySjouk"
 provincie: "Drenthe"
-stad: ""
+stad: "Wijckel"
 foto: "/assets/images/makers/sjouk.jpg"
 categorieen:
   - "Coaching"
@@ -24,9 +24,9 @@ kaart_tags:
   - "Healing"
   - "Angst"
 volgorde: 6
-website: ""
-email_zichtbaar: ""
-telefoon: ""
+website: https://www.bysjouk.nl
+email_zichtbaar: info@bysjouk.nl
+telefoon: 06-20082386
 online: "Ja"
 sessieduur: "60 min"
 tarief: ""

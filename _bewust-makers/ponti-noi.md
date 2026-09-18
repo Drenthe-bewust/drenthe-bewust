@@ -25,7 +25,7 @@ kaart_tags:
   - Bodysculptor
   - Bewegen
 volgorde: 7
-website: ""
+website: https://www.pontinoi.nl
 email_zichtbaar: ""
 telefoon: "06 38634688"
 online: Nee

@@ -1,8 +1,8 @@
 ---
 naam: "Ronald Weerman"
 praktijk: "Mindful-inspirations"
-provincie: "Drenthe"
-stad: ""
+provincie: "Friesland"
+stad: "Leeuwarden"
 foto: "/assets/images/makers/ronald-weerman.jpg"
 categorieen:
   - "Bewegen"
@@ -25,9 +25,9 @@ kaart_tags:
   - "Koud water"
 citaat: "Stressvermindering via ademhaling, mindset en bewuste beweging."
 volgorde: 10
-website: ""
-email_zichtbaar: ""
-telefoon: ""
+website: https://www.mindful-inspirations.nl
+email_zichtbaar: info@mindful-inspirations.nl
+telefoon: 06-42250088
 online: "Ja"
 sessieduur: "60–120 min"
 tarief: ""

@@ -25,9 +25,9 @@ kaart_tags:
   - Coaching
 citaat: Patronen doorbreken voor meer rust en zelfvertrouwen.
 volgorde: 4
-website: ""
-email_zichtbaar: ""
-telefoon: ""
+website: https://www.janetvanderveen.nl
+email_zichtbaar: contact@janetvanderveen.nl
+telefoon: 06-40237827
 online: Op aanvraag
 sessieduur: 75 min
 tarief: ""

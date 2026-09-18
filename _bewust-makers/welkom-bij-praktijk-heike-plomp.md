@@ -2,7 +2,7 @@
 naam: "Heike Plomp"
 praktijk: "Praktijk Heike Plomp"
 provincie: "Drenthe"
-stad: ""
+stad: "Nieuw-Weerdinge"
 foto: "/assets/images/makers/heike-plomp.jpg"
 categorieen:
   - "Massage"
@@ -27,9 +27,9 @@ kaart_tags:
   - "Cupping"
   - "Kruiden"
 volgorde: 3
-website: ""
-email_zichtbaar: ""
-telefoon: ""
+website: https://www.praktijkheikeplomp.nl
+email_zichtbaar: info@praktijkheikeplomp.nl
+telefoon: 06-50413422
 online: "Nee"
 sessieduur: "60–90 min"
 tarief: ""
@@ -50,11 +50,19 @@ opleidingen:
   - "Oor-acupunctuur"
 verenigingen: []
 bio: "Heike werkt vanuit de Traditionele Chinese Geneeskunde met shiatsu massage, cupping, moxa therapie, dorn methode, oor-acupunctuur en kruidengeneeskunde."
-waarom: ""
-onderscheid: ""
-voor_wie: ""
-wat_zeggen_clienten: ""
-na_sessie: ""
+waarom: >-
+  Omdat ik een alternatief heb gevonden voor medicatie slikken en op natuurlijke
+  behandelwijze de oorzaak van een probleem aanpak.
+onderscheid: >-
+  Door mijn veelzijdige opleidingen heb ik een brede kennis over klachten en
+  behandelmethoden.
+voor_wie: >-
+  Je kunt mij bellen als je een ontspanningsmoment zoekt, maar ook als je
+  lichamelijke klachten hebt zoals rug- of nekklachten.
+wat_zeggen_clienten: >-
+  Cliënten zeggen tegen mij dat ik blokkades altijd weet te vinden en dat
+  iedereen zich een Heike-moment zou moeten gunnen.
+na_sessie: Je neemt naar de sessie alleen jezelf mee en draagt makkelijke kleren.
 gepubliceerd: true
 uitgelicht: false
 lidmaatschap: "Bewust-maker"
