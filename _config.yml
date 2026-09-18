@@ -49,8 +49,6 @@ defaults:
     values:
       layout: "mee-maker"
       gepubliceerd: true
-      sitemap: false
-      noindex: true
   - scope:
       path: ""
       type: "kennisbank"
