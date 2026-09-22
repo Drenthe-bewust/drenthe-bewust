@@ -146,7 +146,8 @@ exports.handler = async function(event) {
   const newContent = `---\n${newYaml}---\n`;
 
   // Commit de wijziging naar GitHub
-  const commitBericht = `Profiel bijgewerkt: ${data.naam || slug}`;
+  // [skip ci] → Netlify slaat deze build over; de dagelijkse GitHub Action bouwt om 22:00
+  const commitBericht = `Profiel bijgewerkt: ${data.naam || slug} [skip ci]`;
   try {
     await githubUpdateFile(filePath, newContent, fileData.sha, commitBericht);
   } catch (err) {

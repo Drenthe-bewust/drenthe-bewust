@@ -1,0 +1,14 @@
+name: Dagelijkse profielupdate
+
+on:
+  schedule:
+    # Elke dag om 22:00 Nederlandse tijd (20:00 UTC, zomer) / 21:00 UTC (winter)
+    - cron: '0 20 * * *'
+  workflow_dispatch:  # ook handmatig te starten via GitHub → Actions
+
+jobs:
+  trigger-netlify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify deploy
+        run: curl -s -X POST -d '{}' "${{ secrets.NETLIFY_DEPLOY_HOOK }}"
