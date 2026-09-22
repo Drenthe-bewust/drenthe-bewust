@@ -5,6 +5,10 @@
 [build.environment]
   RUBY_VERSION = "3.2.0"
   JEKYLL_ENV = "production"
+  NODE_VERSION = "18"
+
+[functions]
+  directory = "netlify/functions"
 
 [[redirects]]
   from = "/admin"
