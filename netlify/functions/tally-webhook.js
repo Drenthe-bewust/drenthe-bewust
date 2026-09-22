@@ -54,6 +54,10 @@ const EDITABLE_FIELDS = {
   'Waarvoor bel je mij wél?':                    { yamlKey: 'voor_wie',             type: 'text'   },
   'Wat zeggen cliënten?':                        { yamlKey: 'wat_zeggen_clienten',  type: 'text'   },
   'Wat krijg je mee na een sessie?':             { yamlKey: 'na_sessie',            type: 'text'   },
+
+  // Kennisbank-koppelingen
+  'Kennisbank-koppelingen':                      { yamlKey: 'kennisbank_links',     type: 'array'  },
+  'Nieuw kennisbank-onderwerp':                  { yamlKey: 'kennisbank_suggestie', type: 'text'   },
 };
 
 exports.handler = async function(event) {

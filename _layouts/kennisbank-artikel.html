@@ -97,10 +97,11 @@ layout: standaard
     <!-- BEWUST-MAKERS MET DEZE METHODE OF CATEGORIE -->
     {% assign methode_naam = a.titel | default: a.title %}
     {% assign makers_met_methode = site.bewust-makers | where_exp: "m", "m.methoden contains methode_naam" %}
+    {% assign makers_met_link = site.bewust-makers | where_exp: "m", "m.kennisbank_links contains methode_naam" %}
     {% assign kat = a.categorie %}
     {% assign makers_op_categorie = site.bewust-makers | where_exp: "m", "m.categorieen contains kat" %}
-    {% if makers_met_methode.size > 0 %}
-      {% assign toon_makers = makers_met_methode %}
+    {% if makers_met_methode.size > 0 or makers_met_link.size > 0 %}
+      {% assign toon_makers = makers_met_methode | concat: makers_met_link | uniq %}
       {% assign toon_label = "Bewust-makers die " | append: methode_naam | append: " aanbieden" %}
     {% elsif makers_op_categorie.size > 0 %}
       {% assign toon_makers = makers_op_categorie %}

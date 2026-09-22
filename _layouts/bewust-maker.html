@@ -234,14 +234,12 @@ layout: standaard
     </div>
     {% endif %}
 
-    {% if m.methoden %}
-    {% capture kennisbank_items %}{% for methode in m.methoden %}{% assign methode_lower = methode | downcase %}{% for artikel in site.kennisbank %}{% assign artikel_titel_lower = artikel.titel | downcase %}{% if artikel_titel_lower == methode_lower %}<li style="padding:0.3rem 0;"><a href="{{ artikel.url | relative_url }}" style="color:var(--groen-donker);font-weight:600;">{{ artikel.titel }}</a></li>{% endif %}{% endfor %}{% endfor %}{% endcapture %}
+    {% capture kennisbank_items %}{% for artikel in site.kennisbank %}{% assign artikel_titel_lower = artikel.titel | downcase %}{% assign gevonden = false %}{% if m.kennisbank_links contains artikel.titel %}{% assign gevonden = true %}{% endif %}{% unless gevonden %}{% for methode in m.methoden %}{% assign methode_lower = methode | downcase %}{% if artikel_titel_lower == methode_lower %}{% assign gevonden = true %}{% break %}{% endif %}{% endfor %}{% endunless %}{% if gevonden %}<li style="padding:0.3rem 0;"><a href="{{ artikel.url | relative_url }}" style="color:var(--groen-donker);font-weight:600;">{{ artikel.titel }}</a></li>{% endif %}{% endfor %}{% endcapture %}
     {% if kennisbank_items != "" %}
     <div style="background:var(--creme);border-radius:var(--radius);padding:1.2rem 1.5rem;margin-bottom:2rem;border:1px solid var(--border);">
       <h4 style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--tekst-licht);margin-bottom:0.6rem;">📚 Meer weten over deze methoden?</h4>
       <ul style="list-style:none;margin:0;">{{ kennisbank_items }}</ul>
     </div>
-    {% endif %}
     {% endif %}
 
     <div style="text-align:center;margin-top:1.5rem;">
