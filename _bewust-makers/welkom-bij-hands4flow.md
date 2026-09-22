@@ -62,6 +62,11 @@ opleidingen:
 verenigingen:
   - Reiki vereniging Cirkel
   - Beroepsvereniging voor Stoelmasseurs
+kennisbank_links:
+  - REIKI
+  - Voetreflexologie
+  - Stoelmassage
+  - Access Bars
 bio: Mede initiatiefneemster van Drenthe-Bewust en praktijkhoudster van
   hands4flow. Elsemarie werkt met voetreflexmassage, REIKI, Access Bars,
   coaching en stoelmassage. Tevens geeft ze Reiki cursussen.
