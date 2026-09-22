@@ -52,6 +52,11 @@ opleidingen:
   - Quantum Human Design Analyst lvl 2
   - Zen Human Design analyst
 verenigingen: []
+kennisbank_links:
+  - Ademwerk
+  - Body Dearmouring
+  - Human Design
+  - Conscious Kink
 bio: >-
   Ik was ooit heel goed in overleven. Doorgaan, presteren, aanpassen. Zolang ik
   maar niet hoefde te voelen wat er onder zat.

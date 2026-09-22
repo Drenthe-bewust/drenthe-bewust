@@ -55,6 +55,8 @@ opleidingen:
   - Human Design coaching
   - Reiki 1 & 2
 verenigingen: []
+kennisbank_links:
+  - Human Design
 bio: >-
   Ik ben Martine Stoffers, holistisch leefstijlcoach en het gezicht achter
   Change Your Lifestyle.

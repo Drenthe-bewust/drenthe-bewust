@@ -46,6 +46,9 @@ opleidingen:
   - Reiki Master
 verenigingen:
   - Collectief Alternatieve Therapeuten (CAT) — https://catcollectief.nl/
+kennisbank_links:
+  - REIKI
+  - Familieopstelling
 bio: |
   Als je me zou kennen zou je weten dat…
 

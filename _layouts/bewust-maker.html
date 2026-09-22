@@ -51,19 +51,41 @@ layout: standaard
           📍 {% if m.stad %}{{ m.stad }}, {% endif %}{{ m.provincie }}
         </p>
 
-        {% if m.categorieen %}
-        <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.5rem;">
-          {% for cat in m.categorieen %}
-          <span style="background:var(--goud);border:1px solid var(--goud-donker);color:var(--tekst);font-size:0.75rem;font-weight:700;padding:0.2rem 0.7rem;border-radius:50px;">{{ cat }}</span>
-          {% endfor %}
-        </div>
-        {% endif %}
-
-        {% if m.methoden %}
+        {% if m.methoden or m.kennisbank_links %}
         <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1rem;">
-          {% for tag in m.methoden %}
-          <span class="profiel-tag">{{ tag }}</span>
+          {% for methode in m.methoden %}
+            {% assign _gevonden = nil %}
+            {% assign _m_lc = methode | downcase %}
+            {% for artikel in site.kennisbank %}
+              {% if artikel.gepubliceerd and artikel.titel %}
+                {% assign _a_lc = artikel.titel | downcase %}
+                {% if _a_lc == _m_lc %}{% assign _gevonden = artikel %}{% break %}{% endif %}
+              {% endif %}
+            {% endfor %}
+            {% if _gevonden %}
+              <button class="profiel-tag profiel-tag--koppeling" data-url="{{ _gevonden.url | relative_url }}" data-inleiding="{{ _gevonden.inleiding | escape }}">{{ methode }}</button>
+            {% else %}
+              <span class="profiel-tag">{{ methode }}</span>
+            {% endif %}
           {% endfor %}
+          {% if m.kennisbank_links %}
+            {% for _link in m.kennisbank_links %}
+              {% assign _is_methode = false %}
+              {% assign _link_lc = _link | downcase %}
+              {% for methode in m.methoden %}
+                {% assign _m_lc = methode | downcase %}
+                {% if _m_lc == _link_lc %}{% assign _is_methode = true %}{% break %}{% endif %}
+              {% endfor %}
+              {% unless _is_methode %}
+                {% for artikel in site.kennisbank %}
+                  {% if artikel.titel == _link and artikel.gepubliceerd %}
+                    <button class="profiel-tag profiel-tag--koppeling" data-url="{{ artikel.url | relative_url }}" data-inleiding="{{ artikel.inleiding | escape }}">{{ _link }}</button>
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+              {% endunless %}
+            {% endfor %}
+          {% endif %}
         </div>
         {% endif %}
 
@@ -234,19 +256,35 @@ layout: standaard
     </div>
     {% endif %}
 
-    {% capture kennisbank_items %}{% for artikel in site.kennisbank %}{% assign artikel_titel_lower = artikel.titel | downcase %}{% assign gevonden = false %}{% if m.kennisbank_links contains artikel.titel %}{% assign gevonden = true %}{% endif %}{% unless gevonden %}{% for methode in m.methoden %}{% assign methode_lower = methode | downcase %}{% if artikel_titel_lower == methode_lower %}{% assign gevonden = true %}{% break %}{% endif %}{% endfor %}{% endunless %}{% if gevonden %}<li style="padding:0.3rem 0;"><a href="{{ artikel.url | relative_url }}" style="color:var(--groen-donker);font-weight:600;">{{ artikel.titel }}</a></li>{% endif %}{% endfor %}{% endcapture %}
-    {% if kennisbank_items != "" %}
-    <div style="background:var(--creme);border-radius:var(--radius);padding:1.2rem 1.5rem;margin-bottom:2rem;border:1px solid var(--border);">
-      <h4 style="font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--tekst-licht);margin-bottom:0.6rem;">📚 Meer weten over deze methoden?</h4>
-      <ul style="list-style:none;margin:0;">{{ kennisbank_items }}</ul>
-    </div>
-    {% endif %}
-
     <div style="text-align:center;margin-top:1.5rem;">
       <a href="{{ '/onze-bewust-makers/' | relative_url }}" style="font-size:0.9rem;color:var(--tekst-licht);">← Terug naar alle bewust-makers</a>
     </div>
   </div>
 </section>
+
+<script>
+(function(){
+  var popup=null;
+  function sluiten(){if(popup){popup.remove();popup=null;}}
+  document.querySelectorAll('.profiel-tag--koppeling').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(popup){sluiten();return;}
+      popup=document.createElement('div');
+      popup.className='kb-popup';
+      popup.innerHTML='<p style="margin:0 0 0.7rem;">'+btn.dataset.inleiding+'</p><a href="'+btn.dataset.url+'" style="color:var(--groen-donker);font-weight:600;font-size:0.85rem;">Lees meer in de kennisbank →</a>';
+      document.body.appendChild(popup);
+      var r=btn.getBoundingClientRect();
+      var left=Math.min(r.left+window.scrollX,window.innerWidth-324+window.scrollX);
+      if(left<8)left=8;
+      popup.style.left=left+'px';
+      popup.style.top=(r.bottom+window.scrollY+8)+'px';
+    });
+  });
+  document.addEventListener('click',sluiten);
+  window.addEventListener('scroll',sluiten,{passive:true});
+})();
+</script>
 
 <section class="sectie sectie--kleur">
   <div class="container" style="text-align:center;">

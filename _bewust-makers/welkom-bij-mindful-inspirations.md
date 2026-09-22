@@ -45,6 +45,8 @@ opleidingen:
   - "Ademcoach gecertificeerd"
   - "Mindset coach gecertificeerd"
 verenigingen: []
+kennisbank_links:
+  - Ademwerk
 bio: "Ademwerk coaching Nederland, ademhaling workshops, stress verminderen met ademhaling, adem- en mindset coaching en koud water dip workshops."
 waarom: ""
 onderscheid: ""

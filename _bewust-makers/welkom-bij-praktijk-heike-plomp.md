@@ -49,6 +49,13 @@ opleidingen:
   - "Dorn methode"
   - "Oor-acupunctuur"
 verenigingen: []
+kennisbank_links:
+  - Shiatsu
+  - Cupping
+  - Moxa therapie
+  - Dorn methode
+  - Ooracupunctuur
+  - Kruidengeneeskunde
 bio: "Heike werkt vanuit de Traditionele Chinese Geneeskunde met shiatsu massage, cupping, moxa therapie, dorn methode, oor-acupunctuur en kruidengeneeskunde."
 waarom: >-
   Omdat ik een alternatief heb gevonden voor medicatie slikken en op natuurlijke

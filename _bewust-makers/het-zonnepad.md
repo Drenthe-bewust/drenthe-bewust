@@ -77,6 +77,9 @@ verenigingen:
   - Drenthe Bewust (netwerk)
   - Spiritueel Ondernemers (netwerk)
   - Afhangen (netwerk)
+kennisbank_links:
+  - REIKI
+  - Yoga
 bio: |
   Lydia van der Helm is oprichter van Het Zonnepad en grondlegger van de ZON-methode.
 
