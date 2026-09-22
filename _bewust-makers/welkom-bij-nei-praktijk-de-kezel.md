@@ -27,17 +27,11 @@ kaart_tags:
   - NEI
   - Coaching
   - Massage
-citaat: Van inzicht naar bewuste keuze — voor jezelf en je gezondheid.
+citaat: '“ jouw weg terug naar wie je werkelijk bent: in balans, vol vertrouwen & energiek!'
 volgorde: 2
 lat: 52.8034
 lon: 6.9989
-omschrijving: |-
-  Als je bij mijn NEI praktijk de Kezel binnenstapt, ervaar je een ontspannen sfeer en voel je de rust en ruimte om je verhaal te doen. Vanuit daar gaan we samen met jouw onderbewuste op zoek naar de oorzaak achter jouw fysieke, emotionele of mentale klacht(en). Ik werk daarbij met testlijsten in combinatie met mijn biotensor. 
-
-  Het enige dat jij hoeft te doen is je openstellen, daarmee bedoel ik je nieuwsgierig opstellen naar de boodschap die jouw onderbewuste je wil geven om jouw klacht op te kunnen lossen. 
-  Tijdens de NEI sessie mag praten, maar het hoeft niet. Verder kun je rustig zitten en een kopje thee/koffie of water drinken tijdens je NEI sessie. Na 1-1,5 uur zijn we klaar en bepalen we samen de volgende stap. 
-
-  Alles gebeurd op jouw tempo en zoals het goed voelt voor jou.
+omschrijving: NEI &Reiki praktijk de Kezel, voor jonge vrouwen, moeders (én haar gezin!)
 website: https://praktijkdekezel.nl
 email_zichtbaar: marcella@praktijkdekezel.nl
 telefoon: 06-21312490
