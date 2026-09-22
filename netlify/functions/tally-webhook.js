@@ -188,10 +188,15 @@ function parseVeldwaarde(field, type) {
 }
 
 // Controleer de Tally-HMAC-handtekening
+// Tally signeert met HMAC-SHA256 van JSON.stringify(payload), digest als base64
 function verifySignature(body, signature, secret) {
   if (!signature) return false;
-  const expected = 'sha256=' + crypto.createHmac('sha256', secret).update(body).digest('hex');
   try {
+    const payload = JSON.parse(body);
+    const expected = crypto
+      .createHmac('sha256', secret)
+      .update(JSON.stringify(payload))
+      .digest('base64');
     return crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected));
   } catch {
     return false;
