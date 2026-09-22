@@ -98,6 +98,8 @@ voor_wie: |
   - mensen die niet intensief kunnen sporten
   - mensen die van privacy en een rustige omgeving houden
   - mensen die willen werken aan balans, rust en vitaliteit
+
+  Je kunt mij bellen voor: vitaliteitsbegeleiding, BodySculptor, ervaringsdeskundige ondersteuning, denken in mogelijkheden, SlimUp, spieractivatie met infraroodwarmte.
 wat_zeggen_clienten: >
   - "De sportschool is niet iets voor mij. De rust en persoonlijke begeleiding
   bij Ponti Noi sluit aan bij mijn wensen. Inmiddels 6 kilo lichter en -50 cm

@@ -69,11 +69,16 @@ onderscheid: |-
   Bij mij kun je je zelf zijn, wie of wat je ook bent, doet of voelt. 
 
   Ik ben praktisch, met een inlevend vermogen, ik sta met beide benen op de grond en met een grote liefde voor alles dat leeft (mens, dier, planten).
-voor_wie: 'Ik ben er voor JOU en voor alles dat je graag anders zou willen zien, voelen, ervaren. Dus heb je ADHD/ADD, Angst, Depressie, Vermoeidheid, Hoofdpijn, een verslaving, vage klachten, de diagnose: Je moet ermee leren leven! Ik ben maar één telefoontje van jou vandaan.  '
+voor_wie: |-
+  Ik ben er voor JOU en voor alles dat je graag anders zou willen zien, voelen, ervaren. Dus heb je ADHD/ADD, Angst, Depressie, Vermoeidheid, Hoofdpijn, een verslaving, vage klachten, de diagnose: Je moet ermee leren leven! Ik ben maar één telefoontje van jou vandaan.
+
+  Je kunt mij bellen voor: een NEI behandeling, Bach Bloesem, Flowerplex, Orthomoleculaire voeding, EFT, Edelstenen, REIKI, Verbroken verbinding massage / Metamorfose massage.
 wat_zeggen_clienten: |-
   Eén van mijn cliënten heeft deze mooie referentie gedeeld over mij en mijn werkwijze. Ik deel deze graag met je en hoop dat je een indruk hebt mogen krijgen van mij als persoon en wat ik voor je kan betekenen als je er voor open staat.
 
   Marcella is een hele lieve en begripvolle vrouw die echt luistert naar je verhaal. Ze probeert je te helpen waar ze kan met resultaat. Ik ben met mijn dochter van 2 jaar langs geweest voor problemen met voeding. Ze had een angst voor avondeten en als ze aan tafel moest was het al drama. Ze durfde niet, raakte in paniek en kroop dan weg. Nu komt onze dochter zelf op haar plekje aan tafel zitten zonder problemen als we gaan eten. Ze eet nog niet alles maar wel steeds meer variatie. Mijn dochter voelde zich bij haar omzettend op haar gemak en ging rustig spelen in de ruimte. Ook kijkt Marcella naar andere blokkades die dieper liggen en probeert dit te doorbreken en geeft raad en advies. Ik ben haar heel dankbaar voor wat ze voor onze dochter heeft kunnen betekenen. Aanrader!
+kennisbank_links:
+  - NEI-therapie
 na_sessie: |-
   Na je sessie bij NEI Praktijk de Kezel, krijg je van mij een uitgebreid verslag en en foldertje mee met wat je allemaal de dagen na je behandeling kunt verwachten. Een aantal dagen na je bezoek neem ik nog even contact met je op. 
 

@@ -27,6 +27,10 @@ klachten:
   - samengesteld gezin
   - leeglopen
   - stagnatie in spirituele ontwikkeling
+  - vermoeidheid
+  - stress
+  - angst
+  - slaapproblemen
 kaart_tags:
   - ZON-methode
   - NLP Master
@@ -70,7 +74,7 @@ opleidingen:
   - Yoga Docent (500h)
   - CRKBO-geregistreerd instituut en docent
 verenigingen:
-  - Bewust Drenthe (netwerk)
+  - Drenthe Bewust (netwerk)
   - Spiritueel Ondernemers (netwerk)
   - Afhangen (netwerk)
 bio: |

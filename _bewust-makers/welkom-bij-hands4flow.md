@@ -58,6 +58,7 @@ opleidingen:
   - REIKI gecertificeerd
   - Access Bars gecertificeerd
   - stoelmassage gecertificeerd
+  - Coach
 verenigingen:
   - Reiki vereniging Cirkel
   - Beroepsvereniging voor Stoelmasseurs
@@ -87,6 +88,8 @@ voor_wie: |
   *Vastzittende spieren in rug, nek en schouders
   *Terugkerende patronen
   *Rouwverwerking
+
+  Voor: Stoelmassage, REIKI, coaching, Voetreflex, Access Bars.
   *Pijnklachten
   *Slaapproblemen
   *Een vol hoofd

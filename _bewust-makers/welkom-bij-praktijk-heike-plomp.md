@@ -57,8 +57,9 @@ onderscheid: >-
   Door mijn veelzijdige opleidingen heb ik een brede kennis over klachten en
   behandelmethoden.
 voor_wie: >-
-  Je kunt mij bellen als je een ontspanningsmoment zoekt, maar ook als je
-  lichamelijke klachten hebt zoals rug- of nekklachten.
+  Je kunt mij bellen voor: Shiatsu massage, cupping, moxa therapie, Dorn
+  methode, ooracupunctuur, traditionele Chinese kruidengeneeskunde.
+  Chronische klachten, spanningen in het lichaam, voor volwassenen.
 wat_zeggen_clienten: >-
   Cliënten zeggen tegen mij dat ik blokkades altijd weet te vinden en dat
   iedereen zich een Heike-moment zou moeten gunnen.

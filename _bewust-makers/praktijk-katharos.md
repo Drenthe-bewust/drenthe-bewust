@@ -72,7 +72,10 @@ onderscheid: >-
 voor_wie: >-
   Voor wie al van alles heeft geprobeerd en toch blijft vastlopen in angst,
   blokkades en/of onverklaarbare pijn.
-wat_zeggen_clienten: "De google reviews spreken voor zich : )"
+wat_zeggen_clienten: |-
+  "In een fijne omgeving en veilig voelende sfeer werd ik meegenomen naar een stuk oud verleden. De sessie was heftig, maar voelt nu als bevrijding van wat jaren belemmerend is geweest. Ruud doet de begeleiding zeer professioneel."
+
+  De google reviews spreken voor zich : )
 na_sessie: >-
   Iedereen reageert anders. Sommigen voelen direct een bevrijding, anderen hebben
   langer de tijd nodig om een sessie te verwerken. Maar een diepe innerlijke rust
