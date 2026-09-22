@@ -1,0 +1,13 @@
+name: Dagelijkse profielupdate
+
+on:
+  schedule:
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+
+jobs:
+  trigger-netlify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify deploy
+        run: curl -s -X POST -d '{}' "${{ secrets.NETLIFY_DEPLOY_HOOK }}"
