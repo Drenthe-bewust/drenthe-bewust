@@ -373,10 +373,10 @@ ul { list-style: none; }
 .profiel-meta .praktijk { font-size: 1rem; color: var(--goud-donker); font-weight: 700; margin-bottom: 0.3rem; }
 .profiel-meta .regio { font-size: 0.9rem; color: var(--tekst-licht); margin-bottom: 0.8rem; }
 .profiel-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
-.profiel-tag { background: transparent; border: none; border-bottom: 1.5px solid var(--goud); color: var(--tekst); font-size: 0.88rem; font-weight: 400; padding: 0.1rem 0; margin-right: 0.3rem; border-radius: 0; }
-.profiel-tag::after { content: "·"; margin-left: 0.4rem; color: var(--border); }
+.profiel-tag { background: transparent; border: 1px solid var(--goud); color: var(--tekst); font-size: 0.88rem; font-weight: 400; padding: 0.15rem 0.6rem; border-radius: 4px; }
+.profiel-tag::after { content: ""; }
 .profiel-tag:last-child::after { content: ""; }
-.profiel-tag--koppeling { cursor: pointer; border: 1px solid var(--goud); border-radius: 4px; padding: 0.1rem 0.55rem; text-decoration: underline; text-decoration-color: var(--goud); text-underline-offset: 2px; }
+.profiel-tag--koppeling { cursor: pointer; text-decoration: underline; text-decoration-color: var(--goud); text-underline-offset: 2px; }
 .profiel-tag--koppeling:hover { background: var(--creme); border-color: var(--goud-donker); color: var(--groen-donker); text-decoration-color: var(--groen-donker); }
 .kb-popup { position: absolute; z-index: 200; background: var(--wit); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; max-width: 300px; box-shadow: 0 4px 20px rgba(0,0,0,0.10); font-size: 0.88rem; line-height: 1.6; }
 </style>
