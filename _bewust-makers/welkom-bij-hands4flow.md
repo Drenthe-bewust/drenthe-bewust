@@ -11,7 +11,7 @@ methoden:
   - Voetreflexmassage
   - Reiki-behandelingen
   - Reiki-cursussen
-  - Acces Bars
+  - Access Bars
   - Stoelmassage
   - coaching
 klachten:
@@ -35,7 +35,7 @@ lat: 52.7697
 lon: 6.9142
 omschrijving: Elsemarie van der Ploeg heeft massage & Reiki praktijk hands4flow
   in Emmen. Hier kun je een Reiki-behandeling ontvangen alsmede een
-  voetreflexmassage, een stoelmassage, Acces Bars behandeling, coaching en sinds
+  voetreflexmassage, een stoelmassage, Access Bars behandeling, coaching en sinds
   kort ook Reiki cursussen.
 website: https://www.hands4flow.nl
 email_zichtbaar: info@hands4flow.nl

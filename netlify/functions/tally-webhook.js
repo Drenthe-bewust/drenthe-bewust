@@ -51,7 +51,7 @@ const EDITABLE_FIELDS = {
   'Bio':                                         { yamlKey: 'bio',                  type: 'text'   },
   'Waarom doe je dit werk?':                     { yamlKey: 'waarom',               type: 'text'   },
   'Wat maakt jou uniek?':                        { yamlKey: 'onderscheid',          type: 'text'   },
-  'Voor wie is jouw werk?':                      { yamlKey: 'voor_wie',             type: 'text'   },
+  'Waarvoor bel je mij wél?':                    { yamlKey: 'voor_wie',             type: 'text'   },
   'Wat zeggen cliënten?':                        { yamlKey: 'wat_zeggen_clienten',  type: 'text'   },
   'Wat krijg je mee na een sessie?':             { yamlKey: 'na_sessie',            type: 'text'   },
 };
