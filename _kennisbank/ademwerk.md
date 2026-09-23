@@ -43,3 +43,7 @@ Of je nu zoekt naar ontspanning, meer emotionele balans of gewoon weer wilt voel
 - Muziek ondersteunt vaak het proces
 - Na de actieve fase is er rust- en integratietijd
 - Sessies duren doorgaans 60–90 minuten
+
+## Ervaring uit de praktijk
+
+Bas van der Tang, gecertificeerd ademcoach in Groningen, ziet ademwerk als de basis van zijn begeleiding: "Ademwerk ligt aan de basis van ons zijn." Hij combineert het regelmatig met lichaamswerk of [Human Design](/kennisbank/human-design/), afhankelijk van wat er tijdens de intake naar boven komt. Bekijk zijn volledige profiel op [bewust-makers/bas-van-der-tang](/bewust-makers/bas-van-der-tang/).

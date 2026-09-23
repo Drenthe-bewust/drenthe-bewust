@@ -40,3 +40,7 @@ Human Design onderscheidt vijf energietypes, elk met een eigen strategie:
 ## Autoriteit: hoe neem jij beslissingen?
 
 Naast het type heeft ieder mens een persoonlijke 'autoriteit': de manier waarop je het beste beslissingen neemt. Dat kan via gevoel in de buik, emotionele helderheid over tijd, of juist de stem van iemand die hardop terugkaatst wat je al weet.
+
+## Ervaring uit de praktijk
+
+Voor Bas van der Tang, Human Design Analyst in Groningen, is het systeem vooral een praktisch hulpmiddel: "Human Design is de kaart — de handleiding van wie we zijn." Hij zet het regelmatig in als verdiepende laag naast coaching of [ademwerk](/kennisbank/ademwerk/). Bekijk zijn volledige profiel op [bewust-makers/bas-van-der-tang](/bewust-makers/bas-van-der-tang/).

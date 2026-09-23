@@ -63,7 +63,7 @@ layout: standaard
               {% endif %}
             {% endfor %}
             {% if _gevonden %}
-              <button class="profiel-tag profiel-tag--koppeling" data-url="{{ _gevonden.url | relative_url }}" data-inleiding="{{ _gevonden.inleiding | escape }}">{{ methode }}</button>
+              <a href="{{ _gevonden.url | relative_url }}" class="profiel-tag profiel-tag--koppeling" data-url="{{ _gevonden.url | relative_url }}" data-inleiding="{{ _gevonden.inleiding | escape }}">{{ methode }}</a>
             {% else %}
               <span class="profiel-tag">{{ methode }}</span>
             {% endif %}
@@ -79,7 +79,7 @@ layout: standaard
               {% unless _is_methode %}
                 {% for artikel in site.kennisbank %}
                   {% if artikel.titel == _link and artikel.gepubliceerd %}
-                    <button class="profiel-tag profiel-tag--koppeling" data-url="{{ artikel.url | relative_url }}" data-inleiding="{{ artikel.inleiding | escape }}">{{ _link }}</button>
+                    <a href="{{ artikel.url | relative_url }}" class="profiel-tag profiel-tag--koppeling" data-url="{{ artikel.url | relative_url }}" data-inleiding="{{ artikel.inleiding | escape }}">{{ _link }}</a>
                     {% break %}
                   {% endif %}
                 {% endfor %}
@@ -268,6 +268,7 @@ layout: standaard
   function sluiten(){if(popup){popup.remove();popup=null;}}
   document.querySelectorAll('.profiel-tag--koppeling').forEach(function(btn){
     btn.addEventListener('click',function(e){
+      e.preventDefault();
       e.stopPropagation();
       if(popup){sluiten();return;}
       popup=document.createElement('div');
