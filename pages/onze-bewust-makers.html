@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <p class="maker-kaart__praktijk">{{ maker.praktijk }}</p>
         <p class="maker-kaart__regio">📍 {% if maker.stad %}{{ maker.stad }}, {% endif %}{{ maker.provincie }}</p>
         <div class="maker-kaart__tags">{% for tag in kaart_tags limit:3 %}<span class="maker-kaart__tag">{{ tag }}</span>{% endfor %}</div>
-        <a href="{{ maker.url | relative_url }}" target="_blank" rel="noopener" class="knop knop--goud" style="font-size:0.83rem;">Bekijk profiel</a>
+        <a href="{{ maker.url | relative_url }}" class="knop knop--goud" style="font-size:0.83rem;">Bekijk profiel</a>
       </div>
       {% endfor %}
 

@@ -168,7 +168,7 @@ layout: standaard
 
       {% if m.voor_wie %}
       <div style="border-left:4px solid var(--goud-donker);padding:1.2rem 1.5rem;background:var(--wit);border-radius:0 var(--radius) var(--radius) 0;box-shadow:var(--schaduw);">
-        <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--goud-donker);margin-bottom:0.5rem;">Waarvoor bel je mij wél?</p>
+        <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--goud-donker);margin-bottom:0.5rem;">Waarom bel je mij?</p>
         <div class="profiel-tekst" style="margin:0;line-height:1.75;">{{ m.voor_wie | markdownify }}</div>
       </div>
       {% endif %}
@@ -257,8 +257,23 @@ layout: standaard
     {% endif %}
 
     <div style="text-align:center;margin-top:1.5rem;">
-      <a href="{{ '/onze-bewust-makers/' | relative_url }}" style="font-size:0.9rem;color:var(--tekst-licht);">← Terug naar alle bewust-makers</a>
+      <a href="{{ '/onze-bewust-makers/' | relative_url }}" id="terug-overzicht" style="font-size:0.9rem;color:var(--tekst-licht);">← Terug naar alle bewust-makers</a>
     </div>
+    <script>
+    // Kwam je van het overzicht? Dan terug in de geschiedenis, zodat zoekfilters en scrollpositie behouden blijven
+    (function(){
+      var terug=document.getElementById('terug-overzicht');
+      if(!terug)return;
+      terug.addEventListener('click',function(e){
+        try{
+          var vorige=document.referrer?new URL(document.referrer):null;
+          if(vorige&&vorige.origin===location.origin&&vorige.pathname===new URL(terug.href).pathname&&history.length>1){
+            e.preventDefault();history.back();
+          }
+        }catch(_){}
+      });
+    })();
+    </script>
   </div>
 </section>
 

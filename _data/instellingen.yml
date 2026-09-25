@@ -8,3 +8,5 @@ inspiratie_link: /inspiratie/
 inspiratie_foto: assets/images/makers/photowalk633.web.jpg
 teller_bewust_makers: 10
 teller_mee_makers: 7
+# Tally-formulier "Activiteit aanmelden" (ID uit https://tally.so/r/<ID>). Leeg = knop gaat naar contact.
+agenda_formulier_id: ""

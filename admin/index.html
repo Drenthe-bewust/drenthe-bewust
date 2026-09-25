@@ -56,7 +56,7 @@
           {label:"Bio (korte introductie)", name:"bio", widget:"text", hint:"Verschijnt als eerste tekst op je profielpagina. Beschrijf kort wie je bent en wat je doet."},
           {label:"Waarom is dit jouw werk?", name:"waarom", widget:"text", required:false, hint:"Jouw persoonlijke verhaal en motivatie. Verschijnt op je profielpagina onder 'Waarom is dit mijn werk?'"},
           {label:"Wat maakt jou anders?", name:"onderscheid", widget:"text", required:false, hint:"Wat onderscheidt jou van andere therapeuten? Verschijnt onder 'Wat maakt mij anders?'"},
-          {label:"Waarvoor bel je mij wél — en waarvoor niet?", name:"voor_wie", widget:"text", required:false, hint:"Voor wie ben jij de juiste keuze? Verschijnt onder 'Waarvoor bel je mij wél — en waarvoor niet?'"},
+          {label:"Waarom bel je mij?", name:"voor_wie", widget:"text", required:false, hint:"Voor wie ben jij de juiste keuze? Verschijnt op je profiel onder 'Waarom bel je mij?'"},
           {label:"Wat zeggen cliënten over jou?", name:"wat_zeggen_clienten", widget:"text", required:false, hint:"Ervaringen of testimonials van cliënten. Verschijnt cursief op je profiel."},
           {label:"Wat neem je mee na een sessie?", name:"na_sessie", widget:"text", required:false, hint:"Wat mogen cliënten verwachten na een sessie bij jou?"},
           {label:"Gepubliceerd", name:"gepubliceerd", widget:"boolean", default:true},
@@ -103,7 +103,9 @@
           {label:"Aanmeldlink", name:"aanmeld", widget:"string", required:false, hint:"URL voor aanmelden of meer info (bijv. https://jouwsite.nl/aanmelden). Laat leeg als er geen link is."},
           {label:"Prijs", name:"prijs", widget:"string", required:false, hint:"Bijv. Gratis, €15,-, Op aanvraag"},
           {label:"Sorteernummer", name:"volgorde", widget:"number", required:false, value_type:"int", default:99, hint:"Bepaalt de volgorde als meerdere activiteiten dezelfde datum hebben (laag = eerder). Laat leeg voor automatische volgorde."},
-          {label:"Gepubliceerd", name:"gepubliceerd", widget:"boolean", default:true}
+          {label:"Gepubliceerd", name:"gepubliceerd", widget:"boolean", default:true, hint:"Aanmeldingen via het Tally-formulier komen binnen als concept (uit). Controleer ze en zet deze schakelaar aan om ze online te zetten."},
+          {label:"Aangemeld door (e-mail)", name:"aangemeld_door", widget:"string", required:false, hint:"Automatisch ingevuld bij aanmelding via Tally. Niet zichtbaar op de site."},
+          {label:"Aangemeld op", name:"aangemeld_op", widget:"string", required:false, hint:"Automatisch ingevuld bij aanmelding via Tally."}
         ]
       },
       {
@@ -316,7 +318,8 @@
               {label:"Link artikel", name:"inspiratie_link", widget:"string"},
               {label:"Foto auteur", name:"inspiratie_foto", widget:"image", required:false},
               {label:"Aantal Bewust-makers", name:"teller_bewust_makers", widget:"number", value_type:"int"},
-              {label:"Aantal Mee-makers", name:"teller_mee_makers", widget:"number", value_type:"int"}
+              {label:"Aantal Mee-makers", name:"teller_mee_makers", widget:"number", value_type:"int"},
+              {label:"Tally-formulier activiteit aanmelden (ID)", name:"agenda_formulier_id", widget:"string", required:false, hint:"Het ID uit de Tally-link, bijv. 'wAbC12' uit https://tally.so/r/wAbC12. Leeg = de knop op de agendapagina gaat naar het contactformulier."}
             ]
           }
         ]
