@@ -166,7 +166,7 @@ const blocks = [
   // ── Categorieën & methoden ──
   makeHeading('Categorieën &amp; methoden'),
   ...makeCheckboxes('Categorieën', [
-    'Coaching', 'Bewegen', 'Voeding', 'Energetisch',
+    'Massage', 'Coaching', 'Voeding', 'Energetisch', 'Bewegen', 'Meditatie',
     'Mindfulness', 'Lichaamsgericht', 'Spiritueel', 'Psychosociaal',
   ]),
   ...makeQuestion('Methoden (één per regel)', 'TEXTAREA', { placeholder: 'Elke methode op een nieuwe regel\nbijv.\nAdemwerk\nYoga\nMassage' }),
