@@ -2,7 +2,7 @@
 naam: Judith Hendriks
 praktijk: By Juud
 foto: /assets/images/makers/judith-hendriks.jpg
-provincie: 04343390-898c-41f6-8010-1cd0f58bcac3
+provincie: Overijssel
 stad: Online
 categorieen:
   - Voeding

@@ -2,14 +2,14 @@
 naam: Marcella van den Burg
 praktijk: NEI Praktijk de Kezel
 foto: /assets/images/makers/profielfoto-marcella20.jpeg
-provincie: 04343390-898c-41f6-8010-1cd0f58bcac3
+provincie: Drenthe
 stad: Nieuw-Weerdinge
 categorieen:
-  - 9aefdcd9-2b83-4905-82c3-24a83cf9addd
-  - f422c477-5563-4100-b56d-a1f7d1ee143e
-  - 349b8440-0813-4bd2-80f9-435029c8a3d7
-  - 2958b665-a6f6-4e4a-b8fc-1f1510027796
-  - a5530892-d298-4195-8761-85f11473cf4f
+  - Coaching
+  - Voeding
+  - Energetisch
+  - Lichaamsgericht
+  - Psychosociaal
 methoden:
   - NEI-therapie
   - REIKI
