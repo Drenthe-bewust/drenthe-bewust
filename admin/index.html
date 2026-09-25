@@ -5,7 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
   <title>Drenthe-Bewust Beheer</title>
+  <link rel="icon" href="/assets/images/logo-icoon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    /* Huisstijl Drenthe-Bewust voor Decap CMS.
+       Decap zet componentnamen in de classnamen (bijv. css-abc12-AppHeader), daarop selecteren we. */
+    :root {
+      --groen: #4a7c59; --groen-donker: #2d5c3a; --goud: #eaad32; --goud-donker: #c68b22;
+      --creme: #fffbf5; --achtergrond: #faf6ee; --border: #e8dfc8; --tekst: #2c2c2c;
+    }
+    body, button, input, textarea, select { font-family: 'Lato', 'Open Sans', sans-serif !important; }
+    body { background: var(--achtergrond) !important; color: var(--tekst); }
+
+    /* Kopbalk */
+    [class*="-AppHeader-"], [class$="-AppHeader"] { background: var(--groen-donker) !important; box-shadow: 0 2px 10px rgba(0,0,0,.12) !important; }
+    [class*="AppHeaderContent"] { min-width: 0 !important; }
+    [class*="AppHeaderContent"]::before {
+      content: ""; order: -2; width: 40px; height: 40px; flex-shrink: 0; align-self: center; border-radius: 50%;
+      background: url("/assets/images/logo-wit.png") center / 112% no-repeat;
+    }
+    [class*="AppHeaderContent"]::after {
+      content: "Drenthe-Bewust beheer"; order: -1; align-self: center; margin: 0 2rem 0 .7rem; white-space: nowrap;
+      font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1.1rem; color: #fff;
+    }
+    [class*="AppHeaderButton"], [class*="AppHeaderSiteLink"], [class*="AppHeaderTestRepoIndicator"] { color: rgba(255,255,255,.85) !important; }
+    [class*="AppHeaderButton"]:hover, [aria-current="page"] > [class*="AppHeaderButton"], [aria-current="page"][class*="AppHeaderNavLink"] { color: #fff !important; }
+    [aria-current="page"][class*="AppHeaderNavLink"] { box-shadow: inset 0 -3px 0 var(--goud); }
+    [class*="CollectionTopNewButton"], [class*="AppHeaderQuickNewButton"] { background: var(--goud) !important; color: var(--tekst) !important; }
+
+    /* Kaarten en koppen */
+    [class*="-card"] { border-radius: 14px !important; box-shadow: 0 2px 12px rgba(0,0,0,.06) !important; }
+    [class*="cardTopHeading"], [class*="SidebarHeading"] { font-family: 'Playfair Display', Georgia, serif !important; color: var(--groen-donker) !important; }
+    [class*="SidebarNavLink"] { border-radius: 8px; }
+    [class*="SidebarNavLink"][aria-current="page"] { background: var(--creme) !important; color: var(--groen-donker) !important; border-left-color: var(--goud) !important; font-weight: 700; }
+    [class*="ListCard"], [class*="GridCard"] { border-radius: 10px !important; }
+    [class*="ListCardLink"]:hover h2, [class*="GridCardLink"]:hover h2 { color: var(--groen) !important; }
+
+    /* Editor */
+    [class*="EditorContainer"], [class*="ControlPaneContainer"] { background: var(--achtergrond) !important; }
+    [class*="ToolbarContainer"] { background: #fff !important; border-bottom: 3px solid var(--goud) !important; }
+    [class*="ControlContainer"] > label, [class*="FieldLabel"] { color: var(--groen-donker) !important; font-weight: 700 !important; }
+    [class*="PublishButton"], [class*="SaveButton"] { background: var(--groen) !important; color: #fff !important; }
+    input:focus, textarea:focus, select:focus { outline: 2px solid var(--goud) !important; outline-offset: 1px; }
+
+    /* Knop "Terug zonder opslaan" (door script hieronder toegevoegd in de editor) */
+    .db-terug {
+      display: inline-flex; align-items: center; gap: .4rem; margin: 0 .8rem 0 .4rem; padding: .45rem 1rem;
+      border: 2px solid var(--groen); border-radius: 50px; background: #fff; color: var(--groen-donker);
+      font-weight: 700; font-size: .85rem; cursor: pointer; white-space: nowrap;
+    }
+    .db-terug:hover { background: var(--creme); }
+
+    /* Balk met uitleg over publiceren */
+    .db-publiceerbalk {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 400; display: flex; gap: 1rem; align-items: center;
+      justify-content: center; flex-wrap: wrap; padding: .55rem 1rem; background: var(--creme);
+      border-top: 1px solid var(--border); font-size: .85rem; color: #555;
+    }
+    .db-publiceerbalk button {
+      border: none; border-radius: 50px; padding: .4rem 1.1rem; background: var(--goud); color: var(--tekst);
+      font-weight: 700; cursor: pointer; font-size: .85rem;
+    }
+    .db-publiceerbalk button:disabled { opacity: .6; cursor: default; }
+    body { padding-bottom: 3rem; }
+  </style>
 </head>
 <body>
   <script>window.CMS_MANUAL_INIT = true;</script>
@@ -13,7 +78,22 @@
   <script>
   CMS.init({ config: {
     site_url: "https://www.drenthe-bewust.nl",
-    backend: { name: "git-gateway", branch: "main" },
+    backend: {
+      name: "git-gateway",
+      branch: "main",
+      // [skip ci] = Netlify bouwt niet bij elke opslag (scheelt build-tegoed).
+      // Wijzigingen gaan online bij de avondbuild van 22:00, of direct via "Nu online zetten".
+      commit_messages: {
+        create:      "Nieuw in {{collection}}: {{slug}} [skip ci]",
+        update:      "Bijgewerkt in {{collection}}: {{slug}} [skip ci]",
+        delete:      "Verwijderd uit {{collection}}: {{slug}} [skip ci]",
+        uploadMedia: "Afbeelding toegevoegd: {{path}} [skip ci]",
+        deleteMedia: "Afbeelding verwijderd: {{path}} [skip ci]"
+      }
+    },
+    logo_url: "/assets/images/logo-compleet.png",
+    // De voorbeeldweergave rechts toonde de tekst zonder opmaak; weg ermee voor een rustiger scherm
+    editor: { preview: false },
     media_folder: "assets/images/makers",
     public_folder: "/assets/images/makers",
     locale: "nl",
@@ -344,6 +424,59 @@
       }
     ]
   }});
+  </script>
+  <script>
+  // ── Knop "Terug zonder opslaan" in de editor ──────────────────────────────
+  (function () {
+    function voegTerugknopToe() {
+      var m = location.hash.match(/^#\/collections\/([^/]+)\/(entries|new)/);
+      var bestaand = document.querySelector('.db-terug');
+      if (!m) { if (bestaand) bestaand.remove(); return; }
+      if (bestaand) return;
+      var balk = document.querySelector('[class*="ToolbarSectionMain"]');
+      if (!balk) return;
+      var knop = document.createElement('button');
+      knop.type = 'button';
+      knop.className = 'db-terug';
+      knop.textContent = '← Terug zonder opslaan';
+      knop.title = 'Sluit dit item zonder iets op te slaan';
+      knop.addEventListener('click', function () {
+        var collectie = location.hash.match(/^#\/collections\/([^/]+)/)[1];
+        location.hash = '#/collections/' + collectie;
+      });
+      balk.insertBefore(knop, balk.firstChild.nextSibling);
+    }
+    new MutationObserver(voegTerugknopToe).observe(document.body, { childList: true, subtree: true });
+    window.addEventListener('hashchange', voegTerugknopToe);
+  })();
+
+  // ── Balk onderin: uitleg + "Nu online zetten" ─────────────────────────────
+  (function () {
+    var balk = document.createElement('div');
+    balk.className = 'db-publiceerbalk';
+    balk.innerHTML = '<span>💾 Opgeslagen wijzigingen komen elke avond om 22:00 automatisch online.</span>' +
+      '<button type="button">🚀 Nu online zetten</button><span class="db-status"></span>';
+    var knop = balk.querySelector('button');
+    var status = balk.querySelector('.db-status');
+    knop.addEventListener('click', async function () {
+      var gebruiker = window.netlifyIdentity && netlifyIdentity.currentUser();
+      if (!gebruiker) { status.textContent = 'Log eerst in.'; return; }
+      if (!confirm('Alle opgeslagen wijzigingen nu online zetten? Dit kost een build op Netlify.')) return;
+      knop.disabled = true; status.textContent = 'Bezig…';
+      try {
+        var token = await gebruiker.jwt();
+        var res = await fetch('/.netlify/functions/publiceer-nu', {
+          method: 'POST', headers: { Authorization: 'Bearer ' + token }
+        });
+        status.textContent = res.ok ? '✅ Gestart — over ± 2 minuten staat alles online.' : '❌ Mislukt (' + res.status + ').';
+      } catch (e) {
+        status.textContent = '❌ Mislukt: geen verbinding.';
+      }
+      setTimeout(function () { knop.disabled = false; }, 60000);
+    });
+    document.addEventListener('DOMContentLoaded', function () { document.body.appendChild(balk); });
+    if (document.readyState !== 'loading') document.body.appendChild(balk);
+  })();
   </script>
 </body>
 </html>
