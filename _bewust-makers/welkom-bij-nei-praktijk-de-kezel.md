@@ -52,13 +52,7 @@ opleidingen:
   - Bach Bloesem therapeut
 verenigingen:
   - VVNT
-bio: |-
-  Mijn naam is Marcella en ik ben Initiatiefnemer van Drenthe-Bewust (het platform waar je nu op kijkt) en praktijkhoudster van NEI Praktijk de Kezel en coach bij www.jouwcoachlijn.com 
-
-  Mijn praktijk heb ik aan huis, in het dorp Nieuw-Weerdinge, op 10 minuten auto afstand van Emmen.
-  Ik werk met NEI als mijn basis. Vanuit daar voeg ik op basis van jouw behoefte,  andere kennis en ondersteunende middelen toe. Denk daarbij aan systeemopstellingen, (Bach)-Bloesemremedies, Flowerplex, Schüssler celzouten, Edelstenen, Orthomoleculaire voeding en supplementen, Ook werk ik als het nodig is, met Detox en Dentotox middelen om jou zo optimaal te ondersteunen van jouw herstel. 
-
-  Vanuit mijn nieuwsgierigheid blijf ik leren en op zoek naar mooie ondersteunende middelen , zo kan ik echt inspringen op jouw behoefte. Zo mag en ga ik na de zomer periode ook REIKI behandelingen geven en ga ik werken met de lichtremedies van de Eenhoorn.
+bio: Mijn naam is Marcella en ik ben Initiatiefnemer van Drenthe-Bewust (het platform waar je nu op kijkt) en praktijkhoudster van NEI Praktijk de Kezel en coach bij www.jouwcoachlijn.com Mijn praktijk heb ik aan huis, in het dorp Nieuw-Weerdinge, op 10 minuten auto afstand van Emmen. Ik werk met NEI als mijn basis. Vanuit daar voeg ik op basis van jouw behoefte, andere kennis en ondersteunende middelen toe. Denk daarbij aan systeemopstellingen, (Bach)-Bloesemremedies, Flowerplex, Schüssler celzouten, Edelstenen, Orthomoleculaire voeding en supplementen, Ook werk ik als het nodig is, met Detox en Dentotox middelen om jou zo optimaal te ondersteunen van jouw herstel. Vanuit mijn nieuwsgierigheid blijf ik leren en op zoek naar mooie ondersteunende middelen , zo kan ik echt inspringen op jouw behoefte.
 waarom: |-
   Vanaf klein af aan ben ik nieuwsgierig naar alles dat in de natuur te vinden is, edelstenen, bloemen. Ik vind het magisch en bijzonder hoe mooi én hoe slim de natuur werkt.  En hoe het menselijk lichaam zó sterk en zelfhelend is. 
 
