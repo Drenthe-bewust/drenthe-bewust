@@ -16,16 +16,24 @@ const crypto = require('crypto');
 const yaml = require('js-yaml');
 
 // Tally-veldlabel → YAML-sleutel in _agenda/*.md
+// (zowel de labels van het formulier in Tally als die uit _scripts/maak-tally-agenda-formulier.js)
 const VELDEN = {
   'Naam van de activiteit':       'titel',
+  'Vaste datum of doorlopend':    'soort',
   'Soort activiteit':             'soort',
+  'Start datum':                  'datum',
   'Datum':                        'datum',
+  'Start tijdstip':               'starttijd',
+  'Eind tijdstip':                'eindtijd',
   'Tijdstip':                     'tijdstip',
   'Locatie':                      'locatie',
+  'Organisator':                  'organisator',
   'Georganiseerd door':           'organisator',
   'Korte beschrijving':           'beschrijving',
+  'Link naar de activiteit':      'aanmeld',
   'Link voor aanmelden of info':  'aanmeld',
   'Prijs':                        'prijs',
+  'Email adres voor contact':     'contact_email',
   'Jouw e-mailadres':             'contact_email',
 };
 
@@ -68,6 +76,10 @@ exports.handler = async function(event) {
   const datum = doorlopend ? '' : invoer.datum;
   if (datum && !/^\d{4}-\d{2}-\d{2}$/.test(datum)) {
     return { statusCode: 400, body: 'Ongeldige datum' };
+  }
+
+  if (!invoer.tijdstip && invoer.starttijd) {
+    invoer.tijdstip = invoer.eindtijd ? `${invoer.starttijd}–${invoer.eindtijd}` : invoer.starttijd;
   }
 
   let aanmeld = invoer.aanmeld || '';
@@ -126,7 +138,7 @@ function tekstwaarde(field) {
 
 function maakSlug(tekst) {
   return tekst
-    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
