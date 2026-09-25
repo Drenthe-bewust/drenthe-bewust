@@ -1,0 +1,70 @@
+{% comment %}
+  Toont 3 vergelijkbare bewust-makers onder een profiel.
+  Rangorde: eerst de meeste overeenkomst (gedeelde methode = 3 punten, gedeelde categorie = 2 punten),
+  daarna de kortste afstand (grove schatting in km op basis van lat/lon of de stad in _data/steden.yml).
+  Gebruik: {% include vergelijkbare-makers.html maker=page %}
+{% endcomment %}
+{% assign vm_huidig = include.maker %}
+{% assign vm_cats = vm_huidig.categorieen | join: '|' | downcase | split: '|' %}
+{% assign vm_meth = vm_huidig.methoden | join: '|' | downcase | split: '|' %}
+{% assign vm_stad = site.data.steden[vm_huidig.stad] %}
+{% if vm_huidig.lat %}{% assign vm_lat = vm_huidig.lat %}{% assign vm_lon = vm_huidig.lon %}{% elsif vm_stad %}{% assign vm_lat = vm_stad.lat %}{% assign vm_lon = vm_stad.lon %}{% else %}{% assign vm_lat = nil %}{% endif %}
+
+{% assign vm_alle = site.bewust-makers %}
+{% assign vm_sleutels = "" %}
+{% for m in vm_alle %}
+  {% if m.gepubliceerd == false or m.url == vm_huidig.url %}{% continue %}{% endif %}
+
+  {% assign vm_score = 0 %}
+  {% for c in m.categorieen %}
+    {% assign c_lc = c | downcase %}
+    {% if vm_cats contains c_lc %}{% assign vm_score = vm_score | plus: 2 %}{% endif %}
+  {% endfor %}
+  {% for x in m.methoden %}
+    {% assign x_lc = x | downcase %}
+    {% if vm_meth contains x_lc %}{% assign vm_score = vm_score | plus: 3 %}{% endif %}
+  {% endfor %}
+  {% if vm_score > 99 %}{% assign vm_score = 99 %}{% endif %}
+
+  {% assign m_stad = site.data.steden[m.stad] %}
+  {% if m.lat %}{% assign m_lat = m.lat %}{% assign m_lon = m.lon %}{% elsif m_stad %}{% assign m_lat = m_stad.lat %}{% assign m_lon = m_stad.lon %}{% else %}{% assign m_lat = nil %}{% endif %}
+  {% if vm_lat and m_lat %}
+    {% assign dy = m_lat | minus: vm_lat | times: 111 | abs %}
+    {% assign dx = m_lon | minus: vm_lon | times: 67 | abs %}
+    {% assign vm_km = dy | plus: dx | round %}
+    {% if vm_km > 998 %}{% assign vm_km = 998 %}{% endif %}
+  {% else %}
+    {% assign vm_km = 999 %}
+  {% endif %}
+
+  {% assign rang = 99 | minus: vm_score | prepend: "00" | slice: -2, 2 %}
+  {% assign afstand = vm_km | prepend: "000" | slice: -3, 3 %}
+  {% assign vm_sleutels = vm_sleutels | append: rang | append: afstand | append: "~" | append: forloop.index0 | append: "," %}
+{% endfor %}
+
+{% assign vm_gesorteerd = vm_sleutels | split: "," | sort %}
+{% if vm_gesorteerd.size > 0 %}
+<section class="sectie" aria-labelledby="vergelijkbaar-titel">
+  <div class="container">
+    <h2 id="vergelijkbaar-titel" style="text-align:center;margin-bottom:0.4rem;">Vergelijkbare bewust-makers</h2>
+    <p style="text-align:center;color:var(--tekst-licht);margin-bottom:2rem;">Werken op een vergelijkbare manier als {{ vm_huidig.naam }}, zo dichtbij mogelijk.</p>
+    <div class="grid-3">
+      {% for sleutel in vm_gesorteerd limit:3 %}
+        {% assign idx = sleutel | split: "~" | last | plus: 0 %}
+        {% assign maker = vm_alle[idx] %}
+        {% assign kaart_tags = maker.kaart_tags | default: maker.methoden %}
+        <div class="maker-kaart">
+          <div class="maker-kaart__foto-wrap">
+            <img src="{{ maker.foto | relative_url }}" alt="{{ maker.naam }}" class="maker-kaart__foto" loading="lazy">
+          </div>
+          <h3 class="maker-kaart__naam">{{ maker.naam }}</h3>
+          <p class="maker-kaart__praktijk">{{ maker.praktijk }}</p>
+          <p class="maker-kaart__regio">📍 {% if maker.stad %}{{ maker.stad }}, {% endif %}{{ maker.provincie }}</p>
+          <div class="maker-kaart__tags">{% for tag in kaart_tags limit:3 %}<span class="maker-kaart__tag">{{ tag }}</span>{% endfor %}</div>
+          <a href="{{ maker.url | relative_url }}" class="knop knop--goud" style="font-size:0.83rem;">Bekijk profiel</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
