@@ -51,41 +51,46 @@ layout: standaard
           📍 {% if m.stad %}{{ m.stad }}, {% endif %}{{ m.provincie }}
         </p>
 
-        {% if m.methoden or m.kennisbank_links %}
-        <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:1rem;">
-          {% for methode in m.methoden %}
-            {% assign _gevonden = nil %}
-            {% assign _m_lc = methode | downcase %}
-            {% for artikel in site.kennisbank %}
-              {% if artikel.gepubliceerd and artikel.titel %}
-                {% assign _a_lc = artikel.titel | downcase %}
-                {% if _a_lc == _m_lc %}{% assign _gevonden = artikel %}{% break %}{% endif %}
-              {% endif %}
-            {% endfor %}
-            {% if _gevonden %}
-              <a href="{{ _gevonden.url | relative_url }}" class="profiel-tag profiel-tag--koppeling" data-url="{{ _gevonden.url | relative_url }}" data-inleiding="{{ _gevonden.inleiding | escape }}">{{ methode }}</a>
-            {% else %}
-              <span class="profiel-tag">{{ methode }}</span>
+        {% comment %}
+          Methoden met een kennisbankartikel (zelfde titel, of gekozen via kennisbank_links) worden groene knoppen;
+          de overige methoden rustige labels. Elk artikel komt maar één keer voor. Beide rijen staan alfabetisch.
+        {% endcomment %}
+        {% assign _kb_titels = "" %}
+        {% assign _labels = "" %}
+        {% assign _leeg = "" | split: "" %}
+        {% assign _mth = m.methoden | default: _leeg %}
+        {% assign _kbl = m.kennisbank_links | default: _leeg %}
+        {% assign _zoek = _mth | concat: _kbl %}
+        {% for item in _zoek %}
+          {% assign _gevonden = nil %}
+          {% assign _i_lc = item | downcase %}
+          {% for artikel in site.kennisbank %}
+            {% if artikel.gepubliceerd and artikel.titel %}
+              {% assign _a_lc = artikel.titel | downcase %}
+              {% if _a_lc == _i_lc %}{% assign _gevonden = artikel %}{% break %}{% endif %}
             {% endif %}
           {% endfor %}
-          {% if m.kennisbank_links %}
-            {% for _link in m.kennisbank_links %}
-              {% assign _is_methode = false %}
-              {% assign _link_lc = _link | downcase %}
-              {% for methode in m.methoden %}
-                {% assign _m_lc = methode | downcase %}
-                {% if _m_lc == _link_lc %}{% assign _is_methode = true %}{% break %}{% endif %}
-              {% endfor %}
-              {% unless _is_methode %}
-                {% for artikel in site.kennisbank %}
-                  {% if artikel.titel == _link and artikel.gepubliceerd %}
-                    <a href="{{ artikel.url | relative_url }}" class="profiel-tag profiel-tag--koppeling" data-url="{{ artikel.url | relative_url }}" data-inleiding="{{ artikel.inleiding | escape }}">{{ _link }}</a>
-                    {% break %}
-                  {% endif %}
-                {% endfor %}
-              {% endunless %}
-            {% endfor %}
+          {% if _gevonden %}
+            {% assign _t = _gevonden.titel | append: "¦" %}
+            {% unless _kb_titels contains _t %}{% assign _kb_titels = _kb_titels | append: _t %}{% endunless %}
+          {% elsif forloop.index <= _mth.size %}
+            {% assign _labels = _labels | append: item | append: "¦" %}
           {% endif %}
+        {% endfor %}
+        {% assign _labels = _labels | split: "¦" | sort_natural %}
+        {% assign _kb_titels = _kb_titels | split: "¦" | sort_natural %}
+
+        {% if _labels.size > 0 %}
+        <p class="methoden-kop">Werkt met</p>
+        <div class="methoden-rij">{% for label in _labels %}<span class="methode-label">{{ label }}</span>{% endfor %}</div>
+        {% endif %}
+        {% if _kb_titels.size > 0 %}
+        <p class="methoden-kop">📖 Meer weten? Lees erover in onze kennisbank</p>
+        <div class="methoden-rij">
+          {%- for titel in _kb_titels -%}
+            {%- assign artikel = site.kennisbank | where: "titel", titel | first -%}
+            <a href="{{ artikel.url | relative_url }}" class="kb-knop" data-titel="{{ artikel.titel | escape }}" data-inleiding="{{ artikel.inleiding | escape }}">{{ artikel.titel }}</a>
+          {%- endfor -%}
         </div>
         {% endif %}
 
@@ -281,24 +286,36 @@ layout: standaard
 (function(){
   var popup=null;
   function sluiten(){if(popup){popup.remove();popup=null;}}
-  document.querySelectorAll('.profiel-tag--koppeling').forEach(function(btn){
+  document.querySelectorAll('.kb-knop').forEach(function(btn){
     btn.addEventListener('click',function(e){
+      if(!btn.dataset.inleiding)return; // geen uitleg: gewoon naar het artikel
       e.preventDefault();
       e.stopPropagation();
-      if(popup){sluiten();return;}
+      var wasOpen=popup&&popup.dataset.voor===btn.href;
+      sluiten();
+      if(wasOpen)return;
       popup=document.createElement('div');
       popup.className='kb-popup';
-      popup.innerHTML='<p style="margin:0 0 0.7rem;">'+btn.dataset.inleiding+'</p><a href="'+btn.dataset.url+'" style="color:var(--groen-donker);font-weight:600;font-size:0.85rem;">Lees meer in de kennisbank →</a>';
+      popup.dataset.voor=btn.href;
+      popup.setAttribute('role','dialog');
+      var kop=document.createElement('p');kop.className='kb-popup__kop';kop.textContent='Wat is '+btn.dataset.titel+'?';
+      var sluit=document.createElement('button');sluit.type='button';sluit.className='kb-popup__sluit';sluit.setAttribute('aria-label','Sluiten');sluit.textContent='×';
+      sluit.addEventListener('click',sluiten);
+      var tekst=document.createElement('p');tekst.className='kb-popup__tekst';tekst.textContent=btn.dataset.inleiding;
+      var link=document.createElement('a');link.href=btn.href;link.className='kb-popup__link';link.textContent='Lees het hele artikel →';
+      popup.append(sluit,kop,tekst,link);
+      popup.addEventListener('click',function(ev){ev.stopPropagation();});
       document.body.appendChild(popup);
       var r=btn.getBoundingClientRect();
-      var left=Math.min(r.left+window.scrollX,window.innerWidth-324+window.scrollX);
+      var breedte=popup.offsetWidth;
+      var left=Math.min(r.left+window.scrollX,window.innerWidth-breedte-12+window.scrollX);
       if(left<8)left=8;
       popup.style.left=left+'px';
       popup.style.top=(r.bottom+window.scrollY+8)+'px';
     });
   });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')sluiten();});
   document.addEventListener('click',sluiten);
-  window.addEventListener('scroll',sluiten,{passive:true});
 })();
 </script>
 

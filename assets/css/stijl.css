@@ -373,10 +373,16 @@ ul { list-style: none; }
 .profiel-meta .praktijk { font-size: 1rem; color: var(--goud-donker); font-weight: 700; margin-bottom: 0.3rem; }
 .profiel-meta .regio { font-size: 0.9rem; color: var(--tekst-licht); margin-bottom: 0.8rem; }
 .profiel-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
-.profiel-tag { background: transparent; border: 1px solid var(--goud); color: var(--tekst); font-size: 0.88rem; font-weight: 400; padding: 0.15rem 0.6rem; border-radius: 4px; }
-.profiel-tag::after { content: ""; }
-.profiel-tag:last-child::after { content: ""; }
-.profiel-tag--koppeling { cursor: pointer; text-decoration: underline; text-decoration-color: var(--goud); text-underline-offset: 2px; }
-.profiel-tag--koppeling:hover { background: var(--creme); border-color: var(--goud-donker); color: var(--groen-donker); text-decoration-color: var(--groen-donker); }
-.kb-popup { position: absolute; z-index: 200; background: var(--wit); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; max-width: 300px; box-shadow: 0 4px 20px rgba(0,0,0,0.10); font-size: 0.88rem; line-height: 1.6; }
-</style>
+/* Methoden op een profiel: labels (niet klikbaar) en kennisbank-knoppen (klikbaar) */
+.methoden-kop { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--tekst-licht); margin: 0.2rem 0 0.4rem; }
+.methoden-rij { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+.methode-label { background: var(--creme-donker); color: var(--tekst); font-size: 0.86rem; padding: 0.2rem 0.75rem; border-radius: 50px; }
+.kb-knop { display: inline-flex; align-items: center; gap: 0.3rem; background: #eef4ef; color: var(--groen-donker); border: 1px solid var(--groen-licht); font-size: 0.86rem; font-weight: 700; padding: 0.2rem 0.8rem; border-radius: 50px; cursor: pointer; transition: background 0.15s, color 0.15s; }
+.kb-knop::after { content: "→"; font-weight: 400; }
+.kb-knop:hover, .kb-knop:focus-visible { background: var(--groen); color: var(--wit); border-color: var(--groen); }
+.kb-popup { position: absolute; z-index: 200; background: var(--wit); border: 1px solid var(--border); border-top: 3px solid var(--groen); border-radius: var(--radius); padding: 0.9rem 1.1rem 1rem; width: min(320px, calc(100vw - 24px)); box-shadow: 0 6px 24px rgba(0,0,0,0.12); font-size: 0.88rem; line-height: 1.6; }
+.kb-popup__kop { font-weight: 700; color: var(--groen-donker); margin: 0 1.5rem 0.4rem 0; }
+.kb-popup__tekst { margin: 0 0 0.6rem; color: var(--tekst); }
+.kb-popup__link { color: var(--groen-donker); font-weight: 700; font-size: 0.85rem; }
+.kb-popup__sluit { position: absolute; top: 0.4rem; right: 0.5rem; background: none; border: none; font-size: 1.3rem; line-height: 1; color: var(--tekst-licht); cursor: pointer; padding: 0.2rem 0.4rem; }
+.kb-popup__sluit:hover { color: var(--tekst); }
