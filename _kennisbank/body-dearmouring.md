@@ -43,3 +43,7 @@ Door het harnas laag voor laag te verzachten, krijg je niet alleen meer toegang 
 - meer aanwezigheid in het lichaam
 
 Het is een uitnodiging om jezelf niet langer te beschermen tegen het leven, maar juist volledig te gaan leven.
+
+## Ervaring uit de praktijk
+
+Body de-armourer Bas van der Tang, werkzaam in Groningen, omschrijft het effect zo: "Body de-armouring brengt weer stroming in dat zijn." Hij combineert het regelmatig met [ademwerk](/kennisbank/ademwerk/) of [Human Design](/kennisbank/human-design/), afhankelijk van wat er in de intake naar voren komt. Bekijk zijn volledige profiel op [bewust-makers/bas-van-der-tang](/bewust-makers/bas-van-der-tang/).

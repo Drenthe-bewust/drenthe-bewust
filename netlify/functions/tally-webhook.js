@@ -51,7 +51,9 @@ const EDITABLE_FIELDS = {
   'Bio':                                         { yamlKey: 'bio',                  type: 'text'   },
   'Waarom doe je dit werk?':                     { yamlKey: 'waarom',               type: 'text'   },
   'Wat maakt jou uniek?':                        { yamlKey: 'onderscheid',          type: 'text'   },
-  'Waarvoor bel je mij wél?':                    { yamlKey: 'voor_wie',             type: 'text'   },
+  'Waarom bel je mij?':                          { yamlKey: 'voor_wie',             type: 'text'   },
+  'Waarvoor bel je mij wél?':                    { yamlKey: 'voor_wie',             type: 'text'   }, // oude label
+  'Voor wie is jouw werk?':                      { yamlKey: 'voor_wie',             type: 'text'   }, // oude label
   'Wat zeggen cliënten?':                        { yamlKey: 'wat_zeggen_clienten',  type: 'text'   },
   'Wat krijg je mee na een sessie?':             { yamlKey: 'na_sessie',            type: 'text'   },
 
@@ -168,9 +170,15 @@ exports.handler = async function(event) {
 
 // Verwerk een Tally-veldwaarde naar het juiste JavaScript-type
 function parseVeldwaarde(field, type) {
-  const { value } = field;
+  let { value } = field;
 
   if (value === null || value === undefined) return null;
+
+  // Keuzevelden (dropdown, checkboxes, meerkeuze) sturen optie-ID's mee → omzetten naar tekst
+  if (Array.isArray(value) && Array.isArray(field.options)) {
+    value = value.map(id => (field.options.find(o => o.id === id) || {}).text).filter(Boolean);
+    if (value.length === 0) return null;
+  }
 
   if (type === 'number') {
     const n = parseFloat(String(value).replace(/[^0-9.,]/g, '').replace(',', '.'));

@@ -104,8 +104,14 @@ permalink: /agenda/
     <!-- Activiteit aanmelden -->
     <div style="margin-top:3rem; background:var(--creme); border-radius:var(--radius-groot); padding:1.5rem 2rem; text-align:center;">
       <h3 style="margin-bottom:0.5rem;">Een activiteit aanmelden?</h3>
+      {% assign agenda_formulier = site.data.instellingen.agenda_formulier_id %}
+      {% if agenda_formulier and agenda_formulier != "" %}
+      <p style="font-size:0.9rem; color:var(--tekst-licht); margin-bottom:1rem;">Ben je bewust-maker en organiseer je een workshop, cursus of evenement? Vul het korte formulier in. Wij bekijken je aanmelding en zetten hem daarna in de agenda.</p>
+      <a href="https://tally.so/r/{{ agenda_formulier }}" target="_blank" rel="noopener" class="knop knop--groen" style="font-size:0.9rem;">📅 Een activiteit aanmelden</a>
+      {% else %}
       <p style="font-size:0.9rem; color:var(--tekst-licht); margin-bottom:1rem;">Ben je bewust-maker en wil je een workshop of evenement toevoegen? Meld het via het contactformulier of log in via het beheerpaneel.</p>
-      <a href="{{ '/contact/' | relative_url }}" class="knop knop--groen" style="font-size:0.9rem;">📅 Activiteit aanmelden</a>
+      <a href="{{ '/contact/' | relative_url }}" class="knop knop--groen" style="font-size:0.9rem;">📅 Een activiteit aanmelden</a>
+      {% endif %}
     </div>
 
   </div>
