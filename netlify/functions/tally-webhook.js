@@ -132,7 +132,10 @@ exports.handler = async function(event) {
     const mapping = EDITABLE_FIELDS[field.label];
     if (!mapping) continue;
 
-    const nieuweWaarde = parseVeldwaarde(field, mapping.type);
+    let nieuweWaarde = parseVeldwaarde(field, mapping.type);
+    if (mapping.yamlKey === 'categorieen' && Array.isArray(nieuweWaarde)) {
+      nieuweWaarde = normaliseerCategorieen(nieuweWaarde);
+    }
     if (nieuweWaarde !== null) {
       data[mapping.yamlKey] = nieuweWaarde;
       aangepast = true;
@@ -167,6 +170,23 @@ exports.handler = async function(event) {
     body: JSON.stringify({ ok: true, slug, naam: data.naam }),
   };
 };
+
+// Categorieën op de site = de filterknoppen op /onze-bewust-makers/.
+// Oudere keuzes uit het Tally-formulier worden omgezet naar de dichtstbijzijnde categorie.
+const CATEGORIEEN = ['Massage', 'Coaching', 'Voeding', 'Energetisch', 'Bewegen', 'Meditatie'];
+const OUDE_CATEGORIEEN = {
+  'Mindfulness':     'Meditatie',
+  'Lichaamsgericht': 'Massage',
+  'Spiritueel':      'Energetisch',
+  'Psychosociaal':   'Coaching',
+};
+
+function normaliseerCategorieen(lijst) {
+  const uit = lijst
+    .map(c => OUDE_CATEGORIEEN[c] || c)
+    .filter(c => CATEGORIEEN.includes(c));
+  return [...new Set(uit)];
+}
 
 // Verwerk een Tally-veldwaarde naar het juiste JavaScript-type
 function parseVeldwaarde(field, type) {

@@ -111,7 +111,7 @@
           {label:"Profielfoto", name:"foto", widget:"image", required:false},
           {label:"Provincie", name:"provincie", widget:"select", options:["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"]},
           {label:"Stad", name:"stad", widget:"string", hint:"Vul de plaatsnaam in zoals die in de lijst staat (bijv. 'Groningen', 'Assen'). Dit bepaalt automatisch de locatie voor 'zoek op afstand'."},
-          {label:"Categorieën", name:"categorieen", widget:"select", multiple:true, options:["Massage","Voeding","Bewegen","Meditatie","Coaching","Energetisch","Coaching met dieren","Kindgericht","Hulp voor huisdieren","Expressie / Creativiteit"]},
+          {label:"Categorieën", name:"categorieen", widget:"select", multiple:true, options:["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie"], hint:"Dit zijn ook de filterknoppen op de pagina Bewust-makers."},
           {label:"Methoden", name:"methoden", widget:"list"},
           {label:"Klachten", name:"klachten", widget:"list", required:false, hint:"Vul hier klachten in waarvoor jij hulp biedt (bijv. stress, burnout, rugpijn). Gebruikt voor het zoekfilter."},
           {label:"Kaart-tags", name:"kaart_tags", widget:"list", required:false, hint:"3 korte labels op de profielkaart (bijv. NEI, REIKI, Voeding). Leeg = eerste 3 methoden worden gebruikt."},
@@ -214,7 +214,7 @@
         identifier_field: "titel",
         fields: [
           {label:"Titel", name:"titel", widget:"string"},
-          {label:"Categorie", name:"categorie", widget:"select", options:["Massage","Voeding","Bewegen","Meditatie","Coaching","Energetisch","Coaching met dieren","Kindgericht","Hulp voor huisdieren","Expressie / Creativiteit","Begrip"]},
+          {label:"Categorie", name:"categorie", widget:"select", options:["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Begrip"]},
           {label:"Ook bekend als", name:"ook_bekend_als", widget:"string", required:false},
           {label:"Geschikt voor", name:"geschikt_voor", widget:"string", required:false},
           {label:"Inleiding", name:"inleiding", widget:"text"},
