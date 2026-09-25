@@ -8,7 +8,8 @@ categorieen:
   - Coaching
   - Voeding
   - Energetisch
-  - Massage
+  - Lichaamsgericht
+  - Psychosociaal
 methoden:
   - NEI-therapie
   - REIKI
