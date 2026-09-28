@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const klachtTags      = document.querySelectorAll('.js-klacht-filter');
   const makerItems      = document.querySelectorAll('.js-maker');
   const resultaatTxt    = document.getElementById('zoek-resultaat');
+  const wisFiltersBtn   = document.getElementById('wis-filters');
   const afstandWrap     = document.getElementById('afstand-wrap');
   const afstandSlider   = document.getElementById('afstand-slider');
   const afstandLabel    = document.getElementById('afstand-label');
@@ -145,11 +146,14 @@ document.addEventListener('DOMContentLoaded', function () {
       if (toon) zichtbaar++;
     });
 
+    const isGefilterd = naam || tag !== 'alles' || actiefKlacht || locActief;
     if (resultaatTxt) {
-      const isGefilterd = naam || tag !== 'alles' || actiefKlacht || locActief;
       resultaatTxt.textContent = isGefilterd
         ? zichtbaar + ' bewust-maker' + (zichtbaar !== 1 ? 's' : '') + ' gevonden'
         : '';
+    }
+    if (wisFiltersBtn) {
+      wisFiltersBtn.style.display = isGefilterd ? 'inline-block' : 'none';
     }
   }
 
@@ -224,7 +228,23 @@ document.addEventListener('DOMContentLoaded', function () {
       gebruikerLat = null; gebruikerLon = null;
       if (afstandWrap)     afstandWrap.style.display = 'none';
       if (zoekWoonplaats)  zoekWoonplaats.value = '';
-      if (locatieKnop)     locatieKnop.textContent = '📍 Of gebruik GPS';
+      if (locatieKnop)     locatieKnop.textContent = '📍 Zoek op afstand';
+      filterMakers();
+    });
+  }
+
+  if (wisFiltersBtn) {
+    wisFiltersBtn.addEventListener('click', function () {
+      if (zoekInput) zoekInput.value = '';
+      if (zoekWoonplaats) zoekWoonplaats.value = '';
+      gebruikerLat = null; gebruikerLon = null;
+      actiefKlacht = null;
+      filterTags.forEach(function(k) { k.classList.remove('actief'); });
+      const allesBtn = document.querySelector('.js-tag-filter[data-filter="alles"]');
+      if (allesBtn) allesBtn.classList.add('actief');
+      klachtTags.forEach(function(k) { k.classList.remove('actief'); });
+      if (afstandWrap) afstandWrap.style.display = 'none';
+      if (locatieKnop) locatieKnop.textContent = '📍 Zoek op afstand';
       filterMakers();
     });
   }

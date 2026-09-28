@@ -42,7 +42,7 @@ const STEDEN_COORDS = {
         </div>
         <div class="zoek-veld">
           <label style="opacity:0; display:block; font-size:0.85rem;">&nbsp;</label>
-          <button id="gebruik-locatie" class="knop knop--groen" style="width:100%; padding:0.65rem 1rem; font-size:0.85rem;">📍 Of gebruik GPS</button>
+          <button id="gebruik-locatie" class="knop knop--groen" style="width:100%; padding:0.65rem 1rem; font-size:0.85rem;">📍 Zoek op afstand</button>
         </div>
       </div>
 
@@ -73,23 +73,24 @@ const STEDEN_COORDS = {
         <button class="zoek-filter-tag js-tag-filter" data-filter="spiritueel">Spiritueel</button>
         <button class="zoek-filter-tag js-tag-filter" data-filter="psychosociaal">Psychosociaal</button>
       </div>
-      <div style="margin-top:0.3rem;">
-        <button id="toon-klachten" style="background:none;border:none;color:var(--groen);font-size:0.82rem;cursor:pointer;padding:0.2rem 0;text-decoration:underline;">▾ Zoek op klacht</button>
-        <div id="klacht-filters" style="display:none; margin-top:0.5rem;">
-          <div class="zoek-filters">
-            <button class="zoek-filter-tag js-klacht-filter" data-klacht="stress">Stress</button>
-            <button class="zoek-filter-tag js-klacht-filter" data-klacht="vermoeidheid">Vermoeidheid</button>
-            <button class="zoek-filter-tag js-klacht-filter" data-klacht="burnout">Burnout</button>
-            <button class="zoek-filter-tag js-klacht-filter" data-klacht="angst">Angst</button>
-            <button class="zoek-filter-tag js-klacht-filter" data-klacht="rugpijn">Rugpijn</button>
-            <button class="zoek-filter-tag js-klacht-filter" data-klacht="slaapproblemen">Slaapproblemen</button>
-            <button class="zoek-filter-tag js-klacht-filter" data-klacht="rouw">Rouw / verlies</button>
-            <button class="zoek-filter-tag js-klacht-filter" data-klacht="hormonale disbalans">Hormonen</button>
-            <button class="zoek-filter-tag js-klacht-filter" data-klacht="chronische klachten">Chronische klachten</button>
-          </div>
+      <div style="margin-top:0.8rem;">
+        <p style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--tekst-licht); margin-bottom:0.4rem;">Of zoek op klacht:</p>
+        <div id="klacht-filters" class="zoek-filters">
+          <button class="zoek-filter-tag js-klacht-filter" data-klacht="stress">Stress</button>
+          <button class="zoek-filter-tag js-klacht-filter" data-klacht="vermoeidheid">Vermoeidheid</button>
+          <button class="zoek-filter-tag js-klacht-filter" data-klacht="burnout">Burnout</button>
+          <button class="zoek-filter-tag js-klacht-filter" data-klacht="angst">Angst</button>
+          <button class="zoek-filter-tag js-klacht-filter" data-klacht="rugpijn">Rugpijn</button>
+          <button class="zoek-filter-tag js-klacht-filter" data-klacht="slaapproblemen">Slaapproblemen</button>
+          <button class="zoek-filter-tag js-klacht-filter" data-klacht="rouw">Rouw / verlies</button>
+          <button class="zoek-filter-tag js-klacht-filter" data-klacht="hormonale disbalans">Hormonen</button>
+          <button class="zoek-filter-tag js-klacht-filter" data-klacht="chronische klachten">Chronische klachten</button>
         </div>
       </div>
-      <p class="zoek-resultaat-info" id="zoek-resultaat"></p>
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:1rem; flex-wrap:wrap; gap:0.5rem;">
+        <p class="zoek-resultaat-info" id="zoek-resultaat"></p>
+        <button id="wis-filters" class="knop knop--omlijnd" style="display:none; font-size:0.82rem; padding:0.4rem 1rem;">✕ Verwijder filters</button>
+      </div>
     </div>
   </div>
 </section>
@@ -314,13 +315,16 @@ const STEDEN_COORDS = {
       if (toon) zichtbaar++;
     });
 
-    // Resultaattekst
+    // Resultaattekst en clear-button
     var resultaatEl = document.getElementById('zoek-resultaat');
+    var isGefilterd = naam || prov || tag !== 'alles' || actiefKlacht || locActief;
     if (resultaatEl) {
-      var isGefilterd = naam || prov || tag !== 'alles' || actiefKlacht || locActief;
       resultaatEl.textContent = isGefilterd
         ? zichtbaar + ' bewust-maker' + (zichtbaar !== 1 ? 's' : '') + ' gevonden'
         : '';
+    }
+    if (wisFiltersBtn) {
+      wisFiltersBtn.style.display = isGefilterd ? 'inline-block' : 'none';
     }
 
     var ctaEl     = document.getElementById('homepage-zoek-cta');
@@ -357,10 +361,8 @@ const STEDEN_COORDS = {
     var afstandLabel = document.getElementById('afstand-label');
     var afstandWrap  = document.getElementById('afstand-wrap');
     var afstandWis   = document.getElementById('afstand-wis');
-    var provVeld     = document.getElementById('provincie-veld');
     var locKnop      = document.getElementById('gebruik-locatie');
-    var toonKlachten = document.getElementById('toon-klachten');
-    var klachtFilters = document.getElementById('klacht-filters');
+    var wisFiltersBtn = document.getElementById('wis-filters');
 
     // Shuffle makers: toon 6 willekeurige bij elke paginalading
     (function() {
@@ -378,14 +380,6 @@ const STEDEN_COORDS = {
       });
     })();
 
-    // Inklapbaar klacht-panel
-    if (toonKlachten && klachtFilters) {
-      toonKlachten.addEventListener('click', function() {
-        var open = klachtFilters.style.display === 'none' || klachtFilters.style.display === '';
-        klachtFilters.style.display = open ? 'block' : 'none';
-        toonKlachten.textContent = open ? '▴ Verberg klachten' : '▾ Zoek op klacht';
-      });
-    }
 
     if (zoekInput) zoekInput.addEventListener('input', filterHomepage);
     if (zoekProv)  zoekProv.addEventListener('change', filterHomepage);
@@ -443,8 +437,23 @@ const STEDEN_COORDS = {
       afstandWis.addEventListener('click', function() {
         gebruikerLat = null; gebruikerLon = null;
         if (afstandWrap)  afstandWrap.style.display = 'none';
-        if (provVeld)     provVeld.style.display    = '';
         if (locKnop)      locKnop.textContent       = '📍 Zoek op afstand';
+        filterHomepage();
+      });
+    }
+
+    // Clear-filters knop
+    if (wisFiltersBtn) {
+      wisFiltersBtn.addEventListener('click', function() {
+        if (zoekInput) zoekInput.value = '';
+        if (zoekProv) zoekProv.value = '';
+        gebruikerLat = null; gebruikerLon = null;
+        actiefKlacht = null;
+        filterTags.forEach(function(k) { k.classList.remove('actief'); });
+        document.querySelector('.js-tag-filter[data-filter="alles"]').classList.add('actief');
+        klachtTags.forEach(function(k) { k.classList.remove('actief'); });
+        if (afstandWrap) afstandWrap.style.display = 'none';
+        if (locKnop) locKnop.textContent = '📍 Zoek op afstand';
         filterHomepage();
       });
     }
