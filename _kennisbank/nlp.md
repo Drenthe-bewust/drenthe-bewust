@@ -1,6 +1,6 @@
 ---
 titel: "NLP (Neuro-Linguïstisch Programmeren)"
-categorie: "Coaching en persoonlijke ontwikkeling"
+categorie: "Coaching"
 ook_bekend_als: "Neuro-Linguïstisch Programmeren"
 geschikt_voor: "Geschikt voor persoonlijke ontwikkeling, coaching, communicatie en het werken aan doelstellingen"
 inleiding: "NLP is een methode die zich richt op de samenhang tussen gedachten, taal, communicatie en gedrag. De methode wordt voornamelijk gebruikt binnen coaching, persoonlijke ontwikkeling en communicatie. Er zijn aanwijzingen dat bepaalde NLP-interventies mogelijk positieve effecten kunnen hebben, maar het wetenschappelijke bewijs is beperkt."
