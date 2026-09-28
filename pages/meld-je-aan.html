@@ -49,15 +49,17 @@ permalink: /meld-je-aan/
     </div>
 
     <!-- Tellers -->
+    {% assign n_bewust = site.bewust-makers | where: "gepubliceerd", true | size %}
+    {% assign n_mee = site.mee-makers | where: "gepubliceerd", true | size %}
     <div style="text-align:center; margin-top:4rem;">
       <h3>Hoeveel ondernemers hebben zich al aangesloten?</h3>
       <div class="teller-rij" style="margin-top:1.5rem;">
         <div class="teller">
-          <div class="teller__getal" data-doel="{{ site.data.instellingen.teller_bewust_makers }}">0</div>
+          <div class="teller__getal" data-doel="{{ n_bewust }}">{{ n_bewust }}</div>
           <div class="teller__label">Bewust-makers in Drenthe</div>
         </div>
         <div class="teller">
-          <div class="teller__getal" data-doel="{{ site.data.instellingen.teller_mee_makers }}">0</div>
+          <div class="teller__getal" data-doel="{{ n_mee }}">{{ n_mee }}</div>
           <div class="teller__label">Mee-makers in Drenthe</div>
         </div>
       </div>
