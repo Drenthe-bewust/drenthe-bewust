@@ -34,7 +34,7 @@ const STEDEN_COORDS = {
         </div>
         <div class="zoek-veld">
           <label style="opacity:0; display:block; font-size:0.85rem;">&nbsp;</label>
-          <button id="gebruik-locatie" class="knop knop--groen" style="width:100%; padding:0.65rem 1rem; font-size:0.85rem;">📍 Of gebruik GPS</button>
+          <button id="gebruik-locatie" class="knop knop--groen" style="width:100%; padding:0.65rem 1rem; font-size:0.85rem;">📍 Zoek op afstand</button>
         </div>
       </div>
       <div id="afstand-wrap" style="display:none; margin-top:1rem; background:var(--creme); border-radius:12px; padding:1rem 1.2rem;">
@@ -75,7 +75,10 @@ const STEDEN_COORDS = {
           <button class="zoek-filter-tag js-klacht-filter" data-klacht="chronische klachten">Chronische klachten</button>
         </div>
       </div>
-      <p class="zoek-resultaat-info" id="zoek-resultaat"></p>
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:1rem; flex-wrap:wrap; gap:0.5rem;">
+        <p class="zoek-resultaat-info" id="zoek-resultaat"></p>
+        <button id="wis-filters" class="knop knop--omlijnd" style="display:none; font-size:0.82rem; padding:0.4rem 1rem;">✕ Verwijder filters</button>
+      </div>
     </div>
   </div>
 </section>

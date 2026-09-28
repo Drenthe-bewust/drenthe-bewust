@@ -78,6 +78,8 @@ verenigingen:
   - Spiritueel Ondernemers (netwerk)
   - Afhangen (netwerk)
 kennisbank_links:
+  - NLP
+  - Quantum tijdlijn/healing coaching
   - REIKI
   - Yoga
 bio: |
