@@ -183,7 +183,7 @@
           {label:"Aanmeldlink", name:"aanmeld", widget:"string", required:false, hint:"URL voor aanmelden of meer info (bijv. https://jouwsite.nl/aanmelden). Laat leeg als er geen link is."},
           {label:"Prijs", name:"prijs", widget:"string", required:false, hint:"Bijv. Gratis, €15,-, Op aanvraag"},
           {label:"Sorteernummer", name:"volgorde", widget:"number", required:false, value_type:"int", default:99, hint:"Bepaalt de volgorde als meerdere activiteiten dezelfde datum hebben (laag = eerder). Laat leeg voor automatische volgorde."},
-          {label:"Gepubliceerd", name:"gepubliceerd", widget:"boolean", default:true, hint:"Aanmeldingen via het Tally-formulier komen binnen als concept (uit). Controleer ze en zet deze schakelaar aan om ze online te zetten."},
+          {label:"Gepubliceerd", name:"gepubliceerd", widget:"boolean", default:true, hint:"Tally-aanmeldingen komen als concept (uit). Zet AAN → klik Publish → klik 'Direct online' om live te gaan."},
           {label:"Aangemeld door (e-mail)", name:"aangemeld_door", widget:"string", required:false, hint:"Automatisch ingevuld bij aanmelding via Tally. Niet zichtbaar op de site."},
           {label:"Aangemeld op", name:"aangemeld_op", widget:"string", required:false, hint:"Automatisch ingevuld bij aanmelding via Tally."}
         ]
@@ -454,21 +454,21 @@
   (function () {
     var balk = document.createElement('div');
     balk.className = 'db-publiceerbalk';
-    balk.innerHTML = '<span>💾 Opgeslagen wijzigingen komen elke avond om 22:00 automatisch online.</span>' +
-      '<button type="button">🚀 Nu online zetten</button><span class="db-status"></span>';
+    balk.innerHTML = '<span>💾 Na Publish: wijzigingen gaan elke avond 22:00 online, óf nu via knop.</span>' +
+      '<button type="button">⚡ Direct online (build)</button><span class="db-status"></span>';
     var knop = balk.querySelector('button');
     var status = balk.querySelector('.db-status');
     knop.addEventListener('click', async function () {
       var gebruiker = window.netlifyIdentity && netlifyIdentity.currentUser();
       if (!gebruiker) { status.textContent = 'Log eerst in.'; return; }
-      if (!confirm('Alle opgeslagen wijzigingen nu online zetten? Dit kost een build op Netlify.')) return;
+      if (!confirm('Dit zet alles NU direct online (niet scheduling voor later).\nWeet je zeker dat je dit nu wilt doen?')) return;
       knop.disabled = true; status.textContent = 'Bezig…';
       try {
         var token = await gebruiker.jwt();
         var res = await fetch('/.netlify/functions/publiceer-nu', {
           method: 'POST', headers: { Authorization: 'Bearer ' + token }
         });
-        status.textContent = res.ok ? '✅ Gestart — over ± 2 minuten staat alles online.' : '❌ Mislukt (' + res.status + ').';
+        status.textContent = res.ok ? '✅ Build gestart — site wordt over ± 2 min geupdate.' : '❌ Build mislukt (' + res.status + ').';
       } catch (e) {
         status.textContent = '❌ Mislukt: geen verbinding.';
       }
