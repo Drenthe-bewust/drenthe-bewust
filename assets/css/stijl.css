@@ -245,7 +245,7 @@ ul { list-style: none; }
 }
 
 /* ===================== PRIJZEN ===================== */
-.prijs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
+.prijs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
 .prijs-kaart {
   background: var(--wit); border-radius: var(--radius-groot);
   box-shadow: var(--schaduw); padding: 2rem 1.8rem; text-align: center;
