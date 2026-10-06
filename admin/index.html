@@ -82,10 +82,11 @@
       name: "github",
       repo: "Drenthe-bewust/drenthe-bewust",
       branch: "main",
-      auth_type: "github_app",
+      auth_type: "oauth",
       app_id: "Ov23li4ROWhuOqyMRn9P",
       base_url: "https://api.github.com",
       auth_endpoint: "login/oauth/authorize",
+      oauth_scopes: ["repo"],
       commit_messages: {
         create:      "Nieuw in {{collection}}: {{slug}}",
         update:      "Bijgewerkt in {{collection}}: {{slug}}",
