@@ -9,7 +9,7 @@ categorieen:
   - Bewegen
   - Energetisch
 methoden:
-  - Gecertificeerd adem coach
+  - Gecertificeerd adem-coach
   - Body de-armourer
   - Human Design Analyst
   - Consent- en intimiteitscoach
@@ -52,11 +52,6 @@ opleidingen:
   - Quantum Human Design Analyst lvl 2
   - Zen Human Design analyst
 verenigingen: []
-kennisbank_links:
-  - Ademwerk
-  - Body Dearmouring
-  - Human Design
-  - Conscious Kink
 bio: >-
   Ik was ooit heel goed in overleven. Doorgaan, presteren, aanpassen. Zolang ik
   maar niet hoefde te voelen wat er onder zat.
@@ -93,4 +88,9 @@ uitgelicht: true
 lidmaatschap: Bewust-maker
 layout: bewust-maker
 permalink: /bewust-makers/bas-van-der-tang/
+kennisbank_links:
+  - Ademwerk
+  - Body Dearmouring
+  - Human Design
+  - Conscious Kink
 ---
