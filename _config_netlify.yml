@@ -2,7 +2,3 @@
 # netlify.toml voegt dit toe: jekyll build --config _config.yml,_config_netlify.yml
 baseurl: ""
 url: "https://www.drenthe-bewust.nl"
-
-keep_files:
-  - admin
-  - maker-beheer
