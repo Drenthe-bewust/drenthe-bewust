@@ -79,16 +79,17 @@
   CMS.init({ config: {
     site_url: "https://www.drenthe-bewust.nl",
     backend: {
-      name: "git-gateway",
+      name: "github",
+      repo: "Drenthe-bewust/drenthe-bewust",
       branch: "main",
-      // [skip ci] = Netlify bouwt niet bij elke opslag (scheelt build-tegoed).
-      // Wijzigingen gaan online bij de avondbuild van 22:00, of direct via "Nu online zetten".
+      base_url: "https://auth.netlify.com",
+      auth_endpoint: "auth",
       commit_messages: {
-        create:      "Nieuw in {{collection}}: {{slug}} [skip ci]",
-        update:      "Bijgewerkt in {{collection}}: {{slug}} [skip ci]",
-        delete:      "Verwijderd uit {{collection}}: {{slug}} [skip ci]",
-        uploadMedia: "Afbeelding toegevoegd: {{path}} [skip ci]",
-        deleteMedia: "Afbeelding verwijderd: {{path}} [skip ci]"
+        create:      "Nieuw in {{collection}}: {{slug}}",
+        update:      "Bijgewerkt in {{collection}}: {{slug}}",
+        delete:      "Verwijderd uit {{collection}}: {{slug}}",
+        uploadMedia: "Afbeelding toegevoegd: {{path}}",
+        deleteMedia: "Afbeelding verwijderd: {{path}}"
       }
     },
     logo_url: "/assets/images/logo-compleet.png",
