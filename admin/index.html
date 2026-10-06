@@ -82,8 +82,10 @@
       name: "github",
       repo: "Drenthe-bewust/drenthe-bewust",
       branch: "main",
-      base_url: "https://auth.netlify.com",
-      auth_endpoint: "auth",
+      auth_type: "github_app",
+      app_id: "Ov23li4ROWhuOqyMRn9P",
+      base_url: "https://api.github.com",
+      auth_endpoint: "login/oauth/authorize",
       commit_messages: {
         create:      "Nieuw in {{collection}}: {{slug}}",
         update:      "Bijgewerkt in {{collection}}: {{slug}}",
