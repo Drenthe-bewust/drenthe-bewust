@@ -5,6 +5,6 @@
   "description": "Netlify Functions voor drenthe-bewust.nl",
   "dependencies": {
     "js-yaml": "^4.1.0",
-    "jsonwebtoken": "9.1.2"
+    "jsonwebtoken": "9.0.0"
   }
 }
