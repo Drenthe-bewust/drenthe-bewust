@@ -1,0 +1,2 @@
+# Configuration is loaded inline in index.html via CMS.init()
+# This file exists to prevent 404 errors when Decap CMS looks for config.yml
