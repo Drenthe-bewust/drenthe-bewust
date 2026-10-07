@@ -1,3 +1,11 @@
+import jwt from 'jsonwebtoken';
+
+// Hardcoded users (in production, use a database)
+const USERS = {
+  'marcella@praktijkdekezel.nl': 'drenthe-bewust@26',
+  'info@hands4flow.nl': 'drenthe-bewust@26'
+};
+
 export default async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -8,7 +16,26 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
-  const { code } = req.query;
+  // POST: Email + password login → JWT token
+  if (req.method === 'POST') {
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password required' });
+    }
+
+    if (USERS[email] !== password) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    const jwtSecret = process.env.JWT_SECRET || 'dev-secret-key';
+    const token = jwt.sign({ email, provider: 'email' }, jwtSecret, { expiresIn: '7d' });
+
+    return res.status(200).json({ token, email });
+  }
+
+  // GET: OAuth code exchange (legacy, for future use)
+  const code = req.query.code || req.body?.code;
 
   if (!code) {
     return res.status(400).json({ error: 'No authorization code provided' });
