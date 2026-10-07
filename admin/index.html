@@ -82,27 +82,14 @@
   </script>
   <script src="https://unpkg.com/decap-cms@3.16.2/dist/decap-cms.js"></script>
   <script>
-  // Inject JWT token into Git proxy requests
-  const originalFetch = window.fetch;
-  window.fetch = function(url, options = {}) {
-    if (url.includes('/api/git/')) {
-      const token = localStorage.getItem('drenthe_jwt');
-      if (token) {
-        options.headers = {
-          ...options.headers,
-          'X-JWT-Token': token
-        };
-      }
-    }
-    return originalFetch.call(this, url, options);
-  };
-
   CMS.init({ config: {
     site_url: "https://www.drenthe-bewust.nl",
     backend: {
-      name: "proxy",
-      proxy_url: "https://drenthe-bewust.vercel.app/api/git",
+      name: "github",
+      repo: "Drenthe-bewust/drenthe-bewust",
       branch: "main",
+      base_url: "https://drenthe-bewust.vercel.app/api/github-proxy",
+      auth_type: "implicit",
       commit_messages: {
         create:      "Nieuw in {{collection}}: {{slug}}",
         update:      "Bijgewerkt in {{collection}}: {{slug}}",
