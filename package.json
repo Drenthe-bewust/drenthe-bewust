@@ -4,6 +4,7 @@
   "private": true,
   "description": "Netlify Functions voor drenthe-bewust.nl",
   "dependencies": {
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "jsonwebtoken": "^9.1.0"
   }
 }

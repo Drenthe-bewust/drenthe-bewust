@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+const jwt = require('jsonwebtoken');
 
 // Hardcoded users (in production, use a database)
 const USERS = {
@@ -7,7 +7,7 @@ const USERS = {
   'info@hands4flow.nl': 'drenthe-bewust@26'
 };
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
