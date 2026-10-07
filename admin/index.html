@@ -100,11 +100,9 @@
   CMS.init({ config: {
     site_url: "https://www.drenthe-bewust.nl",
     backend: {
-      name: "github",
-      repo: "Drenthe-bewust/drenthe-bewust",
+      name: "proxy",
+      proxy_url: "https://drenthe-bewust.vercel.app/api/git",
       branch: "main",
-      base_url: "https://drenthe-bewust.vercel.app/api/git",
-      auth_type: "implicit",
       commit_messages: {
         create:      "Nieuw in {{collection}}: {{slug}}",
         update:      "Bijgewerkt in {{collection}}: {{slug}}",
