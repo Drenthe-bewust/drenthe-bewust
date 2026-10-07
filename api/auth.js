@@ -1,86 +1,65 @@
 export default async function handler(req, res) {
   try {
     const { code } = req.query;
+    const clientId = process.env.GITHUB_CLIENT_ID;
+    const clientSecret = process.env.GITHUB_CLIENT_SECRET;
+    const redirectUri = process.env.GITHUB_REDIRECT_URI;
 
-    // Step 1: User clicks "Login with GitHub" → redirect to GitHub
+    // Step 1: No code = initiate OAuth
     if (!code) {
-      const clientId = process.env.GITHUB_CLIENT_ID;
-      const redirectUri = process.env.GITHUB_REDIRECT_URI;
+      const authUrl = new URL('https://github.com/login/oauth/authorize');
+      authUrl.searchParams.set('client_id', clientId);
+      authUrl.searchParams.set('redirect_uri', redirectUri);
+      authUrl.searchParams.set('scope', 'repo');
+      authUrl.searchParams.set('state', Math.random().toString(36).substring(7));
 
-      if (!clientId || !redirectUri) {
-        return res.status(500).send(`
-          <h1>Configuration Error</h1>
-          <p>Missing environment variables:</p>
-          <ul>
-            <li>GITHUB_CLIENT_ID: ${clientId ? '✓' : '✗'}</li>
-            <li>GITHUB_REDIRECT_URI: ${redirectUri ? '✓' : '✗'}</li>
-          </ul>
-        `);
-      }
-
-      const params = new URLSearchParams({
-        client_id: clientId,
-        redirect_uri: redirectUri,
-        scope: 'repo',
-        state: Math.random().toString(36).substring(7)
-      });
-      return res.redirect(`https://github.com/login/oauth/authorize?${params}`);
+      return res.status(302).setHeader('Location', authUrl.toString()).end();
     }
 
-  // Step 2: GitHub redirects back with code → exchange for token
-  try {
-    const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
+    // Step 2: Got code = exchange for token
+    const tokenRes = await fetch('https://github.com/login/oauth/access_token', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        client_id: process.env.GITHUB_CLIENT_ID,
-        client_secret: process.env.GITHUB_CLIENT_SECRET,
-        code: code,
-        redirect_uri: process.env.GITHUB_REDIRECT_URI
+        client_id: clientId,
+        client_secret: clientSecret,
+        code,
+        redirect_uri: redirectUri
       })
     });
 
-    const data = await tokenResponse.json();
+    const data = await tokenRes.json();
 
     if (data.error) {
-      return res.status(400).json({ error: data.error_description || 'OAuth failed' });
+      throw new Error(data.error_description || 'OAuth failed');
     }
 
-    // Step 3: Send token back to Decap via postMessage
+    // Step 3: Send token back to Decap
     res.setHeader('Content-Type', 'text/html');
-    res.send(`
+    res.end(`
       <!DOCTYPE html>
       <html>
-      <head><title>GitHub Auth</title></head>
       <body>
-        <p>Authenticating...</p>
         <script>
-          const token = '${data.access_token}';
           if (window.opener) {
             window.opener.postMessage({
               type: 'authorization',
               payload: {
-                token: token,
+                token: '${data.access_token}',
                 provider: 'github'
               }
             }, 'https://www.drenthe-bewust.nl');
             setTimeout(() => window.close(), 100);
-          } else {
-            document.body.innerHTML = '<h1>Auth successful</h1><p>Token: ' + token.substring(0, 20) + '...</p>';
           }
         </script>
       </body>
       </html>
     `);
+
   } catch (error) {
-    console.error('Auth error:', error);
-    res.status(500).send(`
-      <h1>Authentication Error</h1>
-      <p>${error.message}</p>
-      <pre>${error.stack}</pre>
-    `);
+    res.status(500).end(`Error: ${error.message}`);
   }
 }
