@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 
 // Hardcoded users (in production, use a database)
 const USERS = {
+  'nvhooff@icloud.com': 'drenthe-bewust@26',
   'marcella@praktijkdekezel.nl': 'drenthe-bewust@26',
   'info@hands4flow.nl': 'drenthe-bewust@26'
 };
