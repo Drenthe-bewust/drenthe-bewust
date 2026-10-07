@@ -74,10 +74,6 @@
 </head>
 <body>
   <script>
-  // Check if logged in, redirect to login page if not
-  if (!localStorage.getItem('drenthe_jwt')) {
-    window.location.href = '/admin/login.html';
-  }
   window.CMS_MANUAL_INIT = true;
   </script>
   <script src="https://unpkg.com/decap-cms@3.16.2/dist/decap-cms.js"></script>
@@ -88,8 +84,6 @@
       name: "github",
       repo: "Drenthe-bewust/drenthe-bewust",
       branch: "main",
-      base_url: "https://drenthe-bewust.vercel.app/api/github-proxy",
-      auth_type: "implicit",
       commit_messages: {
         create:      "Nieuw in {{collection}}: {{slug}}",
         update:      "Bijgewerkt in {{collection}}: {{slug}}",
