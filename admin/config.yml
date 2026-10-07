@@ -2,7 +2,8 @@ backend:
   name: github
   repo: Drenthe-bewust/drenthe-bewust
   branch: main
-  base_url: https://drenthe-bewust.vercel.app/api
+  base_url: https://drenthe-bewust.vercel.app
+  auth_endpoint: /api/auth
   commit_messages:
     create: "Nieuw in {{collection}}: {{slug}}"
     update: "Bijgewerkt in {{collection}}: {{slug}}"
