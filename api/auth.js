@@ -51,8 +51,8 @@ export default async function handler(req, res) {
                 token: token,
                 provider: 'github'
               }
-            }, window.location.origin);
-            window.close();
+            }, 'https://www.drenthe-bewust.nl');
+            setTimeout(() => window.close(), 100);
           } else {
             document.body.innerHTML = '<h1>Auth successful</h1><p>Token: ' + token.substring(0, 20) + '...</p>';
           }
