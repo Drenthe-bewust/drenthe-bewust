@@ -1,0 +1,163 @@
+backend:
+  name: github
+  repo: Drenthe-bewust/drenthe-bewust
+  branch: main
+  commit_messages:
+    create: "Nieuw in {{collection}}: {{slug}}"
+    update: "Bijgewerkt in {{collection}}: {{slug}}"
+    delete: "Verwijderd uit {{collection}}: {{slug}}"
+    uploadMedia: "Afbeelding toegevoegd: {{path}}"
+    deleteMedia: "Afbeelding verwijderd: {{path}}"
+
+site_url: https://www.drenthe-bewust.nl
+logo_url: /assets/images/logo-compleet.png
+editor:
+  preview: false
+media_folder: assets/images/makers
+public_folder: /assets/images/makers
+locale: nl
+
+collections:
+  - name: bewust-makers
+    label: Bewust-maker profielen
+    folder: _bewust-makers
+    create: false
+    identifier_field: naam
+    summary: "{{naam}} — {{stad}}, {{provincie}}"
+    fields:
+      - { label: "Naam", name: "naam", widget: "string" }
+      - { label: "Praktijknaam", name: "praktijk", widget: "string" }
+      - { label: "Profielfoto", name: "foto", widget: "image", required: false }
+      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] }
+      - { label: "Stad", name: "stad", widget: "string", hint: "Vul de plaatsnaam in zoals die in de lijst staat (bijv. 'Groningen', 'Assen'). Dit bepaalt automatisch de locatie voor 'zoek op afstand'." }
+      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal"], hint: "Dit zijn ook de filterknoppen op de pagina Bewust-makers." }
+      - { label: "Methoden", name: "methoden", widget: "list" }
+      - { label: "Klachten", name: "klachten", widget: "list", required: false, hint: "Vul hier klachten in waarvoor jij hulp biedt (bijv. stress, burnout, rugpijn). Gebruikt voor het zoekfilter." }
+      - { label: "Kaart-tags", name: "kaart_tags", widget: "list", required: false, hint: "3 korte labels op de profielkaart (bijv. NEI, REIKI, Voeding). Leeg = eerste 3 methoden worden gebruikt." }
+      - { label: "Citaat op homepage", name: "citaat", widget: "string", required: false, hint: "Korte inspirerende uitspraak — alleen zichtbaar als je bent aangevinkt als 'Uitgelicht'." }
+      - { label: "Volgorde", name: "volgorde", widget: "number", required: false, value_type: "int", hint: "Bepaalt de volgorde op de overzichtspagina (laag getal = eerder getoond). Laat leeg voor standaardvolgorde." }
+      - { label: "Locatie — breedtegraad (optioneel)", name: "lat", widget: "string", required: false, hint: "Alleen invullen als je een nauwkeurigere locatie wilt dan de stad. Zoek je adres op via maps.google.nl, klik rechts op de pin → eerste getal (bijv. 52.7697)." }
+      - { label: "Locatie — lengtegraad (optioneel)", name: "lon", widget: "string", required: false, hint: "Alleen invullen als je een nauwkeurigere locatie wilt dan de stad. Zoek je adres op via maps.google.nl, klik rechts op de pin → tweede getal (bijv. 6.9142)." }
+      - { label: "Korte omschrijving (zoekresultaat)", name: "omschrijving", widget: "text", required: false, hint: "Optionele korte tekst die in zoekresultaten getoond kan worden." }
+      - { label: "Website", name: "website", widget: "string", required: false }
+      - { label: "E-mailadres zichtbaar", name: "email_zichtbaar", widget: "string", required: false }
+      - { label: "Telefoonnummer", name: "telefoon", widget: "string", required: false }
+      - { label: "Online sessies", name: "online", widget: "select", options: ["Ja","Nee","Op aanvraag"], default: "Op aanvraag" }
+      - { label: "Sessieduur", name: "sessieduur", widget: "string", required: false }
+      - { label: "Tarief", name: "tarief", widget: "string", required: false }
+      - { label: "Eerste gesprek", name: "eerste_gesprek", widget: "select", options: ["Gratis kennismaking","Gratis (30 min)","Op aanvraag","Betaald"], default: "Gratis kennismaking" }
+      - { label: "Vergoeding", name: "vergoeding", widget: "string", required: false }
+      - { label: "Ervaringsjaren", name: "ervaringsjaren", widget: "number", required: false, value_type: "int" }
+      - { label: "Talen", name: "talen", widget: "list", default: ["Nederlands"] }
+      - { label: "Doelgroepen", name: "doelgroepen", widget: "list", required: false }
+      - { label: "Opleidingen", name: "opleidingen", widget: "list", required: false }
+      - { label: "Verenigingen", name: "verenigingen", widget: "list", required: false }
+      - { label: "Bio (korte introductie)", name: "bio", widget: "text", hint: "Verschijnt als eerste tekst op je profielpagina. Beschrijf kort wie je bent en wat je doet." }
+      - { label: "Waarom is dit jouw werk?", name: "waarom", widget: "text", required: false, hint: "Jouw persoonlijke verhaal en motivatie. Verschijnt op je profielpagina onder 'Waarom is dit mijn werk?'" }
+      - { label: "Wat maakt jou anders?", name: "onderscheid", widget: "text", required: false, hint: "Wat onderscheidt jou van andere therapeuten? Verschijnt onder 'Wat maakt mij anders?'" }
+      - { label: "Waarom bel je mij?", name: "voor_wie", widget: "text", required: false, hint: "Voor wie ben jij de juiste keuze? Verschijnt op je profiel onder 'Waarom bel je mij?'" }
+      - { label: "Wat zeggen cliënten over jou?", name: "wat_zeggen_clienten", widget: "text", required: false, hint: "Ervaringen of testimonials van cliënten. Verschijnt cursief op je profiel." }
+      - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false, hint: "Wat mogen cliënten verwachten na een sessie bij jou?" }
+      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: true }
+      - { label: "Uitgelicht", name: "uitgelicht", widget: "boolean", default: false, hint: "Toont deze bewust-maker op de homepage" }
+      - { label: "Lidmaatschap", name: "lidmaatschap", widget: "select", options: ["Bewust-maker","Mee-maker"], default: "Bewust-maker" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
+
+  - name: bewust-makers-nieuw
+    label: Bewust-maker — Nieuw profiel
+    folder: _bewust-makers
+    create: true
+    identifier_field: naam
+    summary: "{{naam}}"
+    fields:
+      - { label: "Naam", name: "naam", widget: "string" }
+      - { label: "Praktijknaam", name: "praktijk", widget: "string" }
+      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] }
+      - { label: "Stad", name: "stad", widget: "string" }
+      - { label: "Bio", name: "bio", widget: "text", hint: "Korte introductie (bijv. naam, praktijk, werkwijze)" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
+
+  - name: agenda
+    label: Agenda — Evenementen
+    folder: _agenda
+    create: true
+    identifier_field: titel
+    summary: "{{titel}} — {{datum}}"
+    fields:
+      - { label: "Titel", name: "titel", widget: "string" }
+      - { label: "Datum (yyyy-mm-dd)", name: "datum", widget: "string", pattern: ["^\\d{4}-\\d{2}-\\d{2}$", "Datum in formaat yyyy-mm-dd"] }
+      - { label: "Tijd (uu:mm)", name: "tijd", widget: "string", required: false, pattern: ["^\\d{2}:\\d{2}$", "Tijd in formaat uu:mm"] }
+      - { label: "Organisator", name: "organisator", widget: "string", required: false }
+      - { label: "Locatie", name: "locatie", widget: "string", required: false }
+      - { label: "Beschrijving", name: "beschrijving", widget: "text" }
+      - { label: "Link", name: "link", widget: "string", required: false }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "agenda-item" }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
+
+  - name: mee-makers
+    label: Mee-makers
+    folder: _mee-makers
+    create: false
+    identifier_field: naam
+    summary: "{{naam}}"
+    fields:
+      - { label: "Naam", name: "naam", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image", required: false }
+      - { label: "Website", name: "website", widget: "string", required: false }
+      - { label: "Beschrijving", name: "beschrijving", widget: "text" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "mee-maker" }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
+
+  - name: kennisbank
+    label: Kennisbank
+    folder: _kennisbank
+    create: true
+    identifier_field: titel
+    summary: "{{titel}}"
+    fields:
+      - { label: "Titel", name: "titel", widget: "string" }
+      - { label: "Inhoud", name: "body", widget: "markdown" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "kennisbank-artikel" }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
+
+  - name: teksten
+    label: Teksten aanpassen
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "_data/teksten_homepage.yml"
+        fields:
+          - { label: "Hoofdtitel", name: "hero_titel", widget: "string" }
+          - { label: "Subtitel", name: "hero_subtitel", widget: "string" }
+          - { label: "Hero tekst", name: "hero_tekst", widget: "text" }
+          - { label: "Knop 1 (Bewust-makers)", name: "hero_knop1", widget: "string" }
+          - { label: "Knop 2 (Meld je aan)", name: "hero_knop2", widget: "string" }
+          - { label: "Zoekbalk titel", name: "zoek_titel", widget: "string" }
+          - { label: "Pijlers titel", name: "pijlers_titel", widget: "string" }
+          - { label: "Pijlers tekst", name: "pijlers_tekst", widget: "text" }
+          - { label: "Pijler 1 titel", name: "pijler1_titel", widget: "string" }
+          - { label: "Pijler 1 tekst (kort)", name: "pijler1_tekst", widget: "text" }
+          - { label: "Pijler 2 titel", name: "pijler2_titel", widget: "string" }
+          - { label: "Pijler 2 tekst (kort)", name: "pijler2_tekst", widget: "text" }
+          - { label: "Pijler 3 titel", name: "pijler3_titel", widget: "string" }
+          - { label: "Pijler 3 tekst (kort)", name: "pijler3_tekst", widget: "text" }
+          - { label: "Adviesgesprek titel", name: "intake_titel", widget: "string" }
+          - { label: "Adviesgesprek tekst", name: "intake_tekst", widget: "text" }
+          - { label: "Adviesgesprek knop", name: "intake_knop", widget: "string" }
+          - { label: "CTA titel", name: "cta_titel", widget: "string" }
+          - { label: "CTA tekst", name: "cta_tekst", widget: "text" }
+
+  - name: uitnodigingen
+    label: Bewust-maker uitnodigen
+    files:
+      - label: "Uitnodiging"
+        name: "uitnodiging"
+        file: "_data/uitnodigingen.yml"
+        fields:
+          - { label: "Naam", name: "naam", widget: "string" }
+          - { label: "E-mailadres", name: "email", widget: "string" }
+          - { label: "Type", name: "type", widget: "select", options: ["Bewust-maker","Mee-maker"], default: "Bewust-maker" }
+          - { label: "Notitie", name: "notitie", widget: "text", required: false }
+          - { label: "Status", name: "status", widget: "select", options: ["Te verwerken","Uitnodiging verstuurd","Actief"], default: "Te verwerken" }
