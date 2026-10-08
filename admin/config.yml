@@ -1,9 +1,6 @@
 backend:
-  name: github
-  repo: Drenthe-bewust/drenthe-bewust
+  name: git-gateway
   branch: main
-  base_url: https://drenthe-bewust.vercel.app
-  auth_endpoint: /api/auth
   commit_messages:
     create: "Nieuw in {{collection}}: {{slug}}"
     update: "Bijgewerkt in {{collection}}: {{slug}}"
