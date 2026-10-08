@@ -10,28 +10,25 @@ telefoon: '0646647313'
 omschrijving: Ik ben wandelcoach bij Walk of life
 citaat: Ik heb het druk dus ik doe het rustig aan
 categorieen:
-  - Bewegen
   - Coaching
+  - Bewegen
 methoden:
-  - Wandelcoach
+  - Wandelen
+  - Coaching
 talen:
   - Nederlands
   - Engels
   - Frans
 doelgroepen:
-  - Jonge professionals
-  - Professionals
   - Gepensioneerden
 online: Op aanvraag
 sessieduur: '60'
 tarief: '100'
 eerste_gesprek: Betaald intakegesprek
-vergoeding: Nee
+vergoeding: nee
 ervaringsjaren: 20
 klachten:
-  - Vermoeidheid
   - Stress
-  - Gebrek aan focus
 opleidingen:
   - Universiteit Twente
 ---
