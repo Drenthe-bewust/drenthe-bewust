@@ -104,29 +104,64 @@ exports.handler = async function(event) {
   const filePath = `_bewust-makers/${slug}.md`;
 
   // Haal het huidige bestand op via de GitHub API
-  let fileData;
+  // 404 = profiel bestaat nog niet (nieuw)
+  // Andere fouten = echte fout (niet: nieuw profiel aanmaken)
+  let fileData = null;
+  let isNewProfile = false;
+  let existingData = null;
+
   try {
     fileData = await githubGetFile(filePath);
+
+    // Parse bestaande content om idempotentie te checken
+    const rawContent = Buffer.from(fileData.content.replace(/\n/g, ''), 'base64').toString('utf-8');
+    const fmMatch = rawContent.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    if (fmMatch) {
+      try {
+        existingData = yaml.load(fmMatch[1]);
+      } catch (err) {
+        // YAML parsing fout, maar profiel bestaat
+        console.error('YAML-fout bij bestaand profiel:', err.message);
+      }
+    }
   } catch (err) {
-    console.error('GitHub ophaalfout:', err.message);
-    return { statusCode: 404, body: `Profiel niet gevonden: ${slug}` };
+    // Alleen 404 = nieuw profiel; alles anders is een echte fout
+    if (err.message.includes('GitHub 404')) {
+      isNewProfile = true;
+      console.log(`Nieuw profiel: ${slug}`);
+    } else {
+      console.error('GitHub fout:', err.message);
+      return { statusCode: 500, body: `GitHub fout: ${err.message}` };
+    }
   }
 
-  // Decodeer en parseer de YAML-voormaterie
-  const rawContent = Buffer.from(fileData.content.replace(/\n/g, ''), 'base64').toString('utf-8');
-  const fmMatch = rawContent.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  if (!fmMatch) {
-    return { statusCode: 500, body: 'Kan YAML-voormaterie niet verwerken' };
+  // IDEMPOTENTIE: Check of deze Tally submission al verwerkt is
+  const tallySubmissionId = fields.find(f => f.label === 'submission_id' || f.type === 'HIDDEN_FIELDS')?.value;
+  if (tallySubmissionId && existingData?.tally_submission_id === String(tallySubmissionId).trim()) {
+    // Dezelfde submission: al verwerkt, geen wijzigingen
+    console.log(`Duplicate: submission ${tallySubmissionId} al verwerkt voor ${slug}`);
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ ok: true, slug, status: 'duplicate', message: 'Submission al verwerkt' })
+    };
   }
 
-  let data;
-  try {
-    data = yaml.load(fmMatch[1]);
-  } catch (err) {
-    return { statusCode: 500, body: 'YAML-fout: ' + err.message };
+  // Bouw de profieldata samen
+  let data = {};
+
+  if (isNewProfile) {
+    // Nieuw profiel: gebruik Tally-velden als basis
+    data = {
+      layout: 'bewust-maker',
+      permalink: '',
+      gepubliceerd: false  // EXPLICIET: nieuwe profielen zijn niet gepubliceerd
+    };
+  } else {
+    // Bestaand profiel: gebruik al geparste data
+    data = existingData || {};
   }
 
-  // Werk de bewerkbare velden bij
+  // Werk de bewerkbare velden bij (voor zowel nieuw als bestaand)
   let aangepast = false;
   for (const field of fields) {
     const mapping = EDITABLE_FIELDS[field.label];
@@ -139,8 +174,15 @@ exports.handler = async function(event) {
     }
   }
 
-  if (!aangepast) {
+  // Voor bestaande profielen: altijd aangepast (ook zonder wijzigingen)
+  // Voor nieuwe profielen: moet minstens één veld hebben
+  if (!isNewProfile && !aangepast) {
     return { statusCode: 200, body: 'Geen bewerkbare velden ontvangen' };
+  }
+
+  // Sla Tally submission ID op voor idempotentie (opnieuw, omdat Tally het opnieuw kan sturen)
+  if (tallySubmissionId) {
+    data.tally_submission_id = String(tallySubmissionId).trim();
   }
 
   // Serialiseer terug naar YAML
@@ -152,19 +194,28 @@ exports.handler = async function(event) {
   const newContent = `---\n${newYaml}---\n`;
 
   // Commit de wijziging naar GitHub
-  // [skip ci] → Netlify slaat deze build over; de dagelijkse GitHub Action bouwt om 22:00
-  const commitBericht = `Profiel bijgewerkt: ${data.naam || slug} [skip ci]`;
+  // [skip ci] → Netlify slaat deze build over
+  const action = isNewProfile ? 'Nieuw profiel' : 'Profiel bijgewerkt';
+  const commitBericht = `${action}: ${data.naam || slug} [skip ci]`;
+
   try {
-    await githubUpdateFile(filePath, newContent, fileData.sha, commitBericht);
+    if (isNewProfile) {
+      // Nieuw bestand: CREATE (geen SHA nodig)
+      await githubCreateFile(filePath, newContent, commitBericht);
+    } else {
+      // Bestaand bestand: UPDATE (SHA nodig)
+      await githubUpdateFile(filePath, newContent, fileData.sha, commitBericht);
+    }
   } catch (err) {
     console.error('GitHub commit-fout:', err.message);
-    return { statusCode: 500, body: 'Opslaan mislukt: ' + err.message };
+    return { statusCode: 500, body: `Opslaan mislukt: ${err.message}` };
   }
 
-  console.log(`Profiel bijgewerkt: ${slug}`);
+  const status = isNewProfile ? 'pending' : 'updated';
+  console.log(`${action}: ${slug} (status: ${status})`);
   return {
     statusCode: 200,
-    body: JSON.stringify({ ok: true, slug, naam: data.naam }),
+    body: JSON.stringify({ ok: true, slug, naam: data.naam, status }),
   };
 };
 
@@ -253,6 +304,14 @@ function githubRequest(method, filePath, body) {
 
 function githubGetFile(filePath) {
   return githubRequest('GET', filePath, null);
+}
+
+function githubCreateFile(filePath, content, message) {
+  return githubRequest('PUT', filePath, {
+    message,
+    content:  Buffer.from(content).toString('base64'),
+    branch:   process.env.GITHUB_BRANCH || 'main',
+  });
 }
 
 function githubUpdateFile(filePath, content, sha, message) {
