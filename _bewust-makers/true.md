@@ -16,8 +16,8 @@ methoden:
   - Wandelcoaching
 talen:
   - Nederlands
-  - Engels
   - Frans
+  - Engels
 doelgroepen:
   - Gepensioneerden
 online: Nee
