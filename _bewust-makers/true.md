@@ -20,4 +20,15 @@ talen:
   - Frans
 doelgroepen:
   - Gepensioneerden
+online: Nee
+sessieduur: '60'
+tarief: '100'
+eerste_gesprek: Betaald intakegesprek
+vergoeding: Nee
+ervaringsjaren: 20
+klachten:
+  - Stress
+  - burn-out
+opleidingen:
+  - Universiteit Twente
 ---
