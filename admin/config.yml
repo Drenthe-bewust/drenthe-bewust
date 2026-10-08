@@ -18,7 +18,7 @@ locale: nl
 
 collections:
   - name: bewust-makers
-    label: Bewust-maker profielen
+    label: Bewust-makers — Bewerken
     folder: _bewust-makers
     create: false
     identifier_field: naam
@@ -63,8 +63,26 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
+  - name: bewust-makers-aanmeldingen
+    label: Tally-aanmeldingen — Modereren
+    folder: _bewust-makers
+    create: false
+    identifier_field: naam
+    summary: "{{naam}} — {{stad}}, {{provincie}}"
+    fields:
+      - { label: "Naam", name: "naam", widget: "string" }
+      - { label: "Praktijknaam", name: "praktijk", widget: "string" }
+      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] }
+      - { label: "Stad", name: "stad", widget: "string" }
+      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal"] }
+      - { label: "Methoden", name: "methoden", widget: "list" }
+      - { label: "Bio (korte introductie)", name: "bio", widget: "text" }
+      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: true, hint: "Zet op TRUE om live te gaan" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
+
   - name: bewust-makers-nieuw
-    label: Bewust-maker — Nieuw profiel
+    label: Bewust-maker — Nieuw toevoegen
     folder: _bewust-makers
     create: true
     identifier_field: naam
