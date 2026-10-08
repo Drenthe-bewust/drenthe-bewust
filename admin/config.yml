@@ -65,7 +65,7 @@ collections:
 
   - name: bewust-makers-aanmeldingen
     label: Tally-aanmeldingen — Modereren
-    folder: _bewust-makers
+    folder: _bewust-makers-pending
     create: false
     identifier_field: naam
     summary: "{{naam}} — {{stad}}, {{provincie}}"
