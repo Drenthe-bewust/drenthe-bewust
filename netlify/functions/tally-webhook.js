@@ -88,15 +88,19 @@ exports.handler = async function(event) {
     return { statusCode: 400, body: 'Geen velden in payload' };
   }
 
+  // DEBUG: log alle velden die Tally stuurt
+  console.log('Tally fields:', fields.map(f => ({ label: f.label, value: f.value })));
+
   // Zoek de "naam" of "praktijk" veld om slug van af te leiden
-  const naamField = fields.find(f =>
-    f.label?.toLowerCase().includes('naam') ||
-    f.label?.toLowerCase().includes('praktijk')
-  );
+  const naamField = fields.find(f => {
+    const label = String(f.label || '').toLowerCase();
+    return label.includes('naam') || label.includes('praktijk') || label.includes('name') || label.includes('business');
+  });
   const naam = naamField?.value ? String(naamField.value).trim() : null;
 
   if (!naam) {
-    return { statusCode: 400, body: 'Geen naam/praktijk veld gevonden' };
+    console.error('Geen naam veld gevonden. Labels:', fields.map(f => f.label).join(', '));
+    return { statusCode: 400, body: `Geen naam veld gevonden. Labels: ${fields.map(f => f.label).join(', ')}` };
   }
 
   // Genereer slug uit naam: lowercase, accenten weg, spaties → streepjes
