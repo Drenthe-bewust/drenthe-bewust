@@ -74,6 +74,9 @@ exports.handler = async function(event) {
 
   const tallySubmissionId = payload?.submissionId || payload?.data?.id;
 
+  // DEBUG: log alle veldnamen die Tally stuurt
+  console.log('Tally field labels:', fields.map(f => f.label).join(' | '));
+
   // Genereer stabiele slug: timestamp + submission ID (niet gebruikersafhankelijk)
   function generateStableSlug() {
     const timestamp = Date.now().toString().slice(-6);
