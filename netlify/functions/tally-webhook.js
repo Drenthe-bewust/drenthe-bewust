@@ -88,17 +88,31 @@ exports.handler = async function(event) {
     return { statusCode: 400, body: 'Geen velden in payload' };
   }
 
-  // Zoek het verborgen "slug"-veld (doorgegeven via URL-parameter)
-  const slugField = fields.find(f =>
-    f.label === 'slug' || f.label === 'Slug' || f.type === 'HIDDEN_FIELDS'
+  // Zoek de "naam" of "praktijk" veld om slug van af te leiden
+  const naamField = fields.find(f =>
+    f.label?.toLowerCase().includes('naam') ||
+    f.label?.toLowerCase().includes('praktijk')
   );
-  const slug = slugField?.value ? String(slugField.value).trim() : null;
-  if (!slug) {
-    return { statusCode: 400, body: 'Geen slug opgegeven' };
+  const naam = naamField?.value ? String(naamField.value).trim() : null;
+
+  if (!naam) {
+    return { statusCode: 400, body: 'Geen naam/praktijk veld gevonden' };
   }
-  // Basisvalidatie: voorkom path-traversal
-  if (!/^[a-z0-9-]+$/.test(slug)) {
-    return { statusCode: 400, body: 'Ongeldige slug' };
+
+  // Genereer slug uit naam: lowercase, accenten weg, spaties → streepjes
+  function generateSlug(text) {
+    return text
+      .normalize('NFD')
+      .replace(/[̀-ͯ]/g, '')  // accenten verwijderen
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')       // niet-alfanumeriek → streepjes
+      .replace(/^-+|-+$/g, '')           // leading/trailing streepjes weg
+      .slice(0, 60);                     // max 60 chars
+  }
+
+  const slug = generateSlug(naam);
+  if (!slug) {
+    return { statusCode: 400, body: 'Kan geen geldige slug genereren uit naam' };
   }
 
   const filePath = `_bewust-makers/${slug}.md`;
