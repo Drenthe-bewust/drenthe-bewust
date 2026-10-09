@@ -116,7 +116,7 @@ collections:
   - name: mee-makers
     label: Mee-makers
     folder: _mee-makers
-    create: false
+    create: true
     identifier_field: naam
     summary: "{{naam}}"
     fields:
