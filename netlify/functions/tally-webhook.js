@@ -14,6 +14,8 @@ const yaml = require('js-yaml');
 
 // Koppeling: Tally-veldlabel → YAML-sleutel + type
 const EDITABLE_FIELDS = {
+  'Naam':                                        { yamlKey: 'naam',                 type: 'text'   },
+  'Naam praktijk':                               { yamlKey: 'praktijk',             type: 'text'   },
   'Provincie':                                   { yamlKey: 'provincie',            type: 'text'   },
   'Stad of plaats':                              { yamlKey: 'stad',                 type: 'text'   },
   'Website':                                     { yamlKey: 'website',              type: 'text'   },
@@ -27,24 +29,18 @@ const EDITABLE_FIELDS = {
   'Jaren ervaring':                              { yamlKey: 'ervaringsjaren',       type: 'number' },
   'Korte omschrijving':                          { yamlKey: 'omschrijving',         type: 'text'   },
   'Citaat of tagline':                           { yamlKey: 'citaat',               type: 'text'   },
-  'Categorieën':                                 { yamlKey: 'categorieen',          type: 'array'  },
   'Methoden (één per regel)':                    { yamlKey: 'methoden',             type: 'lines'  },
   'Klachten waarmee je helpt (één per regel)':   { yamlKey: 'klachten',             type: 'lines'  },
   'Kaartlabels (één per regel)':                 { yamlKey: 'kaart_tags',           type: 'lines'  },
-  'Talen':                                       { yamlKey: 'talen',                type: 'array'  },
   'Doelgroepen (één per regel)':                 { yamlKey: 'doelgroepen',          type: 'lines'  },
   'Opleidingen en certificeringen (één per regel)': { yamlKey: 'opleidingen',       type: 'lines'  },
   'Verenigingen (één per regel)':                { yamlKey: 'verenigingen',         type: 'lines'  },
   'Bio':                                         { yamlKey: 'bio',                  type: 'text'   },
   'Waarom doe je dit werk?':                     { yamlKey: 'waarom',               type: 'text'   },
   'Wat maakt jou uniek?':                        { yamlKey: 'onderscheid',          type: 'text'   },
-  'Waarom bel je mij?':                          { yamlKey: 'voor_wie',             type: 'text'   },
-  'Waarvoor bel je mij wél?':                    { yamlKey: 'voor_wie',             type: 'text'   },
   'Voor wie is jouw werk?':                      { yamlKey: 'voor_wie',             type: 'text'   },
   'Wat zeggen cliënten?':                        { yamlKey: 'wat_zeggen_clienten',  type: 'text'   },
   'Wat krijg je mee na een sessie?':             { yamlKey: 'na_sessie',            type: 'text'   },
-  'Kennisbank-koppelingen':                      { yamlKey: 'kennisbank_links',     type: 'array'  },
-  'Nieuw kennisbank-onderwerp':                  { yamlKey: 'kennisbank_suggestie', type: 'text'   },
 };
 
 exports.handler = async function(event) {
@@ -97,8 +93,36 @@ exports.handler = async function(event) {
   };
 
   // Werk de bewerkbare velden bij
+  const categorieen = [];
+  const talen = [];
+  const kennisbank_links = [];
+
   for (const field of fields) {
-    const mapping = EDITABLE_FIELDS[field.label];
+    const label = field.label || '';
+
+    // Checkbox-velden: "Categorieën (Coaching)" → voeg "Coaching" toe aan array
+    if (label.startsWith('Categorieën (') && label.endsWith(')') && field.value) {
+      const cat = label.slice('Categorieën ('.length, -1);
+      categorieen.push(cat);
+      continue;
+    }
+
+    // Talen-velden: "Talen (Nederlands)" → voeg "Nederlands" toe
+    if (label.startsWith('Talen (') && label.endsWith(')') && field.value) {
+      const lang = label.slice('Talen ('.length, -1);
+      talen.push(lang);
+      continue;
+    }
+
+    // Kennisbank-velden: "Bij welke behandelvormen... (Yoga)" → voeg "Yoga" toe
+    if (label.startsWith('Bij welke behandelvormen') && label.includes('(') && field.value) {
+      const match = label.match(/\(([^)]+)\)$/);
+      if (match) kennisbank_links.push(match[1]);
+      continue;
+    }
+
+    // Gewone velden
+    const mapping = EDITABLE_FIELDS[label];
     if (!mapping) continue;
 
     const nieuweWaarde = parseVeldwaarde(field, mapping.type);
@@ -106,6 +130,11 @@ exports.handler = async function(event) {
       data[mapping.yamlKey] = nieuweWaarde;
     }
   }
+
+  // Voeg samengevoegde arrays toe
+  if (categorieen.length) data.categorieen = categorieen;
+  if (talen.length) data.talen = talen;
+  if (kennisbank_links.length) data.kennisbank_links = kennisbank_links;
 
   // Sla Tally submission ID op voor idempotentie
   if (tallySubmissionId) {
