@@ -13,7 +13,7 @@ logo_url: /assets/images/logo-compleet.png
 editor:
   preview: false
 locale: nl
-media_folder: ../assets/images/makers
+media_folder: assets/images/makers
 public_folder: /assets/images/makers
 
 collections:
