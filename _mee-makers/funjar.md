@@ -2,7 +2,7 @@
 naam: Funjar
 logo: /assets/images/mee-makers/funjar-logo.png
 website: https://www.funjar.nl
-beschrijving: Funjar!
+beschrijving: Funjar.
 layout: mee-maker
 permalink: /mee-makers/funjar/
 provincie: Drenthe
