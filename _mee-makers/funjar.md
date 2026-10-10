@@ -1,6 +1,6 @@
 ---
 naam: Funjar
-logo: ""
+logo: /assets/images/mee-makers/funjar-logo.png
 website: https://www.funjar.nl
 beschrijving: Funjar!
 layout: mee-maker
