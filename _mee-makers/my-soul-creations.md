@@ -2,7 +2,7 @@
 naam: "My Soul Creations"
 beschrijving: "Reiki, Klankschalen, Levensproces begeleiding en Creativiteit."
 website: "https://www.mysoulcreations.nl"
-logo: "/assets/images/meemakers/my-soul-creations.png"
+logo: "/assets/images/mee-makers/my-soul-creations.png"
 provincie: "Drenthe"
 gepubliceerd: true
 lidmaatschap: "Mee-maker"

@@ -2,7 +2,7 @@
 naam: "Terug in Balans"
 beschrijving: "Terug in Balans."
 website: "https://www.teruginbalans.com"
-logo: "/assets/images/meemakers/terug-in-balans.png"
+logo: "/assets/images/mee-makers/terug-in-balans.png"
 provincie: "Drenthe"
 gepubliceerd: true
 lidmaatschap: "Mee-maker"

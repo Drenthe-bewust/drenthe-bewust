@@ -2,7 +2,7 @@
 naam: "Simplicity Coaching naar kansen"
 beschrijving: "Coaching naar kansen."
 website: "https://www.simplicitycoaching.nl"
-logo: "/assets/images/meemakers/simplicity-coaching.png"
+logo: "/assets/images/mee-makers/simplicity-coaching.png"
 provincie: "Drenthe"
 gepubliceerd: true
 lidmaatschap: "Mee-maker"
