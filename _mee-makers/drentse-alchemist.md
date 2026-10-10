@@ -1,11 +1,11 @@
 ---
-naam: "Drentse Alchemist"
-beschrijving: "Drentse Alchemist."
-website: "https://www.drentse-alchemist.nl"
-logo: "/assets/images/meemakers/drentse-alchemist.png"
-provincie: "Drenthe"
-gepubliceerd: true
-lidmaatschap: "Mee-maker"
+naam: Drentse Alchemist
+logo: /assets/images/meemakers/drentse-alchemist.png
+website: https://www.drentse-alchemist.nl
+beschrijving: Drentse Alchemist
 layout: mee-maker
 permalink: /mee-makers/drentse-alchemist/
+provincie: Drenthe
+gepubliceerd: true
+lidmaatschap: Mee-maker
 ---
