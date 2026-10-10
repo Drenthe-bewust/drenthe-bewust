@@ -1,6 +1,6 @@
 ---
 naam: Drentse Alchemist
-logo: /assets/images/meemakers/drentse-alchemist.png
+logo: /assets/images/mee-makers/drentse-alchemist-logo-wit-1.png
 website: https://www.drentse-alchemist.nl
 beschrijving: Drentse Alchemist
 layout: mee-maker
