@@ -1,7 +1,7 @@
 ---
 naam: "Van Binnen & Buiten"
 beschrijving: "Van Binnen & Buiten."
-website: ""
+website: "https://www.vanbinnenenbuiten.nu"
 logo: "/assets/images/meemakers/van-binnen-en-buiten.png"
 provincie: "Drenthe"
 gepubliceerd: true

@@ -12,8 +12,6 @@ site_url: https://www.drenthe-bewust.nl
 logo_url: /assets/images/logo-compleet.png
 editor:
   preview: false
-media_folder: assets/images/makers
-public_folder: /assets/images/makers
 locale: nl
 
 collections:
@@ -21,6 +19,8 @@ collections:
     label: Bewust-makers — Bewerken
     folder: _bewust-makers
     create: false
+    media_folder: assets/images/makers
+    public_folder: /assets/images/makers
     identifier_field: naam
     summary: "{{naam}} — {{stad}}, {{provincie}}"
     fields:
@@ -67,6 +67,8 @@ collections:
     label: Tally-aanmeldingen — Modereren
     folder: _bewust-makers-pending
     create: false
+    media_folder: assets/images/makers
+    public_folder: /assets/images/makers
     identifier_field: naam
     summary: "{{naam}} — {{stad}}, {{provincie}}"
     fields:
@@ -85,6 +87,8 @@ collections:
     label: Bewust-maker — Nieuw toevoegen
     folder: _bewust-makers
     create: true
+    media_folder: assets/images/makers
+    public_folder: /assets/images/makers
     identifier_field: naam
     summary: "{{naam}}"
     fields:
@@ -119,6 +123,8 @@ collections:
     create: true
     identifier_field: naam
     summary: "{{naam}}"
+    media_folder: assets/images/mee-makers
+    public_folder: /assets/images/mee-makers
     fields:
       - { label: "Naam", name: "naam", widget: "string" }
       - { label: "Logo", name: "logo", widget: "image", required: false }

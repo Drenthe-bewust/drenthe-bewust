@@ -1,7 +1,7 @@
 ---
 naam: "Gewoon Lisa Coaching"
 beschrijving: "Coaching met paarden."
-website: ""
+website: "https://www.gewoonlisacoaching.nl"
 logo: "/assets/images/meemakers/gewoon-lisa-coaching.png"
 provincie: "Drenthe"
 gepubliceerd: true

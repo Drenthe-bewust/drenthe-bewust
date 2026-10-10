@@ -1,7 +1,7 @@
 ---
 naam: "Drentse Alchemist"
 beschrijving: "Drentse Alchemist."
-website: ""
+website: "https://www.drentse-alchemist.nl"
 logo: "/assets/images/meemakers/drentse-alchemist.png"
 provincie: "Drenthe"
 gepubliceerd: true

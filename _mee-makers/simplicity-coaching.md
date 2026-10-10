@@ -1,7 +1,7 @@
 ---
 naam: "Simplicity Coaching naar kansen"
 beschrijving: "Coaching naar kansen."
-website: ""
+website: "https://www.simplicitycoaching.nl"
 logo: "/assets/images/meemakers/simplicity-coaching.png"
 provincie: "Drenthe"
 gepubliceerd: true

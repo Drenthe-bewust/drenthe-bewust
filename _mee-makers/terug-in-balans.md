@@ -1,7 +1,7 @@
 ---
 naam: "Terug in Balans"
 beschrijving: "Terug in Balans."
-website: ""
+website: "https://www.teruginbalans.com"
 logo: "/assets/images/meemakers/terug-in-balans.png"
 provincie: "Drenthe"
 gepubliceerd: true

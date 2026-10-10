@@ -1,7 +1,7 @@
 ---
 naam: "Osteopathie Wenker"
 beschrijving: "Osteopathie."
-website: ""
+website: "https://www.osteopathiewenker.nl"
 logo: "/assets/images/meemakers/osteopathie-wenker.png"
 provincie: "Drenthe"
 gepubliceerd: true
