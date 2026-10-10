@@ -83,13 +83,15 @@
       knop.textContent = '← Terug zonder opslaan';
       knop.title = 'Sluit dit item zonder iets op te slaan';
       knop.addEventListener('click', function () {
-        var collectie = location.hash.match(/^#\/collections\/([^/]+)/)[1];
-        location.hash = '#/collections/' + collectie;
+        var match = location.hash.match(/^#\/collections\/([^/]+)/);
+        if (match && match[1]) location.hash = '#/collections/' + match[1];
       });
       balk.insertBefore(knop, balk.firstChild.nextSibling);
     }
-    new MutationObserver(voegTerugknopToe).observe(document.body, { childList: true, subtree: true });
-    window.addEventListener('hashchange', voegTerugknopToe);
+    try {
+      new MutationObserver(voegTerugknopToe).observe(document.body, { childList: true, subtree: true });
+      window.addEventListener('hashchange', voegTerugknopToe);
+    } catch (e) {}
   })();
 
   // Balk onderin: uitleg + "Nu online zetten" (GitHub Actions webhook)
