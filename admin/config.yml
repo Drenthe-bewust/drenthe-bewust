@@ -8,9 +8,6 @@ backend:
     uploadMedia: "Afbeelding toegevoegd: {{path}}"
     deleteMedia: "Afbeelding verwijderd: {{path}}"
 
-media_library:
-  name: github
-
 site_url: https://www.drenthe-bewust.nl
 logo_url: /assets/images/logo-compleet.png
 editor:
