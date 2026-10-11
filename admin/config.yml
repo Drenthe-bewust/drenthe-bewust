@@ -81,7 +81,7 @@ collections:
       - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal"] }
       - { label: "Methoden", name: "methoden", widget: "list" }
       - { label: "Bio (korte introductie)", name: "bio", widget: "text" }
-      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: true, hint: "Zet op TRUE om live te gaan" }
+      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: false, hint: "Zet op TRUE om live te gaan" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
