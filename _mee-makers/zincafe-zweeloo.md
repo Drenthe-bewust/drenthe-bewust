@@ -13,5 +13,5 @@ beschrijving: >-
 
   Sjoerd en Nathalie zijn verbonden aan het Instituut voor Toegepaste Filosofie, dat filosofie inzet als praktisch instrument — in organisaties, onderwijs en de samenleving.
 layout: mee-maker
-permalink: ""
+permalink: /mee-makers/zincafe-zweeloo/
 ---
