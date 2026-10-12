@@ -18,7 +18,7 @@ provincie: Drenthe
 methoden:
   - wandel
 bio: test test test
-gepubliceerd: false
+gepubliceerd: true
 layout: bewust-maker
 permalink: ""
 email_zichtbaar: nvhooff@icloud.com
