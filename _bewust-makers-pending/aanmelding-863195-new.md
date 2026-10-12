@@ -15,6 +15,8 @@ talen:
   - Frans
 naam: Nathalie test het formulier
 provincie: Drenthe
+methoden:
+  - wandel
 bio: test test test
 gepubliceerd: true
 layout: bewust-maker
