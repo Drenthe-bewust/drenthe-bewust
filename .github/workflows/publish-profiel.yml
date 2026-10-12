@@ -1,0 +1,116 @@
+name: Publish Profiel
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '_bewust-makers-pending/**'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for published profiles
+        id: check
+        run: |
+          # Use github.event.before and github.sha for full push comparison
+          BEFORE=${{ github.event.before }}
+          AFTER=${{ github.sha }}
+          
+          # If before is empty (first push), use HEAD~1
+          if [[ -z "$BEFORE" ]] || [[ "$BEFORE" == "0000000000000000000000000000000000000000" ]]; then
+            BEFORE="HEAD~1"
+          fi
+          
+          # Get all changed files in pending folder
+          CHANGED_FILES=$(git diff --name-only "$BEFORE" "$AFTER" -- '_bewust-makers-pending/' 2>/dev/null || echo "")
+          
+          if [[ -z "$CHANGED_FILES" ]]; then
+            echo "No changes in _bewust-makers-pending/"
+            echo "found=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Collect profiles where gepubliceerd was changed to true AND is true in final version
+          APPROVED_FILES=()
+          for file in $CHANGED_FILES; do
+            if [[ "$file" == _bewust-makers-pending/* ]]; then
+              # Check if gepubliceerd: true was added/changed in this push
+              if git diff "$BEFORE" "$AFTER" -- "$file" 2>/dev/null | grep -q "^+gepubliceerd: true"; then
+                # AND verify gepubliceerd: true is still true in the final version
+                if grep -q "^gepubliceerd: true" "$file"; then
+                  APPROVED_FILES+=("$file")
+                fi
+              fi
+            fi
+          done
+          
+          APPROVED_COUNT=${#APPROVED_FILES[@]}
+          
+          if [[ $APPROVED_COUNT -eq 0 ]]; then
+            echo "No profiles with gepubliceerd changed to true in this push"
+            echo "found=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          # Only process one profile per push
+          if [[ $APPROVED_COUNT -gt 1 ]]; then
+            echo "ERROR: $APPROVED_COUNT profiles approved in single push."
+            echo "Process only one profile per push to avoid data loss."
+            echo "Approved files:"
+            for f in "${APPROVED_FILES[@]}"; do
+              echo "  - $f"
+            done
+            echo "found=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          
+          # Process the single approved file
+          file="${APPROVED_FILES[0]}"
+          BASENAME=$(basename "$file")
+          
+          # Check if target already exists (prevent overwrite)
+          if [ -f "_bewust-makers/$BASENAME" ]; then
+            echo "ERROR: Target file already exists: _bewust-makers/$BASENAME"
+            echo "This profile has already been published."
+            echo "Skipping to prevent data loss."
+            echo "found=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          
+          echo "found=true" >> $GITHUB_OUTPUT
+          echo "file=$file" >> $GITHUB_OUTPUT
+          echo "target=_bewust-makers/$BASENAME" >> $GITHUB_OUTPUT
+
+      - name: Move and publish
+        if: steps.check.outputs.found == 'true'
+        run: |
+          SOURCE="${{ steps.check.outputs.file }}"
+          TARGET="${{ steps.check.outputs.target }}"
+          
+          # Move file
+          mv "$SOURCE" "$TARGET"
+          
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # Extract profile name for commit message
+          PROFILE_NAME=$(grep "^naam:" "$TARGET" | sed 's/naam: //' | tr -d "'" | head -1)
+          
+          # Stage both files
+          git add "$TARGET" "$SOURCE"
+          git commit -m "Publish profiel: $PROFILE_NAME"
+          git push
+
+      - name: Build trigger
+        if: steps.check.outputs.found == 'true'
+        run: |
+          echo "✓ Profiel gepubliceerd. Netlify build start."
