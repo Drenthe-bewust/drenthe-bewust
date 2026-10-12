@@ -66,7 +66,7 @@ collections:
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
   - name: bewust-makers-aanmeldingen
-    label: Tally-aanmeldingen — Modereren
+    label: Tally-aanmeldingen — Modereren (ALLE VELDEN)
     folder: _bewust-makers-pending
     create: false
     media_folder: ../assets/images/makers
@@ -79,8 +79,30 @@ collections:
       - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] }
       - { label: "Stad", name: "stad", widget: "string" }
       - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal"] }
-      - { label: "Methoden", name: "methoden", widget: "list" }
+      - { label: "Methoden", name: "methoden", widget: "list", required: false }
+      - { label: "Klachten", name: "klachten", widget: "list", required: false }
+      - { label: "Kaart-tags", name: "kaart_tags", widget: "list", required: false }
+      - { label: "Doelgroepen", name: "doelgroepen", widget: "list", required: false }
+      - { label: "Opleidingen", name: "opleidingen", widget: "list", required: false }
+      - { label: "Verenigingen", name: "verenigingen", widget: "list", required: false }
+      - { label: "Talen", name: "talen", widget: "list", default: ["Nederlands"], required: false }
+      - { label: "Website", name: "website", widget: "string", required: false }
+      - { label: "E-mailadres zichtbaar", name: "email_zichtbaar", widget: "string", required: false }
+      - { label: "Telefoonnummer", name: "telefoon", widget: "string", required: false }
+      - { label: "Online sessies", name: "online", widget: "select", options: ["Ja","Nee","Op aanvraag"], default: "Op aanvraag", required: false }
+      - { label: "Sessieduur", name: "sessieduur", widget: "string", required: false }
+      - { label: "Tarief (€)", name: "tarief", widget: "string", required: false }
+      - { label: "Eerste gesprek", name: "eerste_gesprek", widget: "select", options: ["Gratis kennismaking","Gratis (30 min)","Op aanvraag","Betaald"], default: "Gratis kennismaking", required: false }
+      - { label: "Vergoeding zorgverzekeraar", name: "vergoeding", widget: "string", required: false }
+      - { label: "Jaren ervaring", name: "ervaringsjaren", widget: "number", required: false, value_type: "int" }
+      - { label: "Korte omschrijving", name: "omschrijving", widget: "text", required: false }
+      - { label: "Citaat of tagline", name: "citaat", widget: "string", required: false }
       - { label: "Bio (korte introductie)", name: "bio", widget: "text" }
+      - { label: "Waarom is dit jouw werk?", name: "waarom", widget: "text", required: false }
+      - { label: "Wat maakt jou anders?", name: "onderscheid", widget: "text", required: false }
+      - { label: "Waarom bel je mij?", name: "voor_wie", widget: "text", required: false }
+      - { label: "Wat zeggen cliënten over jou?", name: "wat_zeggen_clienten", widget: "text", required: false }
+      - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false }
       - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: false, hint: "Zet op TRUE om live te gaan" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
