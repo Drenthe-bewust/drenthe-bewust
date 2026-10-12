@@ -1,27 +1,28 @@
 ---
-layout: bewust-maker
-permalink: ''
-gepubliceerd: false
-naam: Nathalie test het formulier
 praktijk: Walk of Life
 stad: Zweeloo
-provincie: Drenthe
-website: www.instituutvoortoegepastefilosofie.nl
-email_zichtbaar: nvhooff@icloud.com
-telefoon: '0646647313'
-tarief: '100'
-omschrijving: Ik ben wandelcoach bij Walk of life
-citaat: Ik heb het druk dus ik doe het rustig aan
-doelgroepen:
-  - Gepensioneerden
 categorieen:
   - Coaching
   - Bewegen
+omschrijving: Ik ben wandelcoach bij Walk of life
+tarief: "100"
+citaat: Ik heb het druk dus ik doe het rustig aan
+doelgroepen:
+  - Gepensioneerden
 talen:
   - Nederlands
   - Engels
   - Frans
+naam: Nathalie test het formulier
+provincie: Drenthe
+bio: test
+gepubliceerd: true
+layout: bewust-maker
+permalink: ""
+email_zichtbaar: nvhooff@icloud.com
+telefoon: "0646647313"
 kennisbank_links:
   - Een vol hoofd
-  - 'Iets anders, namelijk:'
+  - "Iets anders, namelijk:"
+website: www.instituutvoortoegepastefilosofie.nl
 ---
