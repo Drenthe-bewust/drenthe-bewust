@@ -89,7 +89,7 @@ permalink: /over-drenthe-bewust/
           {% if cat.status == "binnenkort" %}
           <span class="tag" style="opacity:0.55;cursor:default;" title="Meer informatie volgt binnenkort">{{ cat.naam }} <small style="font-size:0.7em;">binnenkort</small></span>
           {% else %}
-          <span class="tag">{{ cat.naam }}</span>
+          <span class="tag" style="cursor:default;">{{ cat.naam }}</span>
           {% endif %}
         </li>
         {% endfor %}
