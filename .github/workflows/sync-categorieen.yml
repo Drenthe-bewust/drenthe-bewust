@@ -1,0 +1,64 @@
+name: Sync Categorieën naar Config
+
+on:
+  push:
+    paths:
+      - '_data/categorieen.yml'
+    branches:
+      - main
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update admin/config.yml met categorieën
+        run: |
+          python3 << 'EOF'
+          import yaml
+          import re
+
+          # Lees categorieen.yml
+          with open('_data/categorieen.yml', 'r', encoding='utf-8') as f:
+              data = yaml.safe_load(f)
+
+          categorieen = data.get('categorieen', [])
+          categorie_namen = [cat['naam'] for cat in categorieen]
+
+          # Lees huidige admin/config.yml
+          with open('admin/config.yml', 'r', encoding='utf-8') as f:
+              config_content = f.read()
+
+          # Update alle categorieën-lijsten in config.yml
+          # Pattern voor bewust-makers en bewust-makers-aanmeldingen
+          pattern = r'(options:\s*\[)"Massage"[^\]]*(\])'
+          replacement = f'options: {categorie_namen}]'
+
+          # Vervang categorieën-opties
+          config_content = re.sub(
+              r'(label:\s*"Categorieën"[^}]*widget:\s*"select"[^}]*multiple:\s*true,\s*)options:\s*\[[^\]]*\]',
+              f'\\1options: {str(categorie_namen)}',
+              config_content
+          )
+
+          # Schrijf terug
+          with open('admin/config.yml', 'w', encoding='utf-8') as f:
+              f.write(config_content)
+
+          print("✅ admin/config.yml bijgewerkt met categorieën uit _data/categorieen.yml")
+          EOF
+
+      - name: Commit wijzigingen
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add admin/config.yml
+          if git diff --cached --quiet; then
+            echo "Geen wijzigingen nodig"
+          else
+            git commit -m "🤖 Sync categorieën naar admin/config.yml"
+            git push
+          fi
