@@ -31,7 +31,7 @@ collections:
       - { label: "Profielfoto", name: "foto", widget: "image", required: false }
       - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] , hint: "In welke provincie werk je"}
       - { label: "Stad", name: "stad", widget: "string", hint: "Plaats waar je voornamelijk werk" }
-      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal"], hint: "Wat zijn je specialisaties (massage, coaching, etc)" }
+      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal","Expressie","Kindgericht","Hulp voor huisdieren"], hint: "Wat zijn je specialisaties (massage, coaching, etc)" }
       - { label: "Methoden", name: "methoden", widget: "list" , hint: "Welke behandelmethoden gebruik je"}
       - { label: "Klachten", name: "klachten", widget: "list", required: false, hint: "Welke klachten kun je helpen (stress, rugpijn, etc)" }
       - { label: "Kaart-tags", name: "kaart_tags", widget: "list", required: false, hint: "3 korte labels voor de profielkaart" }
@@ -78,7 +78,7 @@ collections:
       - { label: "Praktijknaam", name: "praktijk", widget: "string" , hint: "Naam van de praktijk/bedrijf"}
       - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] , hint: "In welke provincie werk je"}
       - { label: "Stad", name: "stad", widget: "string" }
-      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal"] }
+      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal","Expressie","Kindgericht","Hulp voor huisdieren"] }
       - { label: "Methoden", name: "methoden", widget: "list", required: false , hint: "Welke behandelmethoden gebruik je"}
       - { label: "Klachten", name: "klachten", widget: "list", required: false }
       - { label: "Kaart-tags", name: "kaart_tags", widget: "list", required: false }
