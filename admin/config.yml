@@ -202,9 +202,10 @@ collections:
       - label: "Categorieën"
         name: "categorieen"
         file: "_data/categorieen.yml"
+        description: "⚠️ LET OP: Deze categorieën MOETEN identiek zijn aan de opties in de formulieren. Verwijder of wijzig categorieën nooit zonder eerst Nathalie te raadplegen!"
         fields:
           - { label: "Categorieën", name: "categorieen", widget: "list", fields: [
-              { label: "Naam", name: "naam", widget: "string", hint: "Bijv. Massage, Coaching, Expressie" },
+              { label: "Naam", name: "naam", widget: "string", hint: "Bijv. Massage, Coaching, Expressie — MOET identiek zijn aan formulier-opties!" },
               { label: "Status", name: "status", widget: "select", options: ["actief", "binnenkort"], default: "actief", hint: "actief = zichtbaar in zoeken, binnenkort = gedimd op info-pagina's" }
             ] }
 
