@@ -18,9 +18,9 @@ public_folder: /assets/images/makers
 
 collections:
   - name: bewust-makers
-    label: Bewust-makers — Bewerken
+    label: Bewust-makers — Bewerken & Toevoegen
     folder: _bewust-makers
-    create: false
+    create: true
     media_folder: ../assets/images/makers
     public_folder: /assets/images/makers
     identifier_field: naam
@@ -104,23 +104,6 @@ collections:
       - { label: "Wat zeggen cliënten over jou?", name: "wat_zeggen_clienten", widget: "text", required: false }
       - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false }
       - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: false, hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
-      - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
-
-  - name: bewust-makers-nieuw
-    label: Bewust-maker — Nieuw toevoegen
-    folder: _bewust-makers
-    create: true
-    media_folder: ../assets/images/makers
-    public_folder: /assets/images/makers
-    identifier_field: naam
-    summary: "{{naam}}"
-    fields:
-      - { label: "Naam", name: "naam", widget: "string" , hint: "De volledige naam van de therapeut"}
-      - { label: "Praktijknaam", name: "praktijk", widget: "string" , hint: "Naam van de praktijk/bedrijf"}
-      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] , hint: "In welke provincie werk je"}
-      - { label: "Stad", name: "stad", widget: "string" }
-      - { label: "Bio", name: "bio", widget: "text", hint: "Je introductieparagraaf (wie ben je, wat doe je)" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
