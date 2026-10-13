@@ -154,8 +154,8 @@ collections:
       - { label: "Logo", name: "logo", widget: "image", required: false }
       - { label: "Website", name: "website", widget: "string", required: false , hint: "Jouw website of webpagina"}
       - { label: "Beschrijving", name: "beschrijving", widget: "text" }
+      - { label: "Permalink (bijv. /mee-makers/mijn-organisatie/)", name: "permalink", widget: "string", required: true, hint: "Dit bepaalt de URL. Mag NIET leeg zijn!" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "mee-maker" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
   - name: kennisbank
     label: Kennisbank
@@ -166,8 +166,8 @@ collections:
     fields:
       - { label: "Titel", name: "titel", widget: "string" }
       - { label: "Inhoud", name: "body", widget: "markdown" }
+      - { label: "Permalink (bijv. /inspiratie/meditation/ of /inspiratie/je-onderwerp/)", name: "permalink", widget: "string", required: true, hint: "Dit bepaalt de URL. Mag NIET leeg zijn!" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "kennisbank-artikel" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
   - name: teksten
     label: Teksten aanpassen
