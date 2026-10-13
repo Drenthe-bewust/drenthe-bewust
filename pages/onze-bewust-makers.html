@@ -50,19 +50,9 @@ const STEDEN_COORDS = {
       </div>
       <div class="zoek-filters" style="margin-bottom:0.4rem;">
         <button class="zoek-filter-tag js-tag-filter actief" data-filter="alles">Alle methoden</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="massage">Massage</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="coaching">Coaching</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="voeding">Voeding</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="energetisch">Energetisch</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="bewegen">Bewegen</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="meditatie">Meditatie</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="mindfulness">Mindfulness</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="lichaamsgericht">Lichaamsgericht</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="spiritueel">Spiritueel</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="psychosociaal">Psychosociaal</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="expressie">Expressie</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="kindgericht">Kindgericht</button>
-        <button class="zoek-filter-tag js-tag-filter" data-filter="hulp voor huisdieren">Hulp voor huisdieren</button>
+        {% for cat in site.data.categorieen.categorieen %}
+        <button class="zoek-filter-tag js-tag-filter" data-filter="{{ cat.naam | downcase }}">{{ cat.naam }}</button>
+        {% endfor %}
       </div>
       <div style="margin-bottom:0.8rem;">
         <p style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--tekst-licht); margin-bottom:0.4rem;">Of zoek op klacht:</p>

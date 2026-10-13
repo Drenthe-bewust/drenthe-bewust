@@ -196,6 +196,18 @@ collections:
           - { label: "CTA titel", name: "cta_titel", widget: "string" }
           - { label: "CTA tekst", name: "cta_tekst", widget: "text" }
 
+  - name: categorieen
+    label: Categorieën beheren
+    files:
+      - label: "Categorieën"
+        name: "categorieen"
+        file: "_data/categorieen.yml"
+        fields:
+          - { label: "Categorieën", name: "categorieen", widget: "list", fields: [
+              { label: "Naam", name: "naam", widget: "string", hint: "Bijv. Massage, Coaching, Expressie" },
+              { label: "Status", name: "status", widget: "select", options: ["actief", "binnenkort"], default: "actief", hint: "actief = zichtbaar in zoeken, binnenkort = gedimd op info-pagina's" }
+            ] }
+
   - name: uitnodigingen
     label: Bewust-maker uitnodigen
     files:

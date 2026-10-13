@@ -1,0 +1,27 @@
+categorieen:
+  - naam: Massage
+    status: actief
+  - naam: Coaching
+    status: actief
+  - naam: Voeding
+    status: actief
+  - naam: Energetisch
+    status: actief
+  - naam: Bewegen
+    status: actief
+  - naam: Meditatie
+    status: actief
+  - naam: Mindfulness
+    status: actief
+  - naam: Lichaamsgericht
+    status: actief
+  - naam: Spiritueel
+    status: actief
+  - naam: Psychosociaal
+    status: actief
+  - naam: Expressie
+    status: binnenkort
+  - naam: Kindgericht
+    status: binnenkort
+  - naam: Hulp voor huisdieren
+    status: binnenkort
