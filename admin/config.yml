@@ -26,40 +26,40 @@ collections:
     identifier_field: naam
     summary: "{{naam}} — {{stad}}, {{provincie}}"
     fields:
-      - { label: "Naam", name: "naam", widget: "string" }
-      - { label: "Praktijknaam", name: "praktijk", widget: "string" }
+      - { label: "Naam", name: "naam", widget: "string" , hint: "De volledige naam van de therapeut"}
+      - { label: "Praktijknaam", name: "praktijk", widget: "string" , hint: "Naam van de praktijk/bedrijf"}
       - { label: "Profielfoto", name: "foto", widget: "image", required: false }
-      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] }
-      - { label: "Stad", name: "stad", widget: "string", hint: "Vul de plaatsnaam in zoals die in de lijst staat (bijv. 'Groningen', 'Assen'). Dit bepaalt automatisch de locatie voor 'zoek op afstand'." }
-      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal"], hint: "Dit zijn ook de filterknoppen op de pagina Bewust-makers." }
-      - { label: "Methoden", name: "methoden", widget: "list" }
-      - { label: "Klachten", name: "klachten", widget: "list", required: false, hint: "Vul hier klachten in waarvoor jij hulp biedt (bijv. stress, burnout, rugpijn). Gebruikt voor het zoekfilter." }
-      - { label: "Kaart-tags", name: "kaart_tags", widget: "list", required: false, hint: "3 korte labels op de profielkaart (bijv. NEI, REIKI, Voeding). Leeg = eerste 3 methoden worden gebruikt." }
-      - { label: "Citaat op homepage", name: "citaat", widget: "string", required: false, hint: "Korte inspirerende uitspraak — alleen zichtbaar als je bent aangevinkt als 'Uitgelicht'." }
+      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] , hint: "In welke provincie werk je"}
+      - { label: "Stad", name: "stad", widget: "string", hint: "Plaats waar je voornamelijk werk" }
+      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal"], hint: "Wat zijn je specialisaties (massage, coaching, etc)" }
+      - { label: "Methoden", name: "methoden", widget: "list" , hint: "Welke behandelmethoden gebruik je"}
+      - { label: "Klachten", name: "klachten", widget: "list", required: false, hint: "Welke klachten kun je helpen (stress, rugpijn, etc)" }
+      - { label: "Kaart-tags", name: "kaart_tags", widget: "list", required: false, hint: "3 korte labels voor de profielkaart" }
+      - { label: "Citaat op homepage", name: "citaat", widget: "string", required: false, hint: "Inspirerend citaat of je motto" }
       - { label: "Volgorde", name: "volgorde", widget: "number", required: false, value_type: "int", hint: "Bepaalt de volgorde op de overzichtspagina (laag getal = eerder getoond). Laat leeg voor standaardvolgorde." }
       - { label: "Locatie — breedtegraad (optioneel)", name: "lat", widget: "string", required: false, hint: "Alleen invullen als je een nauwkeurigere locatie wilt dan de stad. Zoek je adres op via maps.google.nl, klik rechts op de pin → eerste getal (bijv. 52.7697)." }
       - { label: "Locatie — lengtegraad (optioneel)", name: "lon", widget: "string", required: false, hint: "Alleen invullen als je een nauwkeurigere locatie wilt dan de stad. Zoek je adres op via maps.google.nl, klik rechts op de pin → tweede getal (bijv. 6.9142)." }
-      - { label: "Korte omschrijving (zoekresultaat)", name: "omschrijving", widget: "text", required: false, hint: "Optionele korte tekst die in zoekresultaten getoond kan worden." }
-      - { label: "Website", name: "website", widget: "string", required: false }
-      - { label: "E-mailadres zichtbaar", name: "email_zichtbaar", widget: "string", required: false }
-      - { label: "Telefoonnummer", name: "telefoon", widget: "string", required: false }
-      - { label: "Online sessies", name: "online", widget: "select", options: ["Ja","Nee","Op aanvraag"], default: "Op aanvraag" }
-      - { label: "Sessieduur", name: "sessieduur", widget: "string", required: false }
-      - { label: "Tarief", name: "tarief", widget: "string", required: false }
-      - { label: "Eerste gesprek", name: "eerste_gesprek", widget: "select", options: ["Gratis kennismaking","Gratis (30 min)","Op aanvraag","Betaald"], default: "Gratis kennismaking" }
-      - { label: "Vergoeding", name: "vergoeding", widget: "string", required: false }
-      - { label: "Ervaringsjaren", name: "ervaringsjaren", widget: "number", required: false, value_type: "int" }
-      - { label: "Talen", name: "talen", widget: "list", default: ["Nederlands"] }
-      - { label: "Doelgroepen", name: "doelgroepen", widget: "list", required: false }
-      - { label: "Opleidingen", name: "opleidingen", widget: "list", required: false }
-      - { label: "Verenigingen", name: "verenigingen", widget: "list", required: false }
-      - { label: "Bio (korte introductie)", name: "bio", widget: "text", hint: "Verschijnt als eerste tekst op je profielpagina. Beschrijf kort wie je bent en wat je doet." }
-      - { label: "Waarom is dit jouw werk?", name: "waarom", widget: "text", required: false, hint: "Jouw persoonlijke verhaal en motivatie. Verschijnt op je profielpagina onder 'Waarom is dit mijn werk?'" }
-      - { label: "Wat maakt jou anders?", name: "onderscheid", widget: "text", required: false, hint: "Wat onderscheidt jou van andere therapeuten? Verschijnt onder 'Wat maakt mij anders?'" }
-      - { label: "Waarom bel je mij?", name: "voor_wie", widget: "text", required: false, hint: "Voor wie ben jij de juiste keuze? Verschijnt op je profiel onder 'Waarom bel je mij?'" }
-      - { label: "Wat zeggen cliënten over jou?", name: "wat_zeggen_clienten", widget: "text", required: false, hint: "Ervaringen of testimonials van cliënten. Verschijnt cursief op je profiel." }
-      - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false, hint: "Wat mogen cliënten verwachten na een sessie bij jou?" }
-      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: true }
+      - { label: "Korte omschrijving (zoekresultaat)", name: "omschrijving", widget: "text", required: false, hint: "Korte beschrijving (1-2 zinnen)" }
+      - { label: "Website", name: "website", widget: "string", required: false , hint: "Jouw website of webpagina"}
+      - { label: "E-mailadres zichtbaar", name: "email_zichtbaar", widget: "string", required: false , hint: "Email die zichtbaar is op je profiel"}
+      - { label: "Telefoonnummer", name: "telefoon", widget: "string", required: false , hint: "Telefoonnummer voor cliënten"}
+      - { label: "Online sessies", name: "online", widget: "select", options: ["Ja","Nee","Op aanvraag"], default: "Op aanvraag" , hint: "Bied je online sessies aan"}
+      - { label: "Sessieduur", name: "sessieduur", widget: "string", required: false , hint: "Hoe lang duurt een typische sessie (bijv. 30-60 min)"}
+      - { label: "Tarief", name: "tarief", widget: "string", required: false , hint: "Wat zijn je tarieven (bijv. €50 per sessie)"}
+      - { label: "Eerste gesprek", name: "eerste_gesprek", widget: "select", options: ["Gratis kennismaking","Gratis (30 min)","Op aanvraag","Betaald"], default: "Gratis kennismaking" , hint: "Is het eerste gesprek gratis of betaald"}
+      - { label: "Vergoeding", name: "vergoeding", widget: "string", required: false , hint: "Vergoeding door zorgverzekeraars"}
+      - { label: "Ervaringsjaren", name: "ervaringsjaren", widget: "number", required: false, value_type: "int" , hint: "Hoeveel jaar ervaring heb je"}
+      - { label: "Talen", name: "talen", widget: "list", default: ["Nederlands"] , hint: "Welke talen spreek je"}
+      - { label: "Doelgroepen", name: "doelgroepen", widget: "list", required: false , hint: "Voor wie is je werk (ouderen, kinderen, etc)"}
+      - { label: "Opleidingen", name: "opleidingen", widget: "list", required: false , hint: "Je opleidingen en certificaten"}
+      - { label: "Verenigingen", name: "verenigingen", widget: "list", required: false , hint: "Lidmaatschappen van beroepsorganisaties"}
+      - { label: "Bio (korte introductie)", name: "bio", widget: "text", hint: "Je introductieparagraaf (wie ben je, wat doe je)" }
+      - { label: "Waarom is dit jouw werk?", name: "waarom", widget: "text", required: false, hint: "Waarom ben je deze werkzaamheden gaan doen" }
+      - { label: "Wat maakt jou anders?", name: "onderscheid", widget: "text", required: false, hint: "Wat maakt jou anders van andere therapeuten" }
+      - { label: "Waarom bel je mij?", name: "voor_wie", widget: "text", required: false, hint: "Voor wie is jouw werk ideaal" }
+      - { label: "Wat zeggen cliënten over jou?", name: "wat_zeggen_clienten", widget: "text", required: false, hint: "Wat zeggen tevreden cliënten over je" }
+      - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false, hint: "Wat kunnen cliënten verwachten na een sessie" }
+      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: true , hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
       - { label: "Uitgelicht", name: "uitgelicht", widget: "boolean", default: false, hint: "Toont deze bewust-maker op de homepage" }
       - { label: "Lidmaatschap", name: "lidmaatschap", widget: "select", options: ["Bewust-maker","Mee-maker"], default: "Bewust-maker" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
@@ -74,27 +74,27 @@ collections:
     identifier_field: naam
     summary: "{{naam}} — {{stad}}, {{provincie}}"
     fields:
-      - { label: "Naam", name: "naam", widget: "string" }
-      - { label: "Praktijknaam", name: "praktijk", widget: "string" }
-      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] }
+      - { label: "Naam", name: "naam", widget: "string" , hint: "De volledige naam van de therapeut"}
+      - { label: "Praktijknaam", name: "praktijk", widget: "string" , hint: "Naam van de praktijk/bedrijf"}
+      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] , hint: "In welke provincie werk je"}
       - { label: "Stad", name: "stad", widget: "string" }
       - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal"] }
-      - { label: "Methoden", name: "methoden", widget: "list", required: false }
+      - { label: "Methoden", name: "methoden", widget: "list", required: false , hint: "Welke behandelmethoden gebruik je"}
       - { label: "Klachten", name: "klachten", widget: "list", required: false }
       - { label: "Kaart-tags", name: "kaart_tags", widget: "list", required: false }
-      - { label: "Doelgroepen", name: "doelgroepen", widget: "list", required: false }
-      - { label: "Opleidingen", name: "opleidingen", widget: "list", required: false }
-      - { label: "Verenigingen", name: "verenigingen", widget: "list", required: false }
-      - { label: "Talen", name: "talen", widget: "list", default: ["Nederlands"], required: false }
-      - { label: "Website", name: "website", widget: "string", required: false }
-      - { label: "E-mailadres zichtbaar", name: "email_zichtbaar", widget: "string", required: false }
-      - { label: "Telefoonnummer", name: "telefoon", widget: "string", required: false }
-      - { label: "Online sessies", name: "online", widget: "select", options: ["Ja","Nee","Op aanvraag"], default: "Op aanvraag", required: false }
-      - { label: "Sessieduur", name: "sessieduur", widget: "string", required: false }
-      - { label: "Tarief (€)", name: "tarief", widget: "string", required: false }
-      - { label: "Eerste gesprek", name: "eerste_gesprek", widget: "select", options: ["Gratis kennismaking","Gratis (30 min)","Op aanvraag","Betaald"], default: "Gratis kennismaking", required: false }
-      - { label: "Vergoeding zorgverzekeraar", name: "vergoeding", widget: "string", required: false }
-      - { label: "Jaren ervaring", name: "ervaringsjaren", widget: "number", required: false, value_type: "int" }
+      - { label: "Doelgroepen", name: "doelgroepen", widget: "list", required: false , hint: "Voor wie is je werk (ouderen, kinderen, etc)"}
+      - { label: "Opleidingen", name: "opleidingen", widget: "list", required: false , hint: "Je opleidingen en certificaten"}
+      - { label: "Verenigingen", name: "verenigingen", widget: "list", required: false , hint: "Lidmaatschappen van beroepsorganisaties"}
+      - { label: "Talen", name: "talen", widget: "list", default: ["Nederlands"], required: false , hint: "Welke talen spreek je"}
+      - { label: "Website", name: "website", widget: "string", required: false , hint: "Jouw website of webpagina"}
+      - { label: "E-mailadres zichtbaar", name: "email_zichtbaar", widget: "string", required: false , hint: "Email die zichtbaar is op je profiel"}
+      - { label: "Telefoonnummer", name: "telefoon", widget: "string", required: false , hint: "Telefoonnummer voor cliënten"}
+      - { label: "Online sessies", name: "online", widget: "select", options: ["Ja","Nee","Op aanvraag"], default: "Op aanvraag", required: false , hint: "Bied je online sessies aan"}
+      - { label: "Sessieduur", name: "sessieduur", widget: "string", required: false , hint: "Hoe lang duurt een typische sessie (bijv. 30-60 min)"}
+      - { label: "Tarief (€)", name: "tarief", widget: "string", required: false , hint: "Wat zijn je tarieven (bijv. €50 per sessie)"}
+      - { label: "Eerste gesprek", name: "eerste_gesprek", widget: "select", options: ["Gratis kennismaking","Gratis (30 min)","Op aanvraag","Betaald"], default: "Gratis kennismaking", required: false , hint: "Is het eerste gesprek gratis of betaald"}
+      - { label: "Vergoeding zorgverzekeraar", name: "vergoeding", widget: "string", required: false , hint: "Vergoeding door zorgverzekeraars"}
+      - { label: "Jaren ervaring", name: "ervaringsjaren", widget: "number", required: false, value_type: "int" , hint: "Hoeveel jaar ervaring heb je"}
       - { label: "Korte omschrijving", name: "omschrijving", widget: "text", required: false }
       - { label: "Citaat of tagline", name: "citaat", widget: "string", required: false }
       - { label: "Bio (korte introductie)", name: "bio", widget: "text" }
@@ -103,7 +103,7 @@ collections:
       - { label: "Waarom bel je mij?", name: "voor_wie", widget: "text", required: false }
       - { label: "Wat zeggen cliënten over jou?", name: "wat_zeggen_clienten", widget: "text", required: false }
       - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false }
-      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: false, hint: "Zet op TRUE om live te gaan" }
+      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: false, hint: "Zet op TRUE om live te gaan" , hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
@@ -116,11 +116,11 @@ collections:
     identifier_field: naam
     summary: "{{naam}}"
     fields:
-      - { label: "Naam", name: "naam", widget: "string" }
-      - { label: "Praktijknaam", name: "praktijk", widget: "string" }
-      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] }
+      - { label: "Naam", name: "naam", widget: "string" , hint: "De volledige naam van de therapeut"}
+      - { label: "Praktijknaam", name: "praktijk", widget: "string" , hint: "Naam van de praktijk/bedrijf"}
+      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] , hint: "In welke provincie werk je"}
       - { label: "Stad", name: "stad", widget: "string" }
-      - { label: "Bio", name: "bio", widget: "text", hint: "Korte introductie (bijv. naam, praktijk, werkwijze)" }
+      - { label: "Bio", name: "bio", widget: "text", hint: "Je introductieparagraaf (wie ben je, wat doe je)" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
@@ -150,9 +150,9 @@ collections:
     media_folder: ../assets/images/mee-makers
     public_folder: /assets/images/mee-makers
     fields:
-      - { label: "Naam", name: "naam", widget: "string" }
+      - { label: "Naam", name: "naam", widget: "string" , hint: "De volledige naam van de therapeut"}
       - { label: "Logo", name: "logo", widget: "image", required: false }
-      - { label: "Website", name: "website", widget: "string", required: false }
+      - { label: "Website", name: "website", widget: "string", required: false , hint: "Jouw website of webpagina"}
       - { label: "Beschrijving", name: "beschrijving", widget: "text" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "mee-maker" }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
@@ -203,7 +203,7 @@ collections:
         name: "uitnodiging"
         file: "_data/uitnodigingen.yml"
         fields:
-          - { label: "Naam", name: "naam", widget: "string" }
+          - { label: "Naam", name: "naam", widget: "string" , hint: "De volledige naam van de therapeut"}
           - { label: "E-mailadres", name: "email", widget: "string" }
           - { label: "Type", name: "type", widget: "select", options: ["Bewust-maker","Mee-maker"], default: "Bewust-maker" }
           - { label: "Notitie", name: "notitie", widget: "text", required: false }
