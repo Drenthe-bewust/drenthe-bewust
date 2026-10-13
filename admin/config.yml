@@ -103,7 +103,7 @@ collections:
       - { label: "Waarom bel je mij?", name: "voor_wie", widget: "text", required: false }
       - { label: "Wat zeggen cliënten over jou?", name: "wat_zeggen_clienten", widget: "text", required: false }
       - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false }
-      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: false, hint: "Zet op TRUE om live te gaan" , hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
+      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: false, hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
