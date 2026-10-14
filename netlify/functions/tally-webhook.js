@@ -1,6 +1,7 @@
 // Tally webhook → GitHub API → YAML update → Netlify rebuild
-// Ontvang een Tally-formulierinzending, create nieuw profiel in _bewust-makers-pending/
-// met gepubliceerd: false, zodat Marcella/Elsemarie het kan modereren.
+// Ontvang een Tally-formulierinzending:
+// - Nieuwe makers: aanmelding in _bewust-makers-pending/ met gepubliceerd: false
+// - Bestaande makers: wijzigingen in _bewust-makers-pending/, zoeken op e-mailadres
 //
 // Vereiste omgevingsvariabelen (stel in via Netlify > Site settings > Environment):
 //   GITHUB_TOKEN   — Personal Access Token met 'Contents: Read & write' op de repo
@@ -73,15 +74,37 @@ exports.handler = async function(event) {
   // DEBUG: log alle veldnamen die Tally stuurt
   console.log('Tally field labels:', fields.map(f => f.label).join(' | '));
 
-  // Genereer stabiele slug: timestamp + submission ID (niet gebruikersafhankelijk)
-  function generateStableSlug() {
-    const timestamp = Date.now().toString().slice(-6);
-    const subId = tallySubmissionId ? String(tallySubmissionId).substring(0, 6) : 'new';
-    return `aanmelding-${timestamp}-${subId}`.toLowerCase().replace(/[^a-z0-9-]/g, '-');
+  // Voorfase: controleer of dit een update is en verzamel e-mailadres
+  let isUpdate = false;
+  let updateEmail = '';
+
+  for (const field of fields) {
+    // Checken: "Ben je een bestaande bewust-maker?"
+    if (field.label === 'Ben je een bestaande bewust-maker?' && field.value) {
+      const answer = Array.isArray(field.value)
+        ? field.options?.find(o => o.id === field.value[0])?.text
+        : String(field.value);
+      isUpdate = answer?.toLowerCase().trim() === 'ja';
+    }
+    // E-mailadres ophalen (voor updates)
+    if (field.label === 'E-mail (zichtbaar op profiel)' && field.value) {
+      updateEmail = String(field.value).trim().toLowerCase();
+    }
   }
 
-  const slug = generateStableSlug();
-  console.log(`Generated slug: ${slug} from submission ${tallySubmissionId}`);
+  // Genereer slug
+  let slug;
+  if (isUpdate && updateEmail) {
+    // Update: slug gebaseerd op e-mailadres (voor gemakkelijke opzoeking)
+    slug = `update-${updateEmail.replace(/[^a-z0-9.]/g, '-').replace(/^-+|-+$/g, '')}`;
+  } else {
+    // Nieuwe aanmelding: timestamp + submission ID
+    const timestamp = Date.now().toString().slice(-6);
+    const subId = tallySubmissionId ? String(tallySubmissionId).substring(0, 6) : 'new';
+    slug = `aanmelding-${timestamp}-${subId}`.toLowerCase().replace(/[^a-z0-9-]/g, '-');
+  }
+
+  console.log(`Generated slug: ${slug} (update: ${isUpdate}, email: ${updateEmail})`);
 
   const filePath = `_bewust-makers-pending/${slug}.md`;
 
