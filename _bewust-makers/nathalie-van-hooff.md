@@ -24,7 +24,7 @@ bio: "Het Instituut voor Toegepaste Filosofie werkt met mensen en organisaties
   helder te zien, perspectieven openen en taal vinden voor wat op het spel
   staat. Niet om snelle antwoorden te geven, maar om denken en handelen met
   elkaar te verbinden."
-gepubliceerd: true
+gepubliceerd: false
 uitgelicht: false
 lidmaatschap: Bewust-maker
 layout: bewust-maker
