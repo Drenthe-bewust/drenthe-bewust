@@ -28,5 +28,6 @@ gepubliceerd: true
 uitgelicht: false
 lidmaatschap: Bewust-maker
 layout: bewust-maker
+permalink: /bewust-makers/nathalie-van-hooff/
 permalink: ""
 ---
