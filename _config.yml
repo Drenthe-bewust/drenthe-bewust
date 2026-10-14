@@ -27,6 +27,8 @@ collections:
   bewust-makers:
     output: true
     permalink: /bewust-makers/:slug/
+  bewust-makers-pending:
+    output: false
   agenda:
     output: false
   mee-makers:

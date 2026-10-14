@@ -74,11 +74,11 @@ collections:
     identifier_field: naam
     summary: "{{naam}} — {{stad}}, {{provincie}}"
     fields:
-      - { label: "Naam", name: "naam", widget: "string" , hint: "De volledige naam van de therapeut"}
-      - { label: "Praktijknaam", name: "praktijk", widget: "string" , hint: "Naam van de praktijk/bedrijf"}
-      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] , hint: "In welke provincie werk je"}
-      - { label: "Stad", name: "stad", widget: "string" }
-      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal","Expressie","Kindgericht","Hulp voor huisdieren"] }
+      - { label: "Naam", name: "naam", widget: "string", required: false, hint: "De volledige naam van de therapeut"}
+      - { label: "Praktijknaam", name: "praktijk", widget: "string", required: false, hint: "Naam van de praktijk/bedrijf"}
+      - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"], required: false, hint: "In welke provincie werk je"}
+      - { label: "Stad", name: "stad", widget: "string", required: false }
+      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal","Expressie","Kindgericht","Hulp voor huisdieren"], required: false }
       - { label: "Methoden", name: "methoden", widget: "list", required: false , hint: "Welke behandelmethoden gebruik je"}
       - { label: "Klachten", name: "klachten", widget: "list", required: false }
       - { label: "Kaart-tags", name: "kaart_tags", widget: "list", required: false }
@@ -97,7 +97,7 @@ collections:
       - { label: "Jaren ervaring", name: "ervaringsjaren", widget: "number", required: false, value_type: "int" , hint: "Hoeveel jaar ervaring heb je"}
       - { label: "Korte omschrijving", name: "omschrijving", widget: "text", required: false }
       - { label: "Citaat of tagline", name: "citaat", widget: "string", required: false }
-      - { label: "Bio (korte introductie)", name: "bio", widget: "text" }
+      - { label: "Bio (korte introductie)", name: "bio", widget: "text", required: false }
       - { label: "Waarom is dit jouw werk?", name: "waarom", widget: "text", required: false }
       - { label: "Wat maakt jou anders?", name: "onderscheid", widget: "text", required: false }
       - { label: "Waarom bel je mij?", name: "voor_wie", widget: "text", required: false }
