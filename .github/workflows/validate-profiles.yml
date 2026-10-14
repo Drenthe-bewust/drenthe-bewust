@@ -63,3 +63,44 @@ jobs:
             exit 1
           fi
           echo "✅ No index.html conflicts"
+
+      - name: Ensure all permalinks are valid
+        run: |
+          errors=0
+
+          for file in _bewust-makers/*.md; do
+            if [ -f "$file" ]; then
+              filename=$(basename "$file")
+
+              # Extract the slug from filename (remove .md)
+              slug="${filename%.md}"
+
+              # Check if file has CORRECT permalink
+              if ! grep -q "^permalink: /bewust-makers/$slug/$" "$file"; then
+                # If file doesn't have permalink OR has wrong one, this is an error
+                if grep -q "^permalink:" "$file"; then
+                  current=$(grep "^permalink:" "$file" | head -1)
+                  echo "❌ ERROR in $filename: $current (should be: /bewust-makers/$slug/)"
+                  errors=$((errors + 1))
+                else
+                  echo "❌ ERROR in $filename: Missing permalink (should be: /bewust-makers/$slug/)"
+                  errors=$((errors + 1))
+                fi
+              fi
+            fi
+          done
+
+          if [ $errors -gt 0 ]; then
+            echo ""
+            echo "❌ Validation failed: Found $errors profile(s) with invalid permalinks"
+            echo ""
+            echo "CRITICAL: Every bewust-maker MUST have a valid permalink!"
+            echo "Format: permalink: /bewust-makers/[filename-without-.md]/"
+            echo ""
+            echo "Examples:"
+            echo "  File: amsterdam-coaching.md → permalink: /bewust-makers/amsterdam-coaching/"
+            echo "  File: yoga-rotterdam.md → permalink: /bewust-makers/yoga-rotterdam/"
+            exit 1
+          fi
+
+          echo "✅ All permalinks validated"
