@@ -89,25 +89,44 @@ jobs:
           echo "file=$file" >> $GITHUB_OUTPUT
           echo "target=_bewust-makers/$BASENAME" >> $GITHUB_OUTPUT
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install YAML parser
+        run: npm install js-yaml
+
       - name: Move and publish
         if: steps.check.outputs.found == 'true'
         run: |
           SOURCE="${{ steps.check.outputs.file }}"
-          TARGET="${{ steps.check.outputs.target }}"
-          
-          # Move file
-          mv "$SOURCE" "$TARGET"
-          
+
+          # Use Node.js script to handle both new profiles and updates
+          node .github/workflows/publish-profiel-utils.js "$SOURCE"
+
           # Configure git
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Extract profile name for commit message
-          PROFILE_NAME=$(grep "^naam:" "$TARGET" | sed 's/naam: //' | tr -d "'" | head -1)
-          
-          # Stage both files
-          git add "$TARGET" "$SOURCE"
-          git commit -m "Publish profiel: $PROFILE_NAME"
+
+          # Determine what was changed
+          if [[ "$SOURCE" == *"update-"* ]]; then
+            # Update: find the target file and commit
+            BASENAME=$(basename "$SOURCE")
+            EMAIL="${BASENAME#update-}"
+            EMAIL="${EMAIL%.md}"
+            TARGET=$(find _bewust-makers -name "*.md" -exec grep -l "email_zichtbaar: .*$EMAIL" {} \;)
+            PROFILE_NAME=$(grep "^naam:" "$TARGET" | sed 's/naam: //' | tr -d "'" | head -1)
+            git add "$TARGET"
+            git commit -m "Update profiel: $PROFILE_NAME (via Tally)"
+          else
+            # New profile: just add the moved file
+            TARGET="${{ steps.check.outputs.target }}"
+            PROFILE_NAME=$(grep "^naam:" "$TARGET" | sed 's/naam: //' | tr -d "'" | head -1)
+            git add "$TARGET"
+            git commit -m "Publish profiel: $PROFILE_NAME"
+          fi
+
           git push
 
       - name: Build trigger
