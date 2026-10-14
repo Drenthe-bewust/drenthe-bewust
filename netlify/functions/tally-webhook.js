@@ -111,7 +111,6 @@ exports.handler = async function(event) {
   // Bouw de profieldata samen
   const data = {
     layout: 'bewust-maker',
-    permalink: '',
     gepubliceerd: false
   };
 
