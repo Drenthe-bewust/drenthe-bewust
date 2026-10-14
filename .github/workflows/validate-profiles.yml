@@ -1,0 +1,65 @@
+name: Validate Bewust-maker Profiles
+
+on:
+  pull_request:
+    paths:
+      - '_bewust-makers/**'
+      - '.github/workflows/validate-profiles.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - '_bewust-makers/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for problematic permalinks
+        run: |
+          errors=0
+
+          # Find all bewust-maker files
+          for file in _bewust-makers/*.md; do
+            if [ -f "$file" ]; then
+              filename=$(basename "$file")
+
+              # Check if file has a permalink field that is problematic
+              if grep -q "^permalink: /$" "$file"; then
+                echo "❌ ERROR in $filename: permalink is root '/'"
+                errors=$((errors + 1))
+              fi
+
+              if grep -q "^permalink: \"\"$" "$file"; then
+                echo "❌ ERROR in $filename: permalink is empty"
+                errors=$((errors + 1))
+              fi
+
+              if grep -q "^permalink: ''$" "$file"; then
+                echo "❌ ERROR in $filename: permalink is empty"
+                errors=$((errors + 1))
+              fi
+            fi
+          done
+
+          if [ $errors -gt 0 ]; then
+            echo ""
+            echo "❌ Validation failed: Found $errors profile(s) with problematic permalinks"
+            echo ""
+            echo "Rules:"
+            echo "  - Do NOT set permalink: /"
+            echo "  - Do NOT set permalink: \"\" or permalink: ''"
+            echo "  - Let Jekyll auto-generate permalink from filename"
+            exit 1
+          fi
+
+          echo "✅ All profiles validated successfully"
+
+      - name: Check for index.html conflicts
+        run: |
+          if grep -r "permalink: /index" _bewust-makers/ 2>/dev/null; then
+            echo "❌ ERROR: Found permalink pointing to /index"
+            exit 1
+          fi
+          echo "✅ No index.html conflicts"

@@ -68,5 +68,6 @@ exclude:
   - _config_netlify.yml
   - _config_github.yml
   - maker-beheer
+  - index.html
 
 
