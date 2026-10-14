@@ -31,7 +31,7 @@ collections:
       - { label: "Profielfoto", name: "foto", widget: "image", required: false }
       - { label: "Provincie", name: "provincie", widget: "select", options: ["Drenthe","Groningen","Friesland","Overijssel","Gelderland","Utrecht","Noord-Holland","Zuid-Holland","Zeeland","Noord-Brabant","Limburg","Flevoland"] , hint: "In welke provincie werk je"}
       - { label: "Stad", name: "stad", widget: "string", hint: "Plaats waar je voornamelijk werk" }
-      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal","Expressie","Kindgericht","Hulp voor huisdieren"], hint: "Wat zijn je specialisaties (massage, coaching, etc)" }
+      - { label: "Categorieën", name: "categorieen", widget: "select", multiple: true, options: ["Massage","Coaching","Voeding","Energetisch","Bewegen","Meditatie","Mindfulness","Lichaamsgericht","Spiritueel","Psychosociaal","Expressie","Kindgericht","Hulp voor huisdieren"], required: false, hint: "Wat zijn je specialisaties (massage, coaching, etc)" }
       - { label: "Methoden", name: "methoden", widget: "list" , hint: "Welke behandelmethoden gebruik je"}
       - { label: "Klachten", name: "klachten", widget: "list", required: false, hint: "Welke klachten kun je helpen (stress, rugpijn, etc)" }
       - { label: "Kaart-tags", name: "kaart_tags", widget: "list", required: false, hint: "3 korte labels voor de profielkaart" }
@@ -53,15 +53,15 @@ collections:
       - { label: "Doelgroepen", name: "doelgroepen", widget: "list", required: false , hint: "Voor wie is je werk (ouderen, kinderen, etc)"}
       - { label: "Opleidingen", name: "opleidingen", widget: "list", required: false , hint: "Je opleidingen en certificaten"}
       - { label: "Verenigingen", name: "verenigingen", widget: "list", required: false , hint: "Lidmaatschappen van beroepsorganisaties"}
-      - { label: "Bio (korte introductie)", name: "bio", widget: "text", hint: "Je introductieparagraaf (wie ben je, wat doe je)" }
+      - { label: "Bio (korte introductie)", name: "bio", widget: "text", required: false, hint: "Je introductieparagraaf (wie ben je, wat doe je)" }
       - { label: "Waarom is dit jouw werk?", name: "waarom", widget: "text", required: false, hint: "Waarom ben je deze werkzaamheden gaan doen" }
       - { label: "Wat maakt jou anders?", name: "onderscheid", widget: "text", required: false, hint: "Wat maakt jou anders van andere therapeuten" }
       - { label: "Waarom bel je mij?", name: "voor_wie", widget: "text", required: false, hint: "Voor wie is jouw werk ideaal" }
       - { label: "Wat zeggen cliënten over jou?", name: "wat_zeggen_clienten", widget: "text", required: false, hint: "Wat zeggen tevreden cliënten over je" }
       - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false, hint: "Wat kunnen cliënten verwachten na een sessie" }
       - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: true , hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
-      - { label: "Uitgelicht", name: "uitgelicht", widget: "boolean", default: false, hint: "Toont deze bewust-maker op de homepage" }
-      - { label: "Lidmaatschap", name: "lidmaatschap", widget: "select", options: ["Bewust-maker","Mee-maker"], default: "Bewust-maker" }
+      - { label: "Uitgelicht", name: "uitgelicht", widget: "boolean", default: false, required: false, hint: "Toont deze bewust-maker op de homepage" }
+      - { label: "Lidmaatschap", name: "lidmaatschap", widget: "select", options: ["Bewust-maker","Mee-maker"], default: "Bewust-maker", required: false }
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
 
   - name: bewust-makers-aanmeldingen
