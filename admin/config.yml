@@ -63,7 +63,6 @@ collections:
       - { label: "Uitgelicht", name: "uitgelicht", widget: "boolean", default: false, hint: "Toont deze bewust-maker op de homepage" }
       - { label: "Lidmaatschap", name: "lidmaatschap", widget: "select", options: ["Bewust-maker","Mee-maker"], default: "Bewust-maker" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
   - name: bewust-makers-aanmeldingen
     label: Tally-aanmeldingen — Modereren (ALLE VELDEN)
@@ -105,7 +104,6 @@ collections:
       - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false }
       - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: false, hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
   - name: agenda
     label: Agenda — Evenementen
