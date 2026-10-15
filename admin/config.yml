@@ -215,21 +215,41 @@ collections:
           - { label: "Notitie", name: "notitie", widget: "text", required: false }
           - { label: "Status", name: "status", widget: "select", options: ["Te verwerken","Uitnodiging verstuurd","Actief"], default: "Te verwerken" }
 
-  - name: handleidingen
-    label: Handleidingen
+  - name: hulp
+    label: Hulp & Handleidingen
     files:
-      - label: "Moderatie handleiding (simpel)"
-        name: "handleiding_moderatie_simpel"
-        file: "HANDLEIDING_MODERATIE_SIMPEL.md"
+      - label: "1. Hoe in te loggen"
+        name: "hulp_inloggen"
+        file: "HULP_INLOGGEN.md"
         fields:
           - { label: "Inhoud", name: "body", widget: "markdown" }
-      - label: "Moderatie handleiding (uitgebreid)"
-        name: "handleiding_moderatie"
-        file: "HANDLEIDING_MODERATIE.md"
+      - label: "2. Bewust-makers goedkeuren"
+        name: "hulp_bewust_makers_goedkeuren"
+        file: "HULP_BEWUST_MAKERS_GOEDKEUREN.md"
         fields:
           - { label: "Inhoud", name: "body", widget: "markdown" }
-      - label: "Inloggen handleiding"
-        name: "inloggen_handleiding"
-        file: "INLOGGEN_HANDLEIDING.md"
+      - label: "3. Bewust-maker profielen bewerken"
+        name: "hulp_bewust_makers_bewerken"
+        file: "HULP_BEWUST_MAKERS_BEWERKEN.md"
+        fields:
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+      - label: "4. Agenda-evenementen beheren"
+        name: "hulp_agenda"
+        file: "HULP_AGENDA.md"
+        fields:
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+      - label: "5. Kennisbank artikelen toevoegen"
+        name: "hulp_kennisbank"
+        file: "HULP_KENNISBANK.md"
+        fields:
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+      - label: "6. Inspiratie-artikelen toevoegen"
+        name: "hulp_inspiratie"
+        file: "HULP_INSPIRATIE.md"
+        fields:
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+      - label: "⚠️ Wat je NIET mag doen"
+        name: "hulp_waarschuwingen"
+        file: "HULP_WAARSCHUWINGEN.md"
         fields:
           - { label: "Inhoud", name: "body", widget: "markdown" }
