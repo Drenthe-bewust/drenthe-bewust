@@ -214,3 +214,22 @@ collections:
           - { label: "Type", name: "type", widget: "select", options: ["Bewust-maker","Mee-maker"], default: "Bewust-maker" }
           - { label: "Notitie", name: "notitie", widget: "text", required: false }
           - { label: "Status", name: "status", widget: "select", options: ["Te verwerken","Uitnodiging verstuurd","Actief"], default: "Te verwerken" }
+
+  - name: handleidingen
+    label: Handleidingen
+    files:
+      - label: "Moderatie handleiding (simpel)"
+        name: "handleiding_moderatie_simpel"
+        file: "HANDLEIDING_MODERATIE_SIMPEL.md"
+        fields:
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+      - label: "Moderatie handleiding (uitgebreid)"
+        name: "handleiding_moderatie"
+        file: "HANDLEIDING_MODERATIE.md"
+        fields:
+          - { label: "Inhoud", name: "body", widget: "markdown" }
+      - label: "Inloggen handleiding"
+        name: "inloggen_handleiding"
+        file: "INLOGGEN_HANDLEIDING.md"
+        fields:
+          - { label: "Inhoud", name: "body", widget: "markdown" }
