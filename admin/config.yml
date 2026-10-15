@@ -150,6 +150,18 @@ collections:
       - { label: "Layout", name: "layout", widget: "hidden", default: "kennisbank-artikel" }
       - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
+  - name: inspiratie
+    label: Inspiratie
+    folder: _inspiratie
+    create: true
+    identifier_field: titel
+    summary: "{{titel}}"
+    fields:
+      - { label: "Titel", name: "titel", widget: "string" }
+      - { label: "Inhoud", name: "body", widget: "markdown" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "inspiratie-artikel" }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
+
   - name: teksten
     label: Teksten aanpassen
     files:

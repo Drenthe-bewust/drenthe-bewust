@@ -1,0 +1,37 @@
+---
+layout: standaard
+---
+
+<div class="pagina-header">
+  <h1>{{ page.titel | default: page.title }}</h1>
+  <p>Inspiratie van onze bewust-makers</p>
+</div>
+
+<section class="sectie">
+  <div class="container container--nauw">
+
+    <!-- ARTIKEL INHOUD -->
+    <div style="line-height:1.85;margin-bottom:2rem;font-size:1.02rem;">
+      {{ content }}
+    </div>
+
+    <!-- TERUG LINK -->
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="{{ '/inspiratie/' | relative_url }}" style="font-size:0.9rem;color:var(--tekst-licht);">
+        ← Terug naar Inspiratie
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="sectie sectie--kleur">
+  <div class="container" style="text-align:center;">
+    <h2>Heb jij ook een verhaal te delen?</h2>
+    <p style="max-width:500px;margin:0.8rem auto 1.5rem;color:var(--tekst-licht);">Ben je een bewust-maker met waardevolle kennis of ervaringen? We horen graag van je.</p>
+    <a href="mailto:info@drenthe-bewust.nl?subject=Inspiratie artikel aanleveren" class="knop knop--goud">
+      ✉️ Stuur je artikel in
+    </a>
+  </div>
+</section>

@@ -37,6 +37,9 @@ collections:
   kennisbank:
     output: true
     permalink: /kennisbank/:slug/
+  inspiratie:
+    output: true
+    permalink: /inspiratie/:slug/
 
 defaults:
   - scope:
@@ -56,6 +59,12 @@ defaults:
       type: "kennisbank"
     values:
       layout: "kennisbank-artikel"
+      gepubliceerd: true
+  - scope:
+      path: ""
+      type: "inspiratie"
+    values:
+      layout: "inspiratie-artikel"
       gepubliceerd: true
 
 exclude:
