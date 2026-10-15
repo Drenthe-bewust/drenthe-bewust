@@ -22,13 +22,19 @@ Scroll naar beneden:
 
 **Vink dit AAN** ✅ → Klik **"Opslaan"**
 
-**KLAAR! Profiel gaat live op www.drenthe-bewust.nl/onze-bewust-makers/ om 22:00 uur vandaag.**
+**KLAAR!**
 
-(Wijzigingen worden elke dag om 22:00 uur verwerkt)
+---
+
+## 📅 TIMING
+
+**Normaal:** Profiel gaat live om **22:00 uur vandaag**
+
+**Direct publiceren?** Zie "1. Hoe in te loggen" → "DIRECT PUBLICEREN?"
 
 ## Oeps, fout gemaakt?
 
 1. Open het profiel opnieuw
 2. Zet het vinkje **UIT**
 3. Klik **"Opslaan"**
-4. Profiel wordt verwijderd bij volgende 22:00 uur update
+4. Profiel wordt verwijderd

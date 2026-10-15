@@ -17,6 +17,10 @@ Je ziet alle velden.
 
 Klik **"Opslaan"** → Klaar!
 
-**(Wijzigingen gaan live om 22:00 uur vandaag)**
+---
 
-Wijzigingen worden elke dag om 22:00 uur verwerkt.
+## 📅 TIMING
+
+**Normaal:** Wijzigingen gaan live om **22:00 uur vandaag**
+
+**Direct publiceren?** Zie "1. Hoe in te loggen" → "DIRECT PUBLICEREN?"

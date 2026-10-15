@@ -19,7 +19,13 @@ Je kan Markdown gebruiken (zie kennisbank).
 
 Klik **"Opslaan"** → Klaar!
 
-**(Artikel gaat live op www.drenthe-bewust.nl/inspiratie/ om 22:00 uur vandaag)**
+---
+
+## 📅 TIMING
+
+**Normaal:** Artikel gaat live om **22:00 uur vandaag**
+
+**Direct publiceren?** Zie "1. Hoe in te loggen" → "DIRECT PUBLICEREN?"
 
 ## Wijzigen of verwijderen?
 

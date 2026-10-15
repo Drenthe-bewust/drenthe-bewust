@@ -22,7 +22,13 @@ Klik **"Nieuw"**
 
 Klik **"Opslaan"** → Klaar!
 
-**(Event gaat live om 22:00 uur vandaag)**
+---
+
+## 📅 TIMING
+
+**Normaal:** Event gaat live om **22:00 uur vandaag**
+
+**Direct publiceren?** Zie "1. Hoe in te loggen" → "DIRECT PUBLICEREN?"
 
 ## Wijzigen of verwijderen?
 
