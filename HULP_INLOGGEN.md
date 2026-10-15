@@ -8,24 +8,12 @@ Ga naar: **https://www.drenthe-bewust.nl/admin/**
 
 Je ziet een knop **"Login with GitHub"** → Klik erop
 
-## Stap 3: Voer je GitHub-gegevens in
+## Stap 3: Voer je gegevens in
 
 - GitHub gebruikersnaam of email
 - Wachtwoord
-- Klaar! Je bent ingelogd
+- (Evt. twee-factor code)
 
-## Twee-factor authenticatie?
+## Klaar! 🎉
 
-Als je twee-factor authenticatie hebt ingesteld: voer je code in (via authenticator-app of SMS)
-
-## Je bent nu in het CMS! 🎉
-
-Je ziet linkse menu met:
-- Bewust-makers
-- Mee-makers
-- Agenda
-- Kennisbank
-- Inspiratie
-- Hulp & Handleidingen
-
-Veel sterkte! 💪
+Je bent nu in het CMS. Je ziet het menu aan de linkerkant.

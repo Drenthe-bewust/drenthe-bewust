@@ -248,8 +248,8 @@ collections:
         file: "HULP_INSPIRATIE.md"
         fields:
           - { label: "Inhoud", name: "body", widget: "markdown" }
-      - label: "⚠️ Wat je NIET mag doen"
-        name: "hulp_waarschuwingen"
-        file: "HULP_WAARSCHUWINGEN.md"
+      - label: "7. Categorieën (geef door aan Nathalie)"
+        name: "hulp_categorien"
+        file: "HULP_CATEGORIEN.md"
         fields:
           - { label: "Inhoud", name: "body", widget: "markdown" }

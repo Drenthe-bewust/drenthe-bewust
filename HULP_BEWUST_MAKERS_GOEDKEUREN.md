@@ -1,52 +1,34 @@
-# 2. Hoe bewust-makers goedkeuren & publiceren
+# 2. Bewust-makers goedkeuren & publiceren
 
 ## Stap 1: Open "Tally-aanmeldingen"
 
-In het linkermenu zie je: **"Tally-aanmeldingen — Modereren"**
-Klik erop → je ziet een lijst met alle nieuwe aanmeldingen
+Klik op **"Tally-aanmeldingen — Modereren"** in het linkermenu
 
 ## Stap 2: Klik op een naam
 
-Je ziet alle gegevens die de persoon via Tally heeft ingevuld:
-- Naam, praktijk, stad, provincie
-- Website, email, telefoon
-- Categorieën (Massage, Coaching, etc.)
-- Methoden, ervaring, tarief
-- etc.
+Je ziet alle ingevulde gegevens.
 
-## Stap 3: Controleer alles
+## Stap 3: Check en wijzig indien nodig
 
-**Controleert op:**
-- ✅ Naam en praktijk ingevuld?
-- ✅ Email geldig?
-- ✅ Website werkt?
-- ✅ Geen spellingsfouten?
+- Ziet het er goed uit? → Stap 5
+- Iets te verbeteren? → Wijzig het en klik **"Opslaan"**
 
-## Stap 4: Wijzig indien nodig
+## Stap 4: Publiceer het profiel
 
-Zie je een fout? → Zet je cursor in het veld → Wijzig het → **Klik "Opslaan"**
-
-## Stap 5: Publiceer het profiel! 🎉
-
-Scroll naar beneden en zie je:
+Scroll naar beneden:
 ```
 ☐ Gepubliceerd
 ```
 
-**Vink dit vakje AAN** ✅ → Klik **"Opslaan"**
+**Vink dit AAN** ✅ → Klik **"Opslaan"**
 
-**KLAAR! Het profiel is nu live op www.drenthe-bewust.nl/onze-bewust-makers/**
+**KLAAR! Profiel gaat live op www.drenthe-bewust.nl/onze-bewust-makers/**
 
-Dit duurt ~1-2 minuten.
+(Dit duurt ~1-2 minuten)
 
 ## Oeps, fout gemaakt?
 
-Geen probleem!
 1. Open het profiel opnieuw
-2. Zet het vinkje **UIT** (☐ Gepubliceerd)
+2. Zet het vinkje **UIT**
 3. Klik **"Opslaan"**
-4. Profiel verdwijnt van website
-
----
-
-**Vragen?** Zie "⚠️ Wat je NIET mag doen" voor waarschuwingen.
+4. Profiel is verwijderd

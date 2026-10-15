@@ -1,50 +1,24 @@
-# 6. Hoe inspiratie-artikelen toevoegen
+# 6. Inspiratie-artikelen toevoegen
 
 ## Stap 1: Open "Inspiratie"
 
-In het linkermenu zie je: **"Inspiratie"**
-Klik erop
+Klik op **"Inspiratie"** in het linkermenu
 
-## Stap 2: Nieuw artikel toevoegen
+## Stap 2: Nieuw artikel?
 
-Klik de **"Nieuw"** knop → je ziet een formulier
+Klik **"Nieuw"**
 
-## Stap 3: Vul de titel in
+## Stap 3: Vul in
 
-- **Titel**: Bijvoorbeeld "Waarom vakantie niet altijd energie geeft" of "Gezonde vetten"
+- **Titel**: Bijv. "Waarom vakantie niet altijd helpt" of "Gezonde vetten"
+- **Inhoud**: Schrijf je artikel/verhaal
 
-## Stap 4: Schrijf het artikel
+Je kan Markdown gebruiken (zie kennisbank).
 
-Klik in het **"Inhoud"** veld → Schrijf je inspiratie-artikel
+## Stap 4: Opslaan
 
-**Je kan Markdown gebruiken** (net als kennisbank):
-- `**vet**` voor vette tekst
-- `## Kopje` voor kopjes
-- `- item` voor lijsten
-- `[link](url)` voor links
+Klik **"Opslaan"** → Artikel gaat live op www.drenthe-bewust.nl/inspiratie/
 
-## Stap 5: Opslaan
+## Wijzigen of verwijderen?
 
-Klik **"Opslaan"** → Artikel is nu live op de inspiratie-pagina!
-
-Je kan het vinden op: **www.drenthe-bewust.nl/inspiratie/**
-
-Dit duurt ~1-2 minuten.
-
-## Artikel wijzigen?
-
-Klik op het artikel → wijzig → Klik **"Opslaan"**
-
-## Artikel verwijderen?
-
-Klik op het artikel → Klik **"Verwijder"**
-
----
-
-**Inspiratie-artikelen zijn:**
-- Persoonlijke verhalen van bewust-makers
-- Tips & inzichten
-- Praktische adviezen
-- Ervaringen delen
-
-Veel sterkte! ✍️
+Klik op het artikel → wijzig → **"Opslaan"** of **"Verwijder"**

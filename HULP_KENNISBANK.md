@@ -1,48 +1,28 @@
-# 5. Hoe kennisbank artikelen toevoegen
+# 5. Kennisbank artikelen toevoegen
 
 ## Stap 1: Open "Kennisbank"
 
-In het linkermenu zie je: **"Kennisbank"**
-Klik erop
+Klik op **"Kennisbank"** in het linkermenu
 
-## Stap 2: Nieuw artikel toevoegen
+## Stap 2: Nieuw artikel?
 
-Klik de **"Nieuw"** knop → je ziet een formulier
+Klik **"Nieuw"**
 
-## Stap 3: Vul de titel in
+## Stap 3: Vul in
 
-- **Titel**: Bijvoorbeeld "NEI-therapie" of "Wat is voetreflexologie?"
+- **Titel**: Bijv. "NEI-therapie" of "Voetreflexologie"
+- **Inhoud**: Schrijf je artikel
 
-## Stap 4: Schrijf de artikel inhoud
+Je kan Markdown gebruiken:
+- `**vet**` = **vet**
+- `## Kopje` = kopje
+- `- item` = lijstitem
+- `[link](url)` = link
 
-Klik in het **"Inhoud"** veld → Schrijf je artikel
+## Stap 4: Opslaan
 
-**Je kan Markdown gebruiken:**
-- `**vet**` voor vette tekst
-- `*schuingedrukt*` voor cursief
-- `## Titel` voor kopjes
-- `- item` voor lijsten
-- `[link](url)` voor links
+Klik **"Opslaan"** → Artikel gaat live op www.drenthe-bewust.nl/kennisbank/
 
-## Stap 5: Opslaan
+## Wijzigen of verwijderen?
 
-Klik **"Opslaan"** → Artikel is nu live op de kennisbank!
-
-Je kan het vinden op: **www.drenthe-bewust.nl/kennisbank/**
-
-## Artikel wijzigen?
-
-Klik op het artikel in de lijst → wijzig → Klik **"Opslaan"**
-
-## Artikel verwijderen?
-
-Klik op het artikel → Klik **"Verwijder"**
-
----
-
-**Tip:** Goede artikelen bevatten:
-- Duidelijke titel
-- Korte intro
-- Onderverdeeld in kopjes
-- Praktische tips
-- Duidelijke taal
+Klik op het artikel → wijzig → **"Opslaan"** of **"Verwijder"**

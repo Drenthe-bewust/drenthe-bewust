@@ -1,38 +1,27 @@
-# 4. Hoe agenda-evenementen beheren
+# 4. Agenda-evenementen beheren
 
 ## Stap 1: Open "Agenda — Evenementen"
 
-In het linkermenu zie je: **"Agenda — Evenementen"**
-Klik erop
+Klik op **"Agenda — Evenementen"** in het linkermenu
 
-## Stap 2: Nieuw evenement toevoegen
+## Stap 2: Nieuw evenement?
 
-Klik de **"Nieuw"** knop → je ziet een formulier
+Klik **"Nieuw"**
 
-## Stap 3: Vul de velden in
+## Stap 3: Vul in
 
 - **Titel**: Naam van het evenement
-- **Datum**: In formaat **yyyy-mm-dd** (bijv. 2026-11-15)
-- **Tijd**: In formaat **uu:mm** (bijv. 19:30) — optioneel
-- **Organisator**: Wie organiseert het? — optioneel
-- **Locatie**: Waar is het? — optioneel
-- **Beschrijving**: Wat is het over?
-- **Link**: Naar ticket/registratie pagina — optioneel
+- **Datum**: yyyy-mm-dd (bijv. 2026-11-15)
+- **Tijd**: uu:mm (bijv. 19:30) — optioneel
+- **Organisator**: optioneel
+- **Locatie**: optioneel
+- **Beschrijving**: Waar gaat het over?
+- **Link**: Naar ticket/inschrijving — optioneel
 
 ## Stap 4: Opslaan
 
-Klik **"Opslaan"** → Event is nu live op de agenda!
+Klik **"Opslaan"** → Event gaat live op de agenda!
 
-Dit duurt ~1-2 minuten.
+## Wijzigen of verwijderen?
 
-## Evenement wijzigen?
-
-Klik op het evenement → wijzig de velden → Klik **"Opslaan"**
-
-## Evenement verwijderen?
-
-Klik op het evenement → Klik **"Verwijder"** knop
-
----
-
-**Let op:** Datumformaat is BELANGRIJK! Gebruik altijd **yyyy-mm-dd**
+Klik op het event → wijzig → **"Opslaan"** of **"Verwijder"**
