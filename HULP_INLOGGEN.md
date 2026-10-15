@@ -4,13 +4,13 @@
 
 Ga naar: **https://www.drenthe-bewust.nl/admin/**
 
-## Stap 2: Klik "Login with GitHub"
+## Stap 2: Klik "Login with Netlify"
 
-Je ziet een knop **"Login with GitHub"** → Klik erop
+Je ziet een knop **"Login with Netlify"** → Klik erop
 
 ## Stap 3: Voer je gegevens in
 
-- GitHub gebruikersnaam of email
+- Email of gebruikersnaam
 - Wachtwoord
 - (Evt. twee-factor code)
 

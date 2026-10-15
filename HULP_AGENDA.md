@@ -20,7 +20,9 @@ Klik **"Nieuw"**
 
 ## Stap 4: Opslaan
 
-Klik **"Opslaan"** → Event gaat live op de agenda!
+Klik **"Opslaan"** → Klaar!
+
+**(Event gaat live om 22:00 uur vandaag)**
 
 ## Wijzigen of verwijderen?
 

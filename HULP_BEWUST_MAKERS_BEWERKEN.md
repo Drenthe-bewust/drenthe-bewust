@@ -17,4 +17,6 @@ Je ziet alle velden.
 
 Klik **"Opslaan"** → Klaar!
 
-(Wijzigingen gaan live binnen ~1-2 minuten)
+**(Wijzigingen gaan live om 22:00 uur vandaag)**
+
+Wijzigingen worden elke dag om 22:00 uur verwerkt.

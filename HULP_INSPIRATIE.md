@@ -17,7 +17,9 @@ Je kan Markdown gebruiken (zie kennisbank).
 
 ## Stap 4: Opslaan
 
-Klik **"Opslaan"** → Artikel gaat live op www.drenthe-bewust.nl/inspiratie/
+Klik **"Opslaan"** → Klaar!
+
+**(Artikel gaat live op www.drenthe-bewust.nl/inspiratie/ om 22:00 uur vandaag)**
 
 ## Wijzigen of verwijderen?
 

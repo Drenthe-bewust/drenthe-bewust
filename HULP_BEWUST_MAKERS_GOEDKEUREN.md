@@ -1,4 +1,4 @@
-# 2. Bewust-makers goedkeuren & publiceren
+# 2. Hoe bewust-makers goedkeuren & publiceren
 
 ## Stap 1: Open "Tally-aanmeldingen"
 
@@ -22,13 +22,13 @@ Scroll naar beneden:
 
 **Vink dit AAN** ✅ → Klik **"Opslaan"**
 
-**KLAAR! Profiel gaat live op www.drenthe-bewust.nl/onze-bewust-makers/**
+**KLAAR! Profiel gaat live op www.drenthe-bewust.nl/onze-bewust-makers/ om 22:00 uur vandaag.**
 
-(Dit duurt ~1-2 minuten)
+(Wijzigingen worden elke dag om 22:00 uur verwerkt)
 
 ## Oeps, fout gemaakt?
 
 1. Open het profiel opnieuw
 2. Zet het vinkje **UIT**
 3. Klik **"Opslaan"**
-4. Profiel is verwijderd
+4. Profiel wordt verwijderd bij volgende 22:00 uur update

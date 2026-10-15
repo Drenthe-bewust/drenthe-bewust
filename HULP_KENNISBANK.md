@@ -21,7 +21,9 @@ Je kan Markdown gebruiken:
 
 ## Stap 4: Opslaan
 
-Klik **"Opslaan"** → Artikel gaat live op www.drenthe-bewust.nl/kennisbank/
+Klik **"Opslaan"** → Klaar!
+
+**(Artikel gaat live op www.drenthe-bewust.nl/kennisbank/ om 22:00 uur vandaag)**
 
 ## Wijzigen of verwijderen?
 
