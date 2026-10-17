@@ -112,7 +112,7 @@ exports.handler = async function(event) {
 
   try {
     await githubRequest('PUT', filePath, {
-      message: `Agenda-aanmelding (${status}): ${item.titel} [skip ci]`,
+      message: `Agenda-aanmelding (${status}): ${item.titel} [skip ci] [netlify-skip]`,
       content: Buffer.from(inhoud).toString('base64'),
       branch:  process.env.GITHUB_BRANCH || 'main',
     });

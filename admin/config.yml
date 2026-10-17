@@ -2,9 +2,9 @@ backend:
   name: git-gateway
   branch: main
   commit_messages:
-    create: "Nieuw in {{collection}}: {{slug}}"
-    update: "Bijgewerkt in {{collection}}: {{slug}}"
-    delete: "Verwijderd uit {{collection}}: {{slug}}"
+    create: "Nieuw in {{collection}}: {{slug}} [netlify-skip]"
+    update: "Bijgewerkt in {{collection}}: {{slug}} [netlify-skip]"
+    delete: "Verwijderd uit {{collection}}: {{slug}} [netlify-skip]"
     uploadMedia: "Afbeelding toegevoegd: {{path}}"
     deleteMedia: "Afbeelding verwijderd: {{path}}"
 

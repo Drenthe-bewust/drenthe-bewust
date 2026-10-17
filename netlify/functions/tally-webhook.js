@@ -171,7 +171,7 @@ exports.handler = async function(event) {
   });
   const newContent = `---\n${newYaml}---\n`;
 
-  const commitBericht = `Tally-aanmelding: ${data.naam || slug} [skip ci]`;
+  const commitBericht = `Tally-aanmelding: ${data.naam || slug} [skip ci] [netlify-skip]`;
 
   try {
     await githubCreateFile(filePath, newContent, commitBericht);

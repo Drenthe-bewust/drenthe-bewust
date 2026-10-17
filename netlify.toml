@@ -1,6 +1,7 @@
 [build]
   command = "bundle exec jekyll build --config _config.yml,_config_netlify.yml"
   publish = "_site"
+  ignore = 'git log -1 --pretty=%B | grep -qF "[netlify-skip]"'
 
 [build.environment]
   RUBY_VERSION = "3.2.0"
