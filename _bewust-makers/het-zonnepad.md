@@ -36,11 +36,7 @@ kaart_tags:
   - NLP Master
   - Quantum Hypnose
 citaat: Van overleven naar leven — voluit leven als de zon.
-omschrijving: >-
-  Tijdens een sessie verbindt Lydia met het veld en met jouw ziel, waardoor ze
-  het juiste zegt en doet op het juiste moment. Als advocaat van de ziel beweeg
-  je in haar veld naar dat wat jij op dat moment mag bewegen, aankijken en
-  ontwikkelen.
+omschrijving: "Het Zonnepad in Klazienaveen. Lydia van der Helm werkt met het veld en je ziel, zodat je beweegt naar wat jij op dit moment nodig hebt."
 website: https://www.hetzonnepad.nl
 email_zichtbaar: info@hetzonnepad.nl
 telefoon: 06 13 18 08 35

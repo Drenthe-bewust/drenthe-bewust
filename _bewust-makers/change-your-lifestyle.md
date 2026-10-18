@@ -124,6 +124,7 @@ na_sessie: >
 
 
   Stap voor stap werken we aan meer bewustwording, balans en een leefstijl die echt bij jou past.
+omschrijving: "Holistische leefstijlcoaching bij Change Your Lifestyle in Nieuw-Amsterdam, met een gezonde start en een darmprogramma."
 gepubliceerd: true
 uitgelicht: false
 lidmaatschap: Bewust-maker

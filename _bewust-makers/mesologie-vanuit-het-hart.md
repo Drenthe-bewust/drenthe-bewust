@@ -107,6 +107,7 @@ na_sessie: |
   is er een derde consult nodig om iemand volledig op eigen benen te zetten.
 
   Veel cliënten kiezen daarna voor een halfjaarlijkse of jaarlijkse check-up.
+omschrijving: "Mesologie vanuit het hart in Veenhuizen. Vitamines en mineralen uitmeten, electro-acupunctuur-diagnostiek en voedingsadvies."
 gepubliceerd: true
 uitgelicht: false
 lidmaatschap: Bewust-maker
