@@ -59,6 +59,7 @@ wat_zeggen_clienten: Cliënten zeggen dat ze het een fijne ervaring vinden, erg 
 na_sessie: "Een diepe ontspanning ervaren.  Verlichting voelen. Soms eerst
   vermoeid voelen maar later veel energie ervaren. "
 volgorde: 12
+permalink: /bewust-makers/jacqueline-genegel/
 gepubliceerd: true
 uitgelicht: false
 lidmaatschap: Bewust-maker
