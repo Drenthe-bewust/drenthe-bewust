@@ -22,7 +22,7 @@ kaart_tags:
   - Voeding
   - Leefstijl
   - Human Design
-volgorde: 11
+volgorde: 12
 website: https://changelifestyle.nl/
 email_zichtbaar: changeyourlifestyle.08@outlook.com
 telefoon: 06 81656576

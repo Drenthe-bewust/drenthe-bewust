@@ -25,7 +25,7 @@ kaart_tags:
   - Orthomoleculair
   - Vermoeidheid
 citaat: Herstel van binnenuit — voeding als fundament van je gezondheid.
-volgorde: 9
+volgorde: 12
 website: https://www.by-juud.nl
 email_zichtbaar: info@by-juud.nl
 telefoon: ''

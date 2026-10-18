@@ -24,7 +24,7 @@ kaart_tags:
   - EMS
   - Bodysculptor
   - Bewegen
-volgorde: 7
+volgorde: 12
 website: https://www.pontinoi.nl
 email_zichtbaar: ""
 telefoon: "06 38634688"

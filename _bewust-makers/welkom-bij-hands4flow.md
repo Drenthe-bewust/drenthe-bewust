@@ -30,7 +30,7 @@ kaart_tags:
   - Coaching
   - Reikicursussen
 citaat: Jou terugzetten in je kracht, fysiek, mentaal én spiritueel.
-volgorde: 1
+volgorde: 12
 lat: 52.7697
 lon: 6.9142
 omschrijving: Elsemarie van der Ploeg heeft massage & Reiki praktijk hands4flow

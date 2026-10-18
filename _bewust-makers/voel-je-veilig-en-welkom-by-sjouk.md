@@ -23,7 +23,7 @@ kaart_tags:
   - "Coaching"
   - "Healing"
   - "Angst"
-volgorde: 6
+volgorde: 12
 website: https://www.bysjouk.nl
 email_zichtbaar: info@bysjouk.nl
 telefoon: 06-20082386

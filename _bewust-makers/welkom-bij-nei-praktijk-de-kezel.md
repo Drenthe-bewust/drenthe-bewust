@@ -28,7 +28,7 @@ kaart_tags:
   - Coaching
   - Massage
 citaat: '“ jouw weg terug naar wie je werkelijk bent: in balans, vol vertrouwen & energiek!'
-volgorde: 2
+volgorde: 12
 lat: 52.8034
 lon: 6.9989
 omschrijving: NEI &Reiki praktijk de Kezel, voor jonge vrouwen, moeders (én haar gezin!)

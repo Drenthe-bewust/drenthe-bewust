@@ -123,6 +123,7 @@ na_sessie: >-
   concreet inzicht dat je meteen kunt toepassen. Cliënten noemen herhaaldelijk:
   ontlading van het zenuwstelsel, minder streng voor jezelf zijn, en het gevoel
   gezien en begrepen te worden — soms al na de eerste sessie.
+volgorde: 12
 gepubliceerd: true
 uitgelicht: false
 lidmaatschap: Bewust-maker

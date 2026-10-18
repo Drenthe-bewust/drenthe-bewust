@@ -24,7 +24,7 @@ kaart_tags:
   - "Mindset"
   - "Koud water"
 citaat: "Stressvermindering via ademhaling, mindset en bewuste beweging."
-volgorde: 10
+volgorde: 12
 website: https://www.mindful-inspirations.nl
 email_zichtbaar: info@mindful-inspirations.nl
 telefoon: 06-42250088

@@ -22,7 +22,7 @@ kaart_tags:
   - "Verlies"
   - "Workshops"
 citaat: "Balans is voor mij geen einddoel, maar een beweging."
-volgorde: 5
+volgorde: 12
 website: ""
 email_zichtbaar: ""
 telefoon: ""

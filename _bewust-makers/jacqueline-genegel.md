@@ -58,6 +58,7 @@ voor_wie: "Voor mensen die voelen dat ze niet in balans zijn, energie lek, pijn,
 wat_zeggen_clienten: Cliënten zeggen dat ze het een fijne ervaring vinden, erg ontspannen.
 na_sessie: "Een diepe ontspanning ervaren.  Verlichting voelen. Soms eerst
   vermoeid voelen maar later veel energie ervaren. "
+volgorde: 12
 gepubliceerd: true
 uitgelicht: false
 lidmaatschap: Bewust-maker

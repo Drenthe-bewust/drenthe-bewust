@@ -24,7 +24,7 @@ kaart_tags:
   - Access Bars
   - Coaching
 citaat: Patronen doorbreken voor meer rust en zelfvertrouwen.
-volgorde: 4
+volgorde: 12
 website: https://www.janetvanderveen.nl
 email_zichtbaar: contact@janetvanderveen.nl
 telefoon: 06-40237827

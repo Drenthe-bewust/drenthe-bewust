@@ -83,6 +83,7 @@ na_sessie: >-
   Iedereen reageert anders. Sommigen voelen direct een bevrijding, anderen hebben
   langer de tijd nodig om een sessie te verwerken. Maar een diepe innerlijke rust
   en dat daarmee je levensenergie optimaal stroomt, dat is het doel van de sessie.
+volgorde: 12
 gepubliceerd: true
 uitgelicht: false
 lidmaatschap: Bewust-maker

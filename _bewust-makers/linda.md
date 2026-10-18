@@ -30,6 +30,7 @@ onderscheid: ""
 voor_wie: ""
 wat_zeggen_clienten: ""
 na_sessie: ""
+volgorde: 12
 gepubliceerd: false
 uitgelicht: false
 lidmaatschap: "Bewust-maker"

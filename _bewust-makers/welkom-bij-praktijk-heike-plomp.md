@@ -26,7 +26,7 @@ kaart_tags:
   - "Shiatsu"
   - "Cupping"
   - "Kruiden"
-volgorde: 3
+volgorde: 12
 website: https://www.praktijkheikeplomp.nl
 email_zichtbaar: info@praktijkheikeplomp.nl
 telefoon: 06-50413422
