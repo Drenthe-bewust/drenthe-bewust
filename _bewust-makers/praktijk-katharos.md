@@ -22,7 +22,9 @@ kaart_tags:
   - Reïncarnatie
   - Reiki
 citaat: Bereid om heel diep te gaan met mijn cliënten.
-omschrijving: "Praktijk Katharos in Geesbrug. Een sessie duurt 2 tot 2,5 uur, met een intake van 30 minuten vooraf."
+omschrijving: >-
+  Een sessie duurt 2 tot 2,5 uur. De meeste cliënten komen 1 à 2 keer voor het
+  gewenste resultaat. Intake van 30 minuten, daarna direct aan de slag.
 website: https://praktijkkatharos.nl/
 email_zichtbaar: info@praktijkkatharos.nl
 telefoon: 06 - 14 80 82 90
