@@ -99,6 +99,22 @@
   to = "/mee-maker/"
   status = 301
 
+# Bewust-makers die naar /bewust-makers/:slug/ zijn verhuisd
+[[redirects]]
+  from = "/welkom-bij-hands4flow/"
+  to = "/bewust-makers/welkom-bij-hands4flow/"
+  status = 301
+
+[[redirects]]
+  from = "/welkom-bij-atlamodi/"
+  to = "/bewust-makers/welkom-bij-atlamodi/"
+  status = 301
+
+[[redirects]]
+  from = "/welkom-bij-praktijk-janet-van-der-veen/"
+  to = "/bewust-makers/welkom-bij-praktijk-janet-van-der-veen/"
+  status = 301
+
 # Oude WordPress-artikelen → aanmelden
 [[redirects]]
   from = "/zelf-bewust-maker-worden/"
