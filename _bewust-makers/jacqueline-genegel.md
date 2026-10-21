@@ -20,13 +20,14 @@ kaart_tags:
   - Voetreflex
   - Massage
 citaat: Wanneer iemand openstaat voor behandeling kunnen er mooie dingen ontstaan.
+volgorde: 12
 omschrijving: |+
   Ik geef healing Touch behandelingen en voetmassages op basis van voetreflex
 
 
 
 
-website: https://www.facebook.com/jacqueline.genegelaalten/
+website: https://www.facebook.com/jacqralineaalten/
 online: Op aanvraag
 sessieduur: 60 minuten
 tarief: "35"
@@ -58,10 +59,9 @@ voor_wie: "Voor mensen die voelen dat ze niet in balans zijn, energie lek, pijn,
 wat_zeggen_clienten: Cliënten zeggen dat ze het een fijne ervaring vinden, erg ontspannen.
 na_sessie: "Een diepe ontspanning ervaren.  Verlichting voelen. Soms eerst
   vermoeid voelen maar later veel energie ervaren. "
-volgorde: 12
-permalink: /bewust-makers/jacqueline-genegel/
 gepubliceerd: true
 uitgelicht: false
-lidmaatschap: Bewust-maker
 layout: bewust-maker
+permalink: /bewust-makers/jacqueline-genegel/
+lidmaatschap: Bewust-maker
 ---
