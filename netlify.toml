@@ -1,5 +1,6 @@
 [build]
-  command = "bundle exec jekyll build --config _config.yml,_config_netlify.yml"
+  # Build faalt als de homepage na de build niet meer klopt. Dan blijft de vorige versie live.
+  command = "bundle exec jekyll build --config _config.yml,_config_netlify.yml && grep -q 'id=\"page-top\"' _site/index.html && grep -q 'Van onze bewust-maker' _site/index.html"
   publish = "_site"
   ignore = 'git log -1 --pretty=%B | grep -qF "[netlify-skip]"'
 
