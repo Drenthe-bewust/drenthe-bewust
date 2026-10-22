@@ -26,6 +26,13 @@ jobs:
         run: |
           bundle exec jekyll build --config _config.yml,_config_netlify.yml
 
+      - name: Controleer dat de homepage intact is
+        run: |
+          # Na de build moet index.html nog de homepage zijn, niet een artikel.
+          grep -q 'id="page-top"' _site/index.html || { echo "❌ Homepage-marker ontbreekt in _site/index.html"; exit 1; }
+          grep -q 'Van onze bewust-maker' _site/index.html || { echo "❌ Blok 'Van onze bewust-maker' ontbreekt op de homepage"; exit 1; }
+          echo "✅ Homepage intact"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
