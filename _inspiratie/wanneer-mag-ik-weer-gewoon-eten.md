@@ -1,7 +1,6 @@
 ---
 titel: Wanneer mag ik weer gewoon eten?
 layout: inspiratie-artikel
-permalink: ""
 ---
 Wanneer mag ik weer gewoon eten?
 

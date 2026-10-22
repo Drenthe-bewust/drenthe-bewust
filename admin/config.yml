@@ -120,7 +120,6 @@ collections:
       - { label: "Beschrijving", name: "beschrijving", widget: "text" }
       - { label: "Link", name: "link", widget: "string", required: false }
       - { label: "Layout", name: "layout", widget: "hidden", default: "agenda-item" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
   - name: mee-makers
     label: Mee-makers — Beheren
@@ -136,7 +135,6 @@ collections:
       - { label: "Website", name: "website", widget: "string", required: false , hint: "Jouw website of webpagina"}
       - { label: "Beschrijving", name: "beschrijving", widget: "text" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "mee-maker" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
   - name: kennisbank
     label: Kennisbank
@@ -148,7 +146,6 @@ collections:
       - { label: "Titel", name: "titel", widget: "string" }
       - { label: "Inhoud", name: "body", widget: "markdown" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "kennisbank-artikel" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
   - name: inspiratie
     label: Inspiratie
@@ -160,7 +157,6 @@ collections:
       - { label: "Titel", name: "titel", widget: "string" }
       - { label: "Inhoud", name: "body", widget: "markdown" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "inspiratie-artikel" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "" }
 
   - name: teksten
     label: Teksten aanpassen
