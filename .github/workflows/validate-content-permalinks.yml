@@ -1,0 +1,58 @@
+name: Validate Content Permalinks
+
+# Voorkomt dat een artikel de homepage overschrijft (permalink leeg of "/").
+on:
+  pull_request:
+    paths:
+      - '_inspiratie/**'
+      - '_kennisbank/**'
+      - '_bewust-makers/**'
+      - '_mee-makers/**'
+      - 'admin/config.yml'
+      - '.github/workflows/validate-content-permalinks.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - '_inspiratie/**'
+      - '_kennisbank/**'
+      - '_bewust-makers/**'
+      - '_mee-makers/**'
+      - 'admin/config.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Geen lege of root-permalinks in content
+        run: |
+          errors=0
+          for file in _inspiratie/*.md _kennisbank/*.md _bewust-makers/*.md _mee-makers/*.md; do
+            [ -f "$file" ] || continue
+            if grep -qE '^permalink:[[:space:]]*(""|'"''"'|/)?[[:space:]]*$' "$file"; then
+              echo "❌ $file heeft een lege of root-permalink. Verwijder de regel of gebruik de collectie-standaard."
+              errors=$((errors + 1))
+            fi
+          done
+          if [ $errors -gt 0 ]; then
+            echo "❌ $errors bestand(en) met een gevaarlijke permalink. Dit overschrijft de homepage."
+            exit 1
+          fi
+          echo "✅ Geen gevaarlijke permalinks"
+
+      - name: CMS mag geen lege permalink meer zetten
+        run: |
+          if grep -n 'name: "permalink"' admin/config.yml; then
+            echo "❌ admin/config.yml bevat een permalink-veld. Het CMS zet dan lege permalinks."
+            exit 1
+          fi
+          echo "✅ CMS-config zonder permalink-veld"
+
+      - name: Homepage moet de homepage blijven
+        run: |
+          if grep -q 'layout: inspiratie-artikel' index.html 2>/dev/null; then
+            echo "❌ index.html is overschreven door een artikel"
+            exit 1
+          fi
+          grep -q '<!-- HERO -->' index.html && echo "✅ Homepage intact"
