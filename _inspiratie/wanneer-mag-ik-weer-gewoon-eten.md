@@ -1,6 +1,7 @@
 ---
 titel: Wanneer mag ik weer gewoon eten?
 datum: 2026-10-21
+auteur: Elsemarie van der Ploeg
 layout: inspiratie-artikel
 ---
 Wanneer mag ik weer gewoon eten?
