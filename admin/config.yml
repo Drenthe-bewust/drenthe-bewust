@@ -155,6 +155,7 @@ collections:
     summary: "{{titel}}"
     fields:
       - { label: "Titel", name: "titel", widget: "string" }
+      - { label: "Datum", name: "datum", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, hint: "Bepaalt de volgorde: nieuwste bovenaan" }
       - { label: "Inhoud", name: "body", widget: "markdown" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "inspiratie-artikel" }
 

@@ -1,5 +1,6 @@
 ---
 titel: Wanneer mag ik weer gewoon eten?
+datum: 2026-10-21
 layout: inspiratie-artikel
 ---
 Wanneer mag ik weer gewoon eten?

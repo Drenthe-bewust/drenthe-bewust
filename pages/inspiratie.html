@@ -19,7 +19,7 @@ permalink: /inspiratie/
 
     <!-- Artikelen grid -->
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;">
-      {% assign artikelen = site.inspiratie | sort: "titel" %}
+      {% assign artikelen = site.inspiratie | sort: "datum" | reverse %}
       {% for artikel in artikelen %}
       {% if artikel.link %}{% assign doel = artikel.link %}{% else %}{% assign doel = artikel.url %}{% endif %}
       <a href="{{ doel | relative_url }}"
