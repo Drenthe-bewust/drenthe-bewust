@@ -156,6 +156,7 @@ collections:
     fields:
       - { label: "Titel", name: "titel", widget: "string" }
       - { label: "Datum", name: "datum", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, hint: "Bepaalt de volgorde: nieuwste bovenaan" }
+      - { label: "Auteur", name: "auteur", widget: "string", required: false, hint: "Naam van de bewust-maker die het artikel schreef. Leeg = Drenthe-Bewust" }
       - { label: "Inhoud", name: "body", widget: "markdown" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "inspiratie-artikel" }
 

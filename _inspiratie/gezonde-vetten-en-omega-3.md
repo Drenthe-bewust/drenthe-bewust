@@ -1,5 +1,6 @@
 ---
 titel: "Gezonde vetten? Je lichaam heeft ze harder nodig dan je denkt"
+datum: 2026-06-01
 auteur: "Judith Hendriks — orthomoleculair therapeut, By Juud"
 link: "/kennisbank/gezonde-vetten-en-omega-3/"
 ---

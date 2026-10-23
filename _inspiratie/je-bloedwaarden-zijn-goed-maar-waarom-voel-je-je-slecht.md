@@ -1,5 +1,6 @@
 ---
 titel: "Je bloedwaarden zijn goed. Maar waarom voel je je dan zo slecht?"
+datum: 2026-06-15
 auteur: "Judith Hendriks — orthomoleculair therapeut, By Juud"
 link: "https://by-juud.nl/je-bloedwaarden-zijn-goed-maar-waarom-voel-je-je-dan-zo-slecht/"
 ---

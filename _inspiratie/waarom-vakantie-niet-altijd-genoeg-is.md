@@ -1,5 +1,6 @@
 ---
 titel: "Waarom vakantie niet altijd genoeg is om weer energie te krijgen"
+datum: 2026-06-30
 auteur: "Judith Hendriks — orthomoleculair therapeut, By Juud"
 ---
 
