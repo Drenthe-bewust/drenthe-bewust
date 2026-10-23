@@ -13,64 +13,36 @@ permalink: /inspiratie/
 <section class="sectie">
   <div class="container">
 
-    <!-- Nieuw artikel — augustus 2026 -->
-    <div class="blog-uitgelicht">
-      <p class="blog-uitgelicht__label">📝 Judith Hendriks — orthomoleculair therapeut, By Juud</p>
-      <h2>Waarom vakantie niet altijd genoeg is om weer energie te krijgen</h2>
-      <p style="margin-top:1rem; font-size:1.05rem; color:var(--tekst-licht);">
-        De koffers zijn uitgepakt. Je bent weer aan het werk. Toch hoor je het overal: <em>"Ik heb een heerlijke vakantie gehad, maar ben er nog niet aan toe om weer aan het werk te gaan."</em>
-      </p>
-      <p><strong>Hoe kan dat?</strong><br>
-        Veel mensen verwachten dat vakantie zorgt voor het terugkrijgen van hun energie. En natuurlijk doet even niets doen veel goeds. Maar rust alleen is niet hetzelfde als herstel.
-      </p>
-      <p>
-        Als je al langere tijd roofbouw pleegt, ongezond eet, weinig of slecht slaapt of belangrijke voedingsstoffen tekortkomt, dan verdwijnen die oorzaken niet vanzelf tijdens een vakantie. Vergelijk je lichaam met een huis waarin maandenlang achterstallig onderhoud is ontstaan. Een paar weken de deur op slot doen, lost dat onderhoud niet op.
-      </p>
-      <p>
-        Vermoeidheid is zelden een op zichzelf staand probleem. Het is vaak een signaal dat je lichaam je iets probeert te vertellen. Energiedip in de middag, onrustige slaap, minder concentratie — dat zijn signalen om serieus te nemen.
-      </p>
-      <p>
-        De periode na de vakantie is daarom juist een mooi moment om stil te staan bij de vraag: <strong>wat heeft mijn lichaam eigenlijk nodig?</strong> Niet alleen voor de eerste werkweken, maar ook voor oktober, november en december — en als voorbereiding op de griepgolven die elk najaar terugkomen.
-      </p>
-      <p>
-        Begin met kleine stapjes: regelmaat in je dag, volwaardige maaltijden met voldoende eiwitten en groenten, blijf bewegen en geef je lichaam de bouwstoffen die het nodig heeft. Echte energie ontstaat niet in twee weken vakantie — die bouw je iedere dag opnieuw op.
-      </p>
-      <p style="background:var(--creme); border-left:4px solid var(--goud); padding:1rem 1.2rem; border-radius:0 0.5rem 0.5rem 0; margin-top:1.2rem; font-size:0.95rem;">
-        🎙️ <strong>Gratis webinar: Jouw energie, jouw leven</strong><br>
-        Judith neemt je mee in de belangrijkste oorzaken van vermoeidheid en laat je zien hoe je stap voor stap weer energie kunt opbouwen.
-        <a href="{{ '/contact/' | relative_url }}" class="knop knop--goud" style="display:inline-block; margin-top:0.8rem; font-size:0.85rem;">Meer informatie →</a>
-      </p>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem;">
-        <a href="{{ '/bewust-makers/byjuud/' | relative_url }}" class="knop knop--omlijnd" style="font-size:0.9rem;">Bekijk profiel Judith</a>
-      </div>
+    <div style="max-width:680px;margin:0 auto 2.5rem;text-align:center;">
+      <p>Artikelen van onze bewust-makers over gezondheid, energie, voeding en persoonlijke groei. Kies een onderwerp en lees verder.</p>
     </div>
 
-    <!-- Eerder artikel van Judith -->
-    <div class="blog-uitgelicht" style="margin-top:2rem;">
-      <p class="blog-uitgelicht__label">📝 Judith Hendriks — orthomoleculair therapeut, By Juud</p>
-      <h2>Je bloedwaarden zijn goed. Maar waarom voel je je dan zo slecht?</h2>
-      <p style="margin-top:1rem; font-size:1.05rem; color:var(--tekst-licht);">
-        Ze functioneren nog wel. Ze gaan naar hun werk. Zorgen voor anderen. Sporten soms zelfs nog. Maar ondertussen worden ze moe wakker, voelen ze zich sneller overprikkeld en horen ze bij de dokter steeds: <em>"Alles ziet er goed uit."</em>
-      </p>
-      <p>Judith legt uit wat er dan wél aan de hand kan zijn — en hoe voeding het verschil maakt.</p>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.2rem;">
-        <a href="https://by-juud.nl/je-bloedwaarden-zijn-goed-maar-waarom-voel-je-je-dan-zo-slecht/" target="_blank" rel="noopener" class="knop knop--groen">Lees het volledige artikel →</a>
-        <a href="{{ '/bewust-makers/byjuud/' | relative_url }}" class="knop knop--omlijnd" style="font-size:0.9rem;">Bekijk profiel Judith</a>
-      </div>
+    <!-- Artikelen grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;">
+      {% assign artikelen = site.inspiratie | sort: "titel" %}
+      {% for artikel in artikelen %}
+      {% if artikel.link %}{% assign doel = artikel.link %}{% else %}{% assign doel = artikel.url %}{% endif %}
+      <a href="{{ doel | relative_url }}"
+         style="display:flex;flex-direction:column;background:var(--wit);border-radius:var(--radius-groot);padding:1.5rem;box-shadow:var(--schaduw);text-decoration:none;border:2px solid transparent;transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s;"
+         onmouseover="this.style.borderColor='var(--goud)';this.style.transform='translateY(-3px)';this.style.boxShadow='var(--schaduw-hover)'"
+         onmouseout="this.style.borderColor='transparent';this.style.transform='';this.style.boxShadow='var(--schaduw)'">
+        <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--goud-donker);margin-bottom:0.4rem;">
+          {% if artikel.auteur %}{{ artikel.auteur }}{% else %}Drenthe-Bewust{% endif %}
+        </div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.6rem;color:var(--tekst);line-height:1.35;">
+          {{ artikel.titel }}
+        </h3>
+        <p style="font-size:0.9rem;color:var(--tekst-licht);line-height:1.55;margin:0 0 1rem;">
+          {{ artikel.content | strip_html | strip | truncate: 140 }}
+        </p>
+        <span style="margin-top:auto;font-size:0.85rem;font-weight:700;color:var(--goud-donker);">Lees het artikel →</span>
+      </a>
+      {% endfor %}
     </div>
 
-    <!-- Artikel van Judith: gezonde vetten -->
-    <div class="blog-uitgelicht" style="margin-top:2rem;">
-      <p class="blog-uitgelicht__label">📝 Judith Hendriks — orthomoleculair therapeut, By Juud</p>
-      <h2>Gezonde vetten? Je lichaam heeft ze harder nodig dan je denkt</h2>
-      <p style="margin-top:1rem; font-size:1.05rem; color:var(--tekst-licht);">
-        Vetten kregen jarenlang de schuld van allerlei gezondheidsproblemen. Maar niet alle vetten zijn hetzelfde — en sommige zijn zelfs onmisbaar. Judith legt uit welke rol omega-3 speelt in je cellen, je energie en je algehele gezondheid.
-      </p>
-      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.2rem;">
-        <a href="{{ '/kennisbank/gezonde-vetten-en-omega-3/' | relative_url }}" class="knop knop--groen">Lees het artikel →</a>
-        <a href="{{ '/bewust-makers/byjuud/' | relative_url }}" class="knop knop--omlijnd" style="font-size:0.9rem;">Bekijk profiel Judith</a>
-      </div>
-    </div>
+    {% if artikelen.size == 0 %}
+    <p style="text-align:center;color:var(--tekst-licht);margin-top:2rem;">Er staan nog geen artikelen online.</p>
+    {% endif %}
 
   </div>
 </section>
