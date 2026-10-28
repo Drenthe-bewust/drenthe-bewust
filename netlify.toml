@@ -148,6 +148,12 @@
   to = "/"
   status = 301
 
+# Aanmeldformulier is hernoemd naar meld-je-aan
+[[redirects]]
+  from = "/aanmeldformulier/"
+  to = "/meld-je-aan/"
+  status = 301
+
 # URL zonder trailing slash
 [[redirects]]
   from = "/onze-bewust-makers"
