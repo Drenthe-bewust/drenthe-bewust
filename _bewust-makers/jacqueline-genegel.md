@@ -1,6 +1,6 @@
 ---
 naam: Jacqueline Genegel
-praktijk: Jacqraline
+praktijk: Jacqueline
 foto: /assets/images/makers/img-20260226-wa0023.jpg
 provincie: Drenthe
 stad: Coevorden
