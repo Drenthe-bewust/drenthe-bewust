@@ -18,7 +18,8 @@
   <link rel="icon" href="{{ '/assets/images/logo-icoon.png' | relative_url }}" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="{{ '/assets/css/stijl.css' | relative_url }}">
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XE6BWBWR44"></script>
@@ -31,7 +32,7 @@
   <!-- Cloudflare Web Analytics -->
   <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "648330a82442422c91bfeccf4498e2b9"}'></script>
   <!-- End Cloudflare Web Analytics -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -69,15 +70,17 @@
   {% include footer.html %}
   <script src="{{ '/assets/js/hoofd.js' | relative_url }}"></script>
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", function(user) {
-        if (!user) {
-          window.netlifyIdentity.on("login", function() {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function() {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>
