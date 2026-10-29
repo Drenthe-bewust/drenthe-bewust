@@ -12,8 +12,9 @@ categorieen:
   - Kindgericht
   - Lichaamsgericht
 methoden:
-  - Reiki sessies en Reiki cursussen (Reiki1
-  - Reiki2 en Reiki Master) Reiki voor huis dieren
+  - Reiki sessies
+  - Reiki cursussen (Reiki 1 t/m Reiki Master)
+  - Reiki voor huisdieren
   - cacaoceremonies
   - tienerworkshops
 klachten:
