@@ -106,6 +106,10 @@ ul { list-style: none; }
   background: url('../images/tulpen.jpg') center/cover no-repeat;
   opacity: 0.22;
 }
+@media (max-width: 640px) {
+  .hero::before { background-image: url('../images/tulpen-mobiel.jpg'); }
+  .pagina-header::before { background-image: url('../images/tulpen-mobiel.jpg'); }
+}
 /* Tulpen achtergrond */
 .hero::after {
   content: '';

@@ -21,6 +21,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="{{ '/assets/css/stijl.css' | relative_url }}">
+  {% if page.preload_hero %}
+  <link rel="preload" as="image" href="{{ '/assets/images/tulpen-mobiel.jpg' | relative_url }}" media="(max-width: 640px)" fetchpriority="high">
+  <link rel="preload" as="image" href="{{ '/assets/images/tulpen.jpg' | relative_url }}" media="(min-width: 641px)" fetchpriority="high">
+  {% endif %}
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XE6BWBWR44"></script>
   <script>
