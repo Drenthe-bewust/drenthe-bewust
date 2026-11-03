@@ -62,8 +62,8 @@ bio: Ik zeg altijd dat ik hoofdwerk en hartwerk heb. Dit is mijn hartwerk. Hier
   lijf te zitten (ik was jarenlang ziek met vage klachten) en dat trok al snel
   mensen aan die nieuwsgierig waren naar wat ik deed. En zo ben ik begonnen met
   sessies en cursussen. Ik heb jaren geleden met mezelf afgesproken dat ik mijn
-  hart volg. Dat betekent voor mij elk dag kiezen voor dingen waar mijn hart van
-  gaat kloppen. En dat is onder andere dit werk.
+  hart volg. Dat betekent voor mij elke dag kiezen voor dingen waar mijn hart
+  van gaat kloppen. En dat is onder andere dit werk.
 waarom: Mijn methode werkt omdat ik een eigen wijze (eigenwijze?) heb. Mijn
   uitgangspunt is dat iedereen zelf het beste weet wat op dat moment nodig is en
   dat ik die eigen wijsheid in het bewustzijn breng. Ik laat mensen hun eigen
