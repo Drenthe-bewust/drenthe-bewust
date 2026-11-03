@@ -1,6 +1,7 @@
 ---
 naam: Ghislaine Schmidt
 praktijk: Boomkracht
+foto: /assets/images/makers/profielfoto-ghislaine.jpeg
 provincie: Drenthe
 stad: Emmen
 categorieen:
@@ -78,7 +79,7 @@ wat_zeggen_clienten: Wat ik vaak terug hoor is dat mensen zich op hun gemak
 na_sessie: Je neemt Alles mee, ik ben zelf ook elke keer weer verrast.
 gepubliceerd: true
 uitgelicht: false
-lidmaatschap: Bewust-maker
 layout: bewust-maker
 permalink: /bewust-makers/ghislaine-schmidt/
+lidmaatschap: Bewust-maker
 ---
