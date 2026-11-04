@@ -16,9 +16,9 @@ Vanaf het moment van conceptie gebeurt er van alles. Je groeit in de buik van je
 
 Soms kom je daar later in je leven bepaalde patronen van tegen. Dingen die je steeds opnieuw tegenkomt, zonder precies te weten waarom. Misschien merk je dat je jezelf wegcijfert, moeite hebt om je grenzen aan te geven, sterk de behoefte hebt aan verbinding of juist heel zelfstandig bent geworden. Het kan ook zijn dat je bepaalde gevoelens of reacties hebt waarvan je denkt: *waar komt dit toch vandaan?*
 
-Tijdens een NEI-therapiesessie ga je samen op zoek naar die onderliggende geboortepatronen en vooral naar de behoeften die daaronder liggen.
+Tijdens een NEI-therapiesessie ga je samen op zoek naar de onderliggende geboortepatronen en vooral naar de behoeften die daaronder liggen. Bij deze sessie wordt er gebruik gemaakt van testlijsten in combinatie met spiertesten of de biotensor.  
 
-Dat kan soms een heel mooi “oja…”-moment geven. Ineens valt er iets op zijn plek. Je begrijpt beter waarom je op een bepaalde manier reageert of waarom een bepaald thema steeds terugkomt.
+Deze geboortepatronen en de onderliggende behoeftes kunnen soms een heel mooi “oja…”-moment geven. Ineens valt er iets op zijn plek. Je begrijpt beter waarom je op een bepaalde manier reageert of waarom een bepaald thema steeds terugkomt.
 
 En dan hoeft er niet meteen iets opgelost te worden.
 
