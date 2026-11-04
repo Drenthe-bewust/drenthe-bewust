@@ -70,7 +70,7 @@ waarom: Mijn methode werkt omdat ik een eigen wijze (eigenwijze?) heb. Mijn
   kracht voelen en hun eigen inzichten krijgen en laat ze daarop vertrouwen.
 onderscheid: Niks maakt mij anders, we zijn allemaal uniek!
 voor_wie: "Je belt mij als je door een zware periode gaat, spanning hebt, weer
-  in je kracht wil komen staan, op zoek bent naar een Reiki cursus of een ander
+  in je kracht wil komen staan, op zoek bent naar een Reiki cursus of een andere
   workshop. "
 wat_zeggen_clienten: Wat ik vaak terug hoor is dat mensen zich op hun gemak
   voelen, dat het een magische en liefdevolle ervaring is en dat ik goed in het
