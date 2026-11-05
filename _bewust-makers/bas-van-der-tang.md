@@ -1,5 +1,5 @@
 ---
-naam: Bas van der Tang
+naam: "Bas van der Tang "
 praktijk: Bas van der Tang
 foto: /assets/images/makers/bas-van-der-tang.jpg
 provincie: Groningen
@@ -85,9 +85,9 @@ na_sessie: Voel je meer ruimte, fysiek, emotioneel, spiritueel. Meer gronding en
   meer helderheid in structuren en patronen.
 gepubliceerd: true
 uitgelicht: true
-lidmaatschap: Bewust-maker
 layout: bewust-maker
 permalink: /bewust-makers/bas-van-der-tang/
+lidmaatschap: Bewust-maker
 kennisbank_links:
   - Ademwerk
   - Body Dearmouring
