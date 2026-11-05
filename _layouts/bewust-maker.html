@@ -64,7 +64,7 @@ layout: standaard
         {% for item in _zoek %}
           {% assign _gevonden = nil %}
           {% assign _i_lc = item | downcase %}
-          {% for artikel in site.kennisbank %}
+          {% for artikel in site.kennisbank | where_exp: "a", "a.concept != true" %}
             {% if artikel.gepubliceerd and artikel.titel %}
               {% assign _a_lc = artikel.titel | downcase %}
               {% if _a_lc == _i_lc %}{% assign _gevonden = artikel %}{% break %}{% endif %}

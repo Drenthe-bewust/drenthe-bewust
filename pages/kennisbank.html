@@ -40,7 +40,7 @@ permalink: /kennisbank/
     <!-- Artikelen grid -->
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;"
          id="kb-grid">
-      {% assign gepubliceerd = site.kennisbank | where: "gepubliceerd", true | sort: "titel" %}
+      {% assign gepubliceerd = site.kennisbank | where: "gepubliceerd", true | where_exp: "a", "a.concept != true" | sort: "titel" %}
       {% for artikel in gepubliceerd %}
       <a href="{{ artikel.url | relative_url }}"
          class="kb-item"
