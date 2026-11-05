@@ -38,9 +38,9 @@ beschrijving: >-
 
   Duur: 1 dag plus een terugkom moment
 
-  9:30 welkom, 10u starten we
+  9:30 welkom, 10:00 starten we, 17:00 einde
 
-  Locatie: hands4fow in Emmen
+  Locatie: hands4flow in Emmen
 
   Investering: € 281
 
@@ -49,5 +49,6 @@ beschrijving: >-
 
   Je gaat naar huis met meer kennis, maar vooral met meer vertrouwen in jezelf en in jouw eigen manier van werken met Reiki.
 link: https://www.hands4flow.nl
+gepubliceerd: true
 layout: agenda-item
 ---
