@@ -120,6 +120,7 @@ collections:
       - { label: "Locatie", name: "locatie", widget: "string", required: false }
       - { label: "Beschrijving", name: "beschrijving", widget: "text" }
       - { label: "Link", name: "link", widget: "string", required: false }
+      - { label: "Doorlopend", name: "doorlopend", widget: "boolean", default: false, hint: "✅ AAN = altijd beschikbaar (geen datum). ❌ UIT = vaste datum" }
       - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: true, hint: "✅ AAN = item staat op de agenda. ❌ UIT = verborgen" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "agenda-item" }
 
