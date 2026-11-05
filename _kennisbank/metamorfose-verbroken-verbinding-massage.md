@@ -1,12 +1,9 @@
 ---
 titel: Metamorfose/ verbroken verbinding massage
+concept: false
 layout: kennisbank-artikel
 ---
-## NEI & de Verbroken verbinding-Massage
-
-NEI - De verbroken verbinding, is gericht op het bewust maken van de eerste verbroken verbinding met jezelf, ontstaan in de conceptie periode, tijdens de zwangerschap en jouw geboorte, de bij behorende massage is ook bekend als de metamorfose massage.
-
-### De Verbindingsmassage
+De verbroken verbinding massage, is ook bekend als de metamorfose massage. Het is gericht op het bewust maken van de eerste verbroken verbinding met jezelf, ontstaan in de conceptie periode, tijdens de zwangerschap en jouw geboorte.
 
 #### Een reis terug naar jezelf
 
@@ -20,9 +17,7 @@ Tijdens een NEI-therapiesessie ga je samen op zoek naar de onderliggende geboort
 
 Deze geboortepatronen en de onderliggende behoeftes kunnen soms een heel mooi “oja…”-moment geven. Ineens valt er iets op zijn plek. Je begrijpt beter waarom je op een bepaalde manier reageert of waarom een bepaald thema steeds terugkomt.
 
-En dan hoeft er niet meteen iets opgelost te worden.
-
-Soms is het al heel waardevol om iets te begrijpen en jezelf daarin beter te leren kennen.
+En dan hoeft er niet meteen iets opgelost te worden. Soms is het al heel waardevol om iets te begrijpen en jezelf daarin beter te leren kennen.
 
 ##### Van inzicht naar voelen
 
