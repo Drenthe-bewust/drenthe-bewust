@@ -118,7 +118,8 @@ collections:
       - { label: "Prijs (bijv. € 281)", name: "prijs", widget: "string", required: false }
       - { label: "Organisator", name: "organisator", widget: "string", required: false }
       - { label: "Locatie", name: "locatie", widget: "string", required: false }
-      - { label: "Beschrijving", name: "beschrijving", widget: "text" }
+      - { label: "Korte samenvatting (zichtbaar op de kaart)", name: "samenvatting", widget: "text", required: false }
+      - { label: "Beschrijving (volledige tekst, via Meer lezen)", name: "beschrijving", widget: "text" }
       - { label: "Aanmeldlink", name: "aanmeld", widget: "string", required: false }
       - { label: "Doorlopend", name: "doorlopend", widget: "boolean", default: false, hint: "✅ AAN = altijd beschikbaar (geen datum). ❌ UIT = vaste datum" }
       - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: true, hint: "✅ AAN = item staat op de agenda. ❌ UIT = verborgen" }

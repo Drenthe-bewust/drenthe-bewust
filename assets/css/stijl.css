@@ -282,12 +282,23 @@ ul { list-style: none; }
 .formulier-melding.fout { background: #fce4e4; color: #c62828; border: 1px solid #ef9a9a; display: block; }
 
 /* ===================== AGENDA ===================== */
-.agenda-item {
-  background: var(--wit); border-radius: var(--radius); padding: 1.3rem;
+.agenda-filter { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.agenda-sectie-titel { font-size: 1.1rem; margin: 1.5rem 0 0.8rem; }
+.agenda-doorlopend-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+.agenda-kaart {
+  background: var(--wit); border-radius: var(--radius); padding: 1.2rem;
   margin-bottom: 0.9rem; box-shadow: var(--schaduw);
-  display: flex; gap: 1.3rem; align-items: flex-start; transition: box-shadow 0.2s;
+  display: flex; gap: 1.2rem; align-items: flex-start; transition: box-shadow 0.2s;
 }
-.agenda-item:hover { box-shadow: var(--schaduw-hover); }
+.agenda-kaart:hover { box-shadow: var(--schaduw-hover); }
+.agenda-kaart--doorlopend { flex-direction: column; margin-bottom: 0; }
+.agenda-kaart__body { flex: 1; min-width: 0; }
+.agenda-kaart__titel { font-size: 1rem; margin-bottom: 0.2rem; }
+.agenda-kaart__samenvatting { font-size: 0.92rem; margin-top: 0.5rem; }
+.agenda-meer { margin-top: 0.5rem; }
+.agenda-meer summary { cursor: pointer; color: var(--groen); font-weight: 600; font-size: 0.9rem; }
+.agenda-meer__tekst { font-size: 0.9rem; color: #555; margin-top: 0.5rem; }
+.agenda-kaart__knop { margin-top: 0.8rem; font-size: 0.83rem; padding: 0.5rem 1.1rem; }
 .agenda-datum { background: var(--goud); color: var(--tekst); border-radius: var(--radius); padding: 0.7rem 0.9rem; text-align: center; min-width: 58px; flex-shrink: 0; }
 .agenda-datum__dag { font-size: 1.6rem; font-weight: 700; line-height: 1; }
 .agenda-datum__maand { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
@@ -357,7 +368,7 @@ ul { list-style: none; }
   .hero { padding: 2.5rem 1rem 3rem; }
   .hero-knoppen { flex-direction: column; align-items: center; }
   .teller-rij { gap: 1.5rem; }
-  .agenda-item { flex-direction: column; gap: 0.8rem; }
+  .agenda-kaart { flex-direction: column; gap: 0.8rem; }
   .prijs-grid { grid-template-columns: 1fr; }
   .formulier-wrap { padding: 1.3rem; }
   .container { padding: 0 1rem; }

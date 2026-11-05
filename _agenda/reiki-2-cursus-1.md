@@ -1,6 +1,7 @@
 ---
 titel: Reiki 2 cursus
 datum: 2026-11-28
+samenvatting: "Verdieping van Reiki: meer vertrouwen in jezelf en je eigen intuïtie, met de drie Reiki 2-symbolen en werken op afstand."
 organisator: Hands4flow
 locatie: Emmen
 beschrijving: >-

@@ -19,69 +19,35 @@ permalink: /agenda/
     {% assign doorlopend = alle_items | where: "doorlopend", true | sort: "volgorde" %}
     {% assign gepland = alle_items | where: "doorlopend", false | sort: "datum" %}
 
+    <div class="agenda-filter" role="group" aria-label="Filter agenda">
+      <button class="zoek-filter-tag actief" data-agenda-filter="alles">Alles</button>
+      <button class="zoek-filter-tag" data-agenda-filter="eenmalig">Eenmalig</button>
+      <button class="zoek-filter-tag" data-agenda-filter="doorlopend">Doorlopend</button>
+    </div>
+
     <div id="agenda-komend">
 
-      {% for item in doorlopend %}
-      <article class="agenda-item" data-datum="">
-        <div class="agenda-datum">
-          <div class="agenda-datum__dag">∞</div>
-          <div class="agenda-datum__maand">Doorlopend</div>
+      {% if doorlopend.size > 0 %}
+      <div id="agenda-doorlopend">
+        <h2 class="agenda-sectie-titel">Doorlopend</h2>
+        <div class="agenda-doorlopend-grid">
+          {% for item in doorlopend %}
+          {% include agenda-kaart.html item=item soort="doorlopend" %}
+          {% endfor %}
         </div>
-        <div class="agenda-info">
-          <p class="agenda-info__titel">
-            {% if item.aanmeld and item.aanmeld != "" %}
-              <a href="{{ item.aanmeld }}" target="_blank" rel="noopener">{{ item.titel }}</a>
-            {% else %}
-              {{ item.titel }}
-            {% endif %}
-          </p>
-          <p class="agenda-info__meta">
-            📍 {{ item.locatie }} &nbsp;|&nbsp;
-            ⏰ {{ item.tijdstip }} &nbsp;|&nbsp;
-            💶 {{ item.prijs }}
-          </p>
-          {% if item.beschrijving %}
-          <p style="font-size:0.9rem;color:#555;margin-top:0.4rem;">{{ item.beschrijving }}</p>
-          {% endif %}
-          <p style="font-size:0.9rem;color:#555;margin-top:0.4rem;">
-            Aangeboden door: {{ item.organisator }}
-          </p>
-        </div>
-      </article>
-      {% endfor %}
+      </div>
+      {% endif %}
 
-      {% for item in gepland %}
-      {% assign datum_parts = item.datum | split: "-" %}
-      {% assign maanden = "jan,feb,mrt,apr,mei,jun,jul,aug,sep,okt,nov,dec" | split: "," %}
-      {% assign maand_nr = datum_parts[1] | minus: 1 %}
-      {% assign maand_naam = maanden[maand_nr] %}
-      <article class="agenda-item js-agenda-gepland" data-datum="{{ item.datum }}">
-        <div class="agenda-datum">
-          <div class="agenda-datum__dag">{{ datum_parts[2] }}</div>
-          <div class="agenda-datum__maand">{{ maand_naam }}</div>
+      {% if gepland.size > 0 %}
+      <div id="agenda-eenmalig">
+        <h2 class="agenda-sectie-titel">Eenmalige activiteiten</h2>
+        <div class="agenda-lijst">
+          {% for item in gepland %}
+          {% include agenda-kaart.html item=item soort="eenmalig" %}
+          {% endfor %}
         </div>
-        <div class="agenda-info">
-          <p class="agenda-info__titel">
-            {% if item.aanmeld and item.aanmeld != "" %}
-              <a href="{{ item.aanmeld }}" target="_blank" rel="noopener">{{ item.titel }}</a>
-            {% else %}
-              {{ item.titel }}
-            {% endif %}
-          </p>
-          <p class="agenda-info__meta">
-            📍 {{ item.locatie }} &nbsp;|&nbsp;
-            ⏰ {{ item.tijdstip }} &nbsp;|&nbsp;
-            💶 {{ item.prijs }}
-          </p>
-          {% if item.beschrijving %}
-          <p style="font-size:0.9rem;color:#555;margin-top:0.4rem;">{{ item.beschrijving }}</p>
-          {% endif %}
-          <p style="font-size:0.9rem;color:#555;margin-top:0.4rem;">
-            Georganiseerd door: {{ item.organisator }}
-          </p>
-        </div>
-      </article>
-      {% endfor %}
+      </div>
+      {% endif %}
 
       <div id="agenda-leeg" style="display:none; text-align:center; padding:3rem 0; color:var(--tekst-licht);">
         <p style="font-size:1.1rem;">Er staan momenteel geen activiteiten gepland.</p>
@@ -124,12 +90,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var historieWrap = document.getElementById('agenda-historie');
   var historieInhoud = document.getElementById('historie-inhoud');
-  var komendWrap = document.getElementById('agenda-komend');
   var leegEl = document.getElementById('agenda-leeg');
   var toggleBtn = document.getElementById('toggle-historie');
 
   var items = document.querySelectorAll('.js-agenda-gepland');
-  var komendAantal = document.querySelectorAll('.agenda-item:not(.js-agenda-gepland)').length;
+  var komendAantal = document.querySelectorAll('.agenda-kaart--doorlopend').length;
 
   items.forEach(function(item) {
     var datumStr = item.getAttribute('data-datum');
@@ -158,5 +123,19 @@ document.addEventListener('DOMContentLoaded', function() {
       toggleBtn.textContent = open ? '▴ Verberg vorige evenementen' : '▾ Toon vorige evenementen';
     });
   }
+
+  var filterKnoppen = document.querySelectorAll('[data-agenda-filter]');
+  var doorlopendWrap = document.getElementById('agenda-doorlopend');
+  var eenmaligWrap = document.getElementById('agenda-eenmalig');
+
+  filterKnoppen.forEach(function(knop) {
+    knop.addEventListener('click', function() {
+      filterKnoppen.forEach(function(k) { k.classList.remove('actief'); });
+      knop.classList.add('actief');
+      var filter = knop.dataset.agendaFilter;
+      if (doorlopendWrap) doorlopendWrap.style.display = (filter === 'alles' || filter === 'doorlopend') ? '' : 'none';
+      if (eenmaligWrap) eenmaligWrap.style.display = (filter === 'alles' || filter === 'eenmalig') ? '' : 'none';
+    });
+  });
 });
 </script>

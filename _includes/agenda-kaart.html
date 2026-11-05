@@ -1,0 +1,41 @@
+{% assign item = include.item %}
+{% if include.soort == "doorlopend" %}
+<article class="agenda-kaart agenda-kaart--doorlopend" data-type="doorlopend">
+  <div class="agenda-datum">
+    <div class="agenda-datum__dag">∞</div>
+    <div class="agenda-datum__maand">Doorlopend</div>
+  </div>
+{% else %}
+{% assign datum_parts = item.datum | split: "-" %}
+{% assign maanden = "jan,feb,mrt,apr,mei,jun,jul,aug,sep,okt,nov,dec" | split: "," %}
+{% assign maand_nr = datum_parts[1] | minus: 1 %}
+<article class="agenda-kaart agenda-kaart--eenmalig js-agenda-gepland" data-type="eenmalig" data-datum="{{ item.datum }}">
+  <div class="agenda-datum">
+    <div class="agenda-datum__dag">{{ datum_parts[2] }}</div>
+    <div class="agenda-datum__maand">{{ maanden[maand_nr] }}</div>
+  </div>
+{% endif %}
+  <div class="agenda-kaart__body">
+    <h3 class="agenda-kaart__titel">{{ item.titel }}</h3>
+    <p class="agenda-info__meta">
+      {% if item.locatie %}📍 {{ item.locatie }}{% endif %}
+      {% if item.tijdstip %}{% if item.locatie %} &nbsp;|&nbsp; {% endif %}⏰ {{ item.tijdstip }}{% endif %}
+      {% if item.prijs %}{% if item.locatie or item.tijdstip %} &nbsp;|&nbsp; {% endif %}💶 {{ item.prijs }}{% endif %}
+    </p>
+    {% if item.samenvatting %}
+    <p class="agenda-kaart__samenvatting">{{ item.samenvatting }}</p>
+    {% endif %}
+    {% if item.beschrijving %}
+    <details class="agenda-meer">
+      <summary>Meer lezen</summary>
+      <div class="agenda-meer__tekst">{{ item.beschrijving | newline_to_br }}</div>
+    </details>
+    {% endif %}
+    {% if item.organisator %}
+    <p class="agenda-info__meta">Georganiseerd door: {{ item.organisator }}</p>
+    {% endif %}
+    {% if item.aanmeld %}
+    <a href="{{ item.aanmeld }}" target="_blank" rel="noopener" class="knop knop--goud agenda-kaart__knop">Meer info / Aanmelden</a>
+    {% endif %}
+  </div>
+</article>
