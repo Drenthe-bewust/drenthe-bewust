@@ -50,7 +50,7 @@ beschrijving: >-
 layout: agenda-item
 prijs: € 281
 tijdstip: 10:00 - 17:00 uur
-link: https://www.hands4flow.nl
+aanmeld: https://www.hands4flow.nl
 doorlopend: false
 gepubliceerd: true
 ---
