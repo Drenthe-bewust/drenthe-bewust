@@ -54,8 +54,9 @@
     .db-publiceerbalk {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 400; display: flex; gap: 1rem; align-items: center;
       justify-content: center; flex-wrap: wrap; padding: .55rem 1rem; background: var(--creme);
-      border-top: 1px solid var(--border); font-size: .85rem; color: #555;
+      border-top: 1px solid var(--border); font-size: .85rem; color: #555; pointer-events: none;
     }
+    .db-publiceerbalk button, .db-publiceerbalk a { pointer-events: auto; }
     .db-publiceerbalk button {
       border: none; border-radius: 50px; padding: .4rem 1.1rem; background: var(--goud); color: var(--tekst);
       font-weight: 700; cursor: pointer; font-size: .85rem;
@@ -117,7 +118,7 @@
   (function () {
     var balk = document.createElement('div');
     balk.className = 'db-publiceerbalk';
-    balk.innerHTML = '<span>💾 <strong>Opslaan</strong> bewaart je wijziging; die staat om 22:00 online (uit = concept, niet zichtbaar). <strong>Direct online</strong> zet hem binnen ±2 min live. <strong>Terug zonder opslaan</strong> gooit je wijziging weg.</span>' +
+    balk.innerHTML = '<span>💾 <strong>Opslaan</strong> = online om 22:00 (uit = concept) · <strong>Terug zonder opslaan</strong> = weggooien</span>' +
       '<button type="button">⚡ Direct online (build)</button>' +
       '<a href="https://raw.githubusercontent.com/Drenthe-bewust/drenthe-bewust-site/main/HANDLEIDING_MODERATIE_SIMPEL.md" target="_blank" style="color: var(--groen-donker); text-decoration: none; font-weight: 700; padding: 0.4rem 1.1rem; background: #fff; border: 2px solid var(--groen); border-radius: 50px; display: inline-block; font-size: 0.85rem; cursor: pointer;">📖 Handleiding</a>' +
       '<span class="db-status"></span>';
