@@ -1,7 +1,8 @@
 ---
 titel: Reiki 2 cursus
 datum: 2026-11-28
-tijd: ""
+tijdstip: "10:00 - 17:00 uur"
+prijs: "€ 281"
 organisator: Hands4flow
 locatie: Emmen
 beschrijving: >-

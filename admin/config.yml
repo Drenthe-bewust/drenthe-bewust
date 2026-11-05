@@ -114,7 +114,8 @@ collections:
     fields:
       - { label: "Titel", name: "titel", widget: "string" }
       - { label: "Datum (yyyy-mm-dd)", name: "datum", widget: "string", pattern: ["^\\d{4}-\\d{2}-\\d{2}$", "Datum in formaat yyyy-mm-dd"] }
-      - { label: "Tijd (uu:mm)", name: "tijd", widget: "string", required: false, pattern: ["^\\d{2}:\\d{2}$", "Tijd in formaat uu:mm"] }
+      - { label: "Tijd (bijv. 10:00 - 17:00 uur)", name: "tijdstip", widget: "string", required: false }
+      - { label: "Prijs (bijv. € 281)", name: "prijs", widget: "string", required: false }
       - { label: "Organisator", name: "organisator", widget: "string", required: false }
       - { label: "Locatie", name: "locatie", widget: "string", required: false }
       - { label: "Beschrijving", name: "beschrijving", widget: "text" }
