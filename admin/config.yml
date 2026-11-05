@@ -59,7 +59,7 @@ collections:
       - { label: "Waarom bel je mij?", name: "voor_wie", widget: "text", required: false, hint: "Voor wie is jouw werk ideaal" }
       - { label: "Wat zeggen cliënten over jou?", name: "wat_zeggen_clienten", widget: "text", required: false, hint: "Wat zeggen tevreden cliënten over je" }
       - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false, hint: "Wat kunnen cliënten verwachten na een sessie" }
-      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: true , hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
+      - { label: "Zichtbaar op de site (uit = concept)", name: "gepubliceerd", widget: "boolean", default: true , hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
       - { label: "Uitgelicht", name: "uitgelicht", widget: "boolean", default: false, required: false, hint: "Toont deze bewust-maker op de homepage" }
       - { label: "Lidmaatschap", name: "lidmaatschap", widget: "select", options: ["Bewust-maker","Mee-maker"], default: "Bewust-maker", required: false }
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
@@ -102,7 +102,7 @@ collections:
       - { label: "Waarom bel je mij?", name: "voor_wie", widget: "text", required: false }
       - { label: "Wat zeggen cliënten over jou?", name: "wat_zeggen_clienten", widget: "text", required: false }
       - { label: "Wat neem je mee na een sessie?", name: "na_sessie", widget: "text", required: false }
-      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: false, hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
+      - { label: "Zichtbaar op de site (uit = concept)", name: "gepubliceerd", widget: "boolean", default: false, hint: "✅ AAN = profiel gaat live. ❌ UIT = verborgen"}
       - { label: "Layout", name: "layout", widget: "hidden", default: "bewust-maker" }
 
   - name: agenda
@@ -122,7 +122,7 @@ collections:
       - { label: "Beschrijving (volledige tekst, via Meer lezen)", name: "beschrijving", widget: "text" }
       - { label: "Aanmeldlink", name: "aanmeld", widget: "string", required: false }
       - { label: "Doorlopend", name: "doorlopend", widget: "boolean", default: false, hint: "✅ AAN = altijd beschikbaar (geen datum). ❌ UIT = vaste datum" }
-      - { label: "Gepubliceerd", name: "gepubliceerd", widget: "boolean", default: true, hint: "✅ AAN = item staat op de agenda. ❌ UIT = verborgen" }
+      - { label: "Zichtbaar op de site (uit = concept)", name: "gepubliceerd", widget: "boolean", default: true, hint: "✅ AAN = item staat op de agenda. ❌ UIT = verborgen" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "agenda-item" }
 
   - name: mee-makers
