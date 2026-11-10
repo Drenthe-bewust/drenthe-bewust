@@ -21,7 +21,12 @@ De grootste groei ontstaat juist in de emoties die wringen, pijn doen of verdrie
 ***Van daaruit is [JouwCoachLijn](www.jouwcoachlijn.com) ontstaan.***
 
 Want hoe fijn is het als je dagelijks een eigen lifecoach tot je beschikking hebt op elk gewenst moment van de dag?
-Een verlengstuk van professionals die mensen begeleiden in het leven vanuit diverse specialiteiten kiezen ervoor om ook op deze laagdrempelige manier kennis te maken met jou, je op weg te helpen naar richting, doelen en nieuwe focus.
+
+Drenthe-bewust laat je graag in contact komen, met JouwCoachLijn, want wij werken toe naar "*Een nieuwe generatie die leeft van binnenuit — vol vertrouwen, verbonden en bruisend van levenslust".* 
+
+Bij Drenthe-bewust geloven we erin dat je met de juiste mensen om je heen bewustwording kunt creëren en vandaaruit keuzes kunt maken en kan groeien naar een (zelf)bewuster, gelukkiger en gezonder leven. 
+
+JouwCoachLijn is een verlengstuk van professionals die mensen begeleiden in het leven vanuit diverse specialiteiten kiezen ervoor om ook op deze laagdrempelige manier kennis te maken met jou, je op weg te helpen naar richting, doelen en nieuwe focus.
 Gewoon direct telefonisch te bereiken, geen gedoe, gewoon bellen en je coach kiezen. 
 Een band mee opbouwen, jezelf niet opnieuw uit hoeven te leggen maar iemand die jou positief aanmoedigt in het leven en de dagelijkse omstandigheden.
 
@@ -40,5 +45,7 @@ Dit initiatief ligt bij Richard van [InnerForceCoaching](www.innerforcecoaching.
 2 bezielde mensen die als geen ander weten hoe transformatie werkt en het iedereen gunnen om weer te leven in plaats van te overleven. 
 Waar spiritualiteit en bewustwording voor jaren geleden nog een zweverig imago had, is de behoefte naar innerlijke groei groter dan ooit, iedereen mag zijn plaats innemen in deze wereld, zelfliefde is de bron van al het leven.
 Zij zien het als de reden waarom zij hier zijn om een plek te bieden waar mensen al hun kwetsbaarheid durven te uiten en meer levensgeluk kunnen ervaren.
+
+
 
 ![JouwCoachLijn ](/assets/images/makers/logo_jcl_edited_v2_bg_broken_white_color_-fbf8f1_.png "JouwCoachLijn")
