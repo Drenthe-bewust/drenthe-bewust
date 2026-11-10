@@ -10,6 +10,11 @@ permissions:
   pages: write
   id-token: write
 
+# Voorkomt dat twee Pages-deploys tegelijk lopen (fout "in progress deployment")
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
