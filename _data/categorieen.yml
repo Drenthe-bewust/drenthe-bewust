@@ -25,3 +25,5 @@ categorieen:
     status: binnenkort
   - naam: Kindgericht
     status: binnenkort
+  - status: actief
+    naam: JouwCoachLijn
