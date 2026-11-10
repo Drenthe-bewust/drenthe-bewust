@@ -6,7 +6,7 @@ auteur: Denise van Jouw Coach Lijn
 concept: false
 layout: inspiratie-artikel
 ---
-**De wereld mag weer wat zachter en dat begint bij jouw binnenwereld.**
+# **De wereld mag weer wat zachter en dat begint bij jouw binnenwereld.**
 
 Mensen ontdekken veel vaker dat er iets niet klopt, dat gevoelens schuren en je langzaam niet lekker in je vel komt te zitten.
 Hiervoor vlieg je niet direct naar de psycholoog en in jezelf blijft het sudderen en zijn er steeds meer omstandigheden die zorgen laten opstapelen die je niet kan plaatsen.
@@ -25,11 +25,15 @@ Een verlengstuk van professionals die mensen begeleiden in het leven vanuit dive
 Gewoon direct telefonisch te bereiken, geen gedoe, gewoon bellen en je coach kiezen. 
 Een band mee opbouwen, jezelf niet opnieuw uit hoeven te leggen maar iemand die jou positief aanmoedigt in het leven en de dagelijkse omstandigheden.
 
-**Deze lijn is werkelijk voor iedereen, van examen stress tot diep trauma.**
+## **Deze lijn is werkelijk voor iedereen, van examen stress tot diep trauma.**
+
+
 Het specifieke aan deze lijn is dat hier consulten werken met een holistische en spirituele levensvisie. 
 Wij willen geen afhankelijkheid creëren en geloven dat er niet maar 1 manier is, iedereen is uniek en iedereen mag landen in de kracht die zij zelf altijd al zijn geweest. De weg is van binnen naar buiten en daar helpen we mensen met alle liefde mee om een dieper bewustzijn zichtbaar te maken zodat mensen weer emotioneel contact maken met zichzelf en de regie weer over hun eigen leven durven te nemen.
 
-**Goed om te weten:** JouwCoachLijn wordt niet door een overheid gestimuleerd of gefinancierd en is daarom een betaalde telefoonlijn die wij in kosten zo laag mogelijk hebben kunnen houden.
+### **Goed om te weten:** 
+
+JouwCoachLijn wordt niet door een overheid gestimuleerd of gefinancierd en is daarom een betaalde telefoonlijn die wij in kosten zo laag mogelijk hebben kunnen houden.
 Je belt met 0900-1881 en betaalt € 0,80 per minuut en om je kosten te beschermen stopt een gesprek automatisch na 50 minuten. 
 Op www.jouwcoachlijn.com vind je alle consulenten, in hun profiel zijn ook hun praktijken te vinden, wanneer je de behoefte voelt om na een fijn gesprek verder te willen groeien in een traject met de coach van jouw keuze, dan kan dat!
 
