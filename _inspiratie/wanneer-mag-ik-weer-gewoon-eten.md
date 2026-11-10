@@ -7,8 +7,6 @@ layout: inspiratie-artikel
 ---
 Wanneer mag ik weer gewoon eten?
 
-
-
 Het is een vraag die ik regelmatig hoor in gesprekken met vrouwen die mijn programma volgen. En ik moet daar altijd om lachen. Niet omdat ik de vraag gek vind, maar omdat ik me afvraag: wat verstaan we eigenlijk onder gewoon eten? Want als je bij mij komt omdat je je niet lekker voelt, regelmatig last hebt van je buik, weinig energie hebt of merkt dat je lichaam niet meer reageert zoals je zou willen, dan is het toch logisch dat we ook eens kijken naar wat je dagelijks eet?
 
 Vaak zijn we zo gewend aan onze eigen eetgewoontes dat we er eigenlijk niet meer bij stilstaan. Het ontbijt dat we altijd nemen, de boterhammen tussen de middag, iets lekkers bij de koffie en ’s avonds eten wat er op tafel komt. Dat is wat we kennen. Dat voelt vertrouwd. En dus noemen we dat al snel gewoon eten. Maar is dat wat we gewend zijn automatisch ook wat het beste bij ons past? Anders eten betekent niet dat je nooit meer mag genieten
@@ -27,10 +25,6 @@ En nu ben ik benieuwd: als jij zegt “ik wil weer gewoon eten”, wat betekent 
 
 Betekent het dat je weer wilt eten zoals je altijd deed? Of betekent het dat je een manier zoekt waarop je gezond kunt leven én volop kunt blijven genieten?
 
-
+Ik ben benieuwd hoe jij daarover denkt.
 
 Bron: Martine Stoffers - www.changeyourlifestyle.nl
-
-
-
-Ik ben benieuwd hoe jij daarover denkt.
