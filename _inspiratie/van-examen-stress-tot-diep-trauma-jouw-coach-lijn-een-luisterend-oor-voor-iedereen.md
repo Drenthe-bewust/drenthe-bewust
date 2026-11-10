@@ -27,11 +27,10 @@ Een band mee opbouwen, jezelf niet opnieuw uit hoeven te leggen maar iemand die 
 
 ## **Deze lijn is werkelijk voor iedereen, van examen stress tot diep trauma.**
 
-
 Het specifieke aan deze lijn is dat hier consulten werken met een holistische en spirituele levensvisie. 
 Wij willen geen afhankelijkheid creëren en geloven dat er niet maar 1 manier is, iedereen is uniek en iedereen mag landen in de kracht die zij zelf altijd al zijn geweest. De weg is van binnen naar buiten en daar helpen we mensen met alle liefde mee om een dieper bewustzijn zichtbaar te maken zodat mensen weer emotioneel contact maken met zichzelf en de regie weer over hun eigen leven durven te nemen.
 
-### **Goed om te weten:** 
+### **Goed om te weten:**
 
 JouwCoachLijn wordt niet door een overheid gestimuleerd of gefinancierd en is daarom een betaalde telefoonlijn die wij in kosten zo laag mogelijk hebben kunnen houden.
 Je belt met 0900-1881 en betaalt € 0,80 per minuut en om je kosten te beschermen stopt een gesprek automatisch na 50 minuten. 
@@ -41,3 +40,5 @@ Dit initiatief ligt bij Richard van [InnerForceCoaching](www.innerforcecoaching.
 2 bezielde mensen die als geen ander weten hoe transformatie werkt en het iedereen gunnen om weer te leven in plaats van te overleven. 
 Waar spiritualiteit en bewustwording voor jaren geleden nog een zweverig imago had, is de behoefte naar innerlijke groei groter dan ooit, iedereen mag zijn plaats innemen in deze wereld, zelfliefde is de bron van al het leven.
 Zij zien het als de reden waarom zij hier zijn om een plek te bieden waar mensen al hun kwetsbaarheid durven te uiten en meer levensgeluk kunnen ervaren.
+
+![JouwCoachLijn ](/assets/images/makers/logo_jcl_edited_v2_bg_broken_white_color_-fbf8f1_.png "JouwCoachLijn")
