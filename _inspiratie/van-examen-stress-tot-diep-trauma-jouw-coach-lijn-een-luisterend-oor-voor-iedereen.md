@@ -1,5 +1,5 @@
 ---
-titel: Van examen stress tot diep trauma, Jouw Coach Lijn een luisterend oor
+titel: Van examen stress tot diep trauma, Jouw Coach Lijn, een luisterend oor
   voor iedereen
 datum: 2026-11-10
 auteur: Denise van Jouw Coach Lijn
