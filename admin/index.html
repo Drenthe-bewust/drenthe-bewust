@@ -127,12 +127,13 @@
     var status = balk.querySelector('.db-status');
     knop.addEventListener('click', async function () {
       if (!confirm('Dit start een build om de site direct te updaten.\nWeet je zeker dat je dit nu wilt doen?')) return;
+      var gebruiker = window.netlifyIdentity && netlifyIdentity.currentUser();
+      if (!gebruiker) { status.textContent = '❌ Log eerst in op het beheerpaneel.'; return; }
       knop.disabled = true; status.textContent = 'Bezig…';
       try {
-        var res = await fetch('https://api.github.com/repos/Drenthe-bewust/drenthe-bewust/dispatches', {
+        var res = await fetch('/.netlify/functions/publiceer-nu', {
           method: 'POST',
-          headers: { 'Accept': 'application/vnd.github.v3+json' },
-          body: JSON.stringify({ 'event_type': 'publish-now' })
+          headers: { 'Authorization': 'Bearer ' + gebruiker.token.access_token }
         });
         status.textContent = res.ok ? '✅ Build gestart — site wordt over ± 2 min geupdate.' : '❌ Build mislukt (' + res.status + ').';
       } catch (e) {
