@@ -23,6 +23,7 @@ kaart_tags:
   - Ademcoach
   - Human Design
   - Coaching
+  - JouwCoachlijn
 citaat: Elke sessie begint met een intake — een verkenning van wat er speelt.
   Dat kan via praten, lichaamswerk, human design, ademwerk, etc.
 volgorde: 12
