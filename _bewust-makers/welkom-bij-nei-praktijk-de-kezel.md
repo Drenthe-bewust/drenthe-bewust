@@ -27,7 +27,9 @@ kaart_tags:
   - NEI
   - Coaching
   - Massage
-citaat: '“ jouw weg terug naar wie je werkelijk bent: in balans, vol vertrouwen & energiek!'
+  - JouwCoachlijn
+citaat: "“ jouw weg terug naar wie je werkelijk bent: in balans, vol vertrouwen
+  & energiek!"
 volgorde: 12
 lat: 52.8034
 lon: 6.9989
@@ -52,36 +54,65 @@ opleidingen:
   - Bach Bloesem therapeut
 verenigingen:
   - VVNT
-bio: Mijn naam is Marcella en ik ben Initiatiefnemer van Drenthe-Bewust (het platform waar je nu op kijkt) en praktijkhoudster van NEI Praktijk de Kezel en coach bij www.jouwcoachlijn.com Mijn praktijk heb ik aan huis, in het dorp Nieuw-Weerdinge, op 10 minuten auto afstand van Emmen. Ik werk met NEI als mijn basis. Vanuit daar voeg ik op basis van jouw behoefte, andere kennis en ondersteunende middelen toe. Denk daarbij aan systeemopstellingen, (Bach)-Bloesemremedies, Flowerplex, Schüssler celzouten, Edelstenen, Orthomoleculaire voeding en supplementen, Ook werk ik als het nodig is, met Detox en Dentotox middelen om jou zo optimaal te ondersteunen van jouw herstel. Vanuit mijn nieuwsgierigheid blijf ik leren en op zoek naar mooie ondersteunende middelen , zo kan ik echt inspringen op jouw behoefte.
-waarom: |-
-  Vanaf klein af aan ben ik nieuwsgierig naar alles dat in de natuur te vinden is, edelstenen, bloemen. Ik vind het magisch en bijzonder hoe mooi én hoe slim de natuur werkt.  En hoe het menselijk lichaam zó sterk en zelfhelend is. 
+bio: Mijn naam is Marcella en ik ben Initiatiefnemer van Drenthe-Bewust (het
+  platform waar je nu op kijkt) en praktijkhoudster van NEI Praktijk de Kezel en
+  coach bij www.jouwcoachlijn.com Mijn praktijk heb ik aan huis, in het dorp
+  Nieuw-Weerdinge, op 10 minuten auto afstand van Emmen. Ik werk met NEI als
+  mijn basis. Vanuit daar voeg ik op basis van jouw behoefte, andere kennis en
+  ondersteunende middelen toe. Denk daarbij aan systeemopstellingen,
+  (Bach)-Bloesemremedies, Flowerplex, Schüssler celzouten, Edelstenen,
+  Orthomoleculaire voeding en supplementen, Ook werk ik als het nodig is, met
+  Detox en Dentotox middelen om jou zo optimaal te ondersteunen van jouw
+  herstel. Vanuit mijn nieuwsgierigheid blijf ik leren en op zoek naar mooie
+  ondersteunende middelen , zo kan ik echt inspringen op jouw behoefte.
+waarom: >-
+  Vanaf klein af aan ben ik nieuwsgierig naar alles dat in de natuur te vinden
+  is, edelstenen, bloemen. Ik vind het magisch en bijzonder hoe mooi én hoe slim
+  de natuur werkt.  En hoe het menselijk lichaam zó sterk en zelfhelend is. 
+
 
   Ik word er blij van als ik mensen zoals jij mag ondersteunen in het vinden van meer overzicht in je leven en meer inzicht in jezelf. Dit geeft heel veel rust en blijdschap. Ik doe dat door jou weer te laten vertrouwen, op het besef dat alles dat je nodig hebt, in jezelf te vinden is. Daarnaast is de natuur iets dat ons heel veel te bieden heeft en ons weer terug in veiligheid kan brengen. Zo kun jij weer in een fijne natuurlijke flow komen!  
-onderscheid: |-
-  Ik ben nieuwsgierig naar jou, en wil samen met jou in de NEI sessie op pad gaan naar het antwoord achter jouw klachten. 
+onderscheid: >-
+  Ik ben nieuwsgierig naar jou, en wil samen met jou in de NEI sessie op pad
+  gaan naar het antwoord achter jouw klachten. 
+
   Volgens vele straal ik rust uit en geef ik het gevoel van een veilige ruimte om je verhaal te mogen doen. 
+
   Bij mij kun je je zelf zijn, wie of wat je ook bent, doet of voelt. 
 
+
   Ik ben praktisch, met een inlevend vermogen, ik sta met beide benen op de grond en met een grote liefde voor alles dat leeft (mens, dier, planten).
-voor_wie: |-
-  Ik ben er voor JOU en voor alles dat je graag anders zou willen zien, voelen, ervaren. Dus heb je ADHD/ADD, Angst, Depressie, Vermoeidheid, Hoofdpijn, een verslaving, vage klachten, de diagnose: Je moet ermee leren leven! Ik ben maar één telefoontje van jou vandaan.
+voor_wie: >-
+  Ik ben er voor JOU en voor alles dat je graag anders zou willen zien, voelen,
+  ervaren. Dus heb je ADHD/ADD, Angst, Depressie, Vermoeidheid, Hoofdpijn, een
+  verslaving, vage klachten, de diagnose: Je moet ermee leren leven! Ik ben maar
+  één telefoontje van jou vandaan.
+
 
   Je kunt mij bellen voor: een NEI behandeling, Bach Bloesem, Flowerplex, Orthomoleculaire voeding, EFT, Edelstenen, REIKI, Verbroken verbinding massage / Metamorfose massage.
-wat_zeggen_clienten: |-
-  Eén van mijn cliënten heeft deze mooie referentie gedeeld over mij en mijn werkwijze. Ik deel deze graag met je en hoop dat je een indruk hebt mogen krijgen van mij als persoon en wat ik voor je kan betekenen als je er voor open staat.
+wat_zeggen_clienten: >-
+  Eén van mijn cliënten heeft deze mooie referentie gedeeld over mij en mijn
+  werkwijze. Ik deel deze graag met je en hoop dat je een indruk hebt mogen
+  krijgen van mij als persoon en wat ik voor je kan betekenen als je er voor
+  open staat.
+
 
   Marcella is een hele lieve en begripvolle vrouw die echt luistert naar je verhaal. Ze probeert je te helpen waar ze kan met resultaat. Ik ben met mijn dochter van 2 jaar langs geweest voor problemen met voeding. Ze had een angst voor avondeten en als ze aan tafel moest was het al drama. Ze durfde niet, raakte in paniek en kroop dan weg. Nu komt onze dochter zelf op haar plekje aan tafel zitten zonder problemen als we gaan eten. Ze eet nog niet alles maar wel steeds meer variatie. Mijn dochter voelde zich bij haar omzettend op haar gemak en ging rustig spelen in de ruimte. Ook kijkt Marcella naar andere blokkades die dieper liggen en probeert dit te doorbreken en geeft raad en advies. Ik ben haar heel dankbaar voor wat ze voor onze dochter heeft kunnen betekenen. Aanrader!
-kennisbank_links:
-  - NEI-therapie
-na_sessie: |-
-  Na je sessie bij NEI Praktijk de Kezel, krijg je van mij een uitgebreid verslag en en foldertje mee met wat je allemaal de dagen na je behandeling kunt verwachten. Een aantal dagen na je bezoek neem ik nog even contact met je op. 
+na_sessie: >-
+  Na je sessie bij NEI Praktijk de Kezel, krijg je van mij een uitgebreid
+  verslag en en foldertje mee met wat je allemaal de dagen na je behandeling
+  kunt verwachten. Een aantal dagen na je bezoek neem ik nog even contact met je
+  op. 
+
 
   Je mag me tussentijds altijd appen, dan reageer ik snel terug, als het nodig is kunnen we ook even telefonisch overleg hebben. Over het algemeen voelen de mensen zich rustiger na de NEI sessie. 1-3 sessies is vaak genoeg voor één en hetzelfde thema/klacht.
    
   Wil je met andere thema's/ klachten aan de slag, dan ben je uiteraard altijd welkom voor meer sessies. Ik hou er niet van om mensen aan het 'lijntje' te houden. Mijn insteek is altijd om jou weer zo snel mogelijk (& onafhankelijk!) weer in je eigenkracht te zetten! 
 gepubliceerd: true
-uitgelicht: true
 lidmaatschap: Bewust-maker
 layout: bewust-maker
 permalink: /bewust-makers/welkom-bij-nei-praktijk-de-kezel/
+uitgelicht: true
+kennisbank_links:
+  - NEI-therapie
 ---
