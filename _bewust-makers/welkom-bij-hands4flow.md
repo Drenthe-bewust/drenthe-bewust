@@ -29,14 +29,15 @@ kaart_tags:
   - Stoelmassage
   - Coaching
   - Reikicursussen
+  - JouwCoachlijn
 citaat: Jou terugzetten in je kracht, fysiek, mentaal én spiritueel.
 volgorde: 12
 lat: 52.7697
 lon: 6.9142
 omschrijving: Elsemarie van der Ploeg heeft massage & Reiki praktijk hands4flow
   in Emmen. Hier kun je een Reiki-behandeling ontvangen alsmede een
-  voetreflexmassage, een stoelmassage, Access Bars behandeling, coaching en sinds
-  kort ook Reiki cursussen.
+  voetreflexmassage, een stoelmassage, Access Bars behandeling, coaching en
+  sinds kort ook Reiki cursussen.
 website: https://www.hands4flow.nl
 email_zichtbaar: info@hands4flow.nl
 telefoon: 06-59111456
@@ -62,11 +63,6 @@ opleidingen:
 verenigingen:
   - Reiki vereniging Cirkel
   - Beroepsvereniging voor Stoelmasseurs
-kennisbank_links:
-  - REIKI
-  - Voetreflexologie
-  - Stoelmassage
-  - Access Bars
 bio: Mede initiatiefneemster van Drenthe-Bewust en praktijkhoudster van
   hands4flow. Elsemarie werkt met voetreflexmassage, REIKI, Access Bars,
   coaching en stoelmassage. Tevens geeft ze Reiki cursussen.
@@ -109,8 +105,13 @@ na_sessie: "Wat je meeneemt na een sessie bij hands4flow is dat je weer een
   beetje meer terug bij jezelf bent. Je bent meer ontspannen en hebt wat minder
   pijnklachten, je voelt dat je weer meer in balans bent. "
 gepubliceerd: true
-uitgelicht: true
 lidmaatschap: Bewust-maker
 layout: bewust-maker
 permalink: /bewust-makers/welkom-bij-hands4flow/
+uitgelicht: true
+kennisbank_links:
+  - REIKI
+  - Voetreflexologie
+  - Stoelmassage
+  - Access Bars
 ---
