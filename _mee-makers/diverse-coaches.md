@@ -1,6 +1,6 @@
 ---
 naam: JouwCoachLijn - Diverse coaches
-logo: /assets/images/mee-makers/logo_jcl_edited_v2_bg_broken_white_color_-fbf8f1_.png
+logo: www.jouwcoachlijn.com
 website: www.jouwcoachlijn.com
 beschrijving: >
   NU- Direct een coach spreken voor rust, helderheid en persoonlijke
