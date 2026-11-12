@@ -1,4 +1,6 @@
 categorieen:
+  - status: actief
+    naam: JouwCoachLijn
   - naam: Massage
     status: actief
   - naam: Coaching
@@ -25,5 +27,3 @@ categorieen:
     status: binnenkort
   - naam: Kindgericht
     status: binnenkort
-  - status: actief
-    naam: JouwCoachLijn
