@@ -7,6 +7,7 @@ stad: Emmen
 categorieen:
   - Massage
   - Energetisch
+  - JouwCoachLijn
 methoden:
   - Voetreflexmassage
   - Reiki-behandelingen
