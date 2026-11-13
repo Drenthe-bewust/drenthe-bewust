@@ -7,6 +7,7 @@ stad: Leeuwarden
 categorieen:
   - Bewegen
   - Coaching
+  - JouwCoachLijn
 methoden:
   - Ademwerk coaching
   - Ademhaling workshop
