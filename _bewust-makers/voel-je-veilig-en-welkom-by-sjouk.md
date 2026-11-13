@@ -7,6 +7,7 @@ stad: Wijckel
 categorieen:
   - Coaching
   - Energetisch
+  - JouwCoachLijn
 methoden:
   - Persoonlijke coaching
   - Energetische healing
