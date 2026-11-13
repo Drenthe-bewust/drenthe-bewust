@@ -86,6 +86,10 @@ document.addEventListener('DOMContentLoaded', function () {
     return R * 2 * Math.asin(Math.sqrt(a));
   }
 
+  // Op de homepage regelt index.html de zoekfilters zelf. Hier niet dubbel uitvoeren:
+  // beide handlers zetten de klachtknop dan aan en weer uit, waardoor geen filter actief blijft.
+  if (document.getElementById('homepage-zoek-cta')) return;
+
   // ===================== ZOEK & FILTER =====================
   const zoekInput       = document.getElementById('zoek-naam');
   const zoekWoonplaats  = document.getElementById('zoek-woonplaats');

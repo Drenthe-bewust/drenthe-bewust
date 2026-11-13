@@ -265,6 +265,7 @@ const STEDEN_COORDS = {
   var actiefKlacht = null;
 
   function filterHomepage() {
+    var wisFiltersBtn = document.getElementById('wis-filters');
     var naam        = (document.getElementById('zoek-naam') || {}).value || '';
     naam = naam.toLowerCase().trim();
     var prov        = (document.getElementById('zoek-provincie') || {}).value || '';
