@@ -10,6 +10,8 @@ categorieen:
   - Energetisch
   - Lichaamsgericht
   - Psychosociaal
+  - JouwCoachLijn
+  - Hulp voor huisdieren
 methoden:
   - NEI-therapie
   - REIKI
