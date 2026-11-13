@@ -2,6 +2,7 @@
 layout: standaard
 ---
 {% assign m = page %}
+{% assign web = "" %}{% if m.website %}{% assign web = m.website | strip %}{% unless web contains "://" %}{% capture web %}https://{{ web }}{% endcapture %}{% endunless %}{% endif %}
 
 <div class="pagina-header">
   <h1>{{ m.naam }}</h1>
@@ -27,7 +28,7 @@ layout: standaard
         <p>{{ m.beschrijving }}</p>
         {% endif %}
         {% if m.website %}
-        <a href="{{ m.website }}" target="_blank" rel="noopener"
+        <a href="{{ web }}" target="_blank" rel="noopener"
            class="knop knop--goud" style="font-size:0.88rem;margin-top:0.8rem;">
           🌐 Bezoek website
         </a>
