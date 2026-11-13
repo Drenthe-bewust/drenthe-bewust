@@ -18,7 +18,7 @@ Een vaste plek waar er 24 uur per dag iemand voor je is.
 
 De grootste groei ontstaat juist in de emoties die wringen, pijn doen of verdriet of angst geven. 
 
-***Van daaruit is [JouwCoachLijn](www.jouwcoachlijn.com) ontstaan.***
+***Van daaruit is [JouwCoachLijn](https://www.jouwcoachlijn.com) ontstaan.***
 
 Want hoe fijn is het als je dagelijks een eigen lifecoach tot je beschikking hebt op elk gewenst moment van de dag?
 
