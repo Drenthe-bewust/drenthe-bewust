@@ -7,6 +7,7 @@ stad: Emmen
 categorieen:
   - Coaching
   - Energetisch
+  - Kindgericht
 methoden:
   - PSYCH-K®
   - Reflexintegratie
@@ -55,7 +56,7 @@ wat_zeggen_clienten: ""
 na_sessie: ""
 gepubliceerd: true
 uitgelicht: true
-lidmaatschap: Bewust-maker
 layout: bewust-maker
 permalink: /bewust-makers/welkom-bij-praktijk-janet-van-der-veen/
+lidmaatschap: Bewust-maker
 ---
