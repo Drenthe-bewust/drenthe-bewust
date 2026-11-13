@@ -8,6 +8,7 @@ categorieen:
   - Coaching
   - Bewegen
   - Energetisch
+  - JouwCoachLijn
 methoden:
   - Gecertificeerd adem-coach
   - Body de-armourer
