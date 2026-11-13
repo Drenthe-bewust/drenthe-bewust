@@ -6,12 +6,12 @@ provincie: Drenthe
 stad: Nieuw-Weerdinge
 categorieen:
   - Coaching
-  - Voeding
   - Energetisch
   - Lichaamsgericht
   - Psychosociaal
   - JouwCoachLijn
   - Hulp voor huisdieren
+  - Kindgericht
 methoden:
   - NEI-therapie
   - REIKI
