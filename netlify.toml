@@ -154,6 +154,28 @@
   to = "/meld-je-aan/"
   status = 301
 
+# Search Console 404's (nov 2026): oude WordPress-artikelen en verwijderde profielen
+[[redirects]]
+  from = "/reflexintegratie-wat-is-het-en-wat-doet-het/"
+  to = "/kennisbank/reflexintegratie/"
+  status = 301
+
+[[redirects]]
+  from = "/psych-k-werken-met-overtuigingen-en-onderbewuste-patronen/"
+  to = "/kennisbank/psych-k/"
+  status = 301
+
+# Verwijderde of testprofielen: alle profielen die niet meer bestaan naar het overzicht
+[[redirects]]
+  from = "/bewust-makers/*"
+  to = "/onze-bewust-makers/"
+  status = 301
+
+[[redirects]]
+  from = "/mee-makers/*"
+  to = "/mee-maker/"
+  status = 301
+
 # URL zonder trailing slash
 [[redirects]]
   from = "/onze-bewust-makers"
