@@ -165,6 +165,23 @@
   to = "/kennisbank/psych-k/"
   status = 301
 
+# Serverfout/404 uit Search Console (nov 2026, tweede ronde)
+[[redirects]]
+  from = "/wat-is-een-reiki-behandeling-uitleg-werking-en-voordelen/"
+  to = "/kennisbank/reiki/"
+  status = 301
+
+[[redirects]]
+  from = "/mabon-dankbaar-voor-de-oogst-en-in-balans-komen/"
+  to = "/inspiratie/"
+  status = 301
+
+# Kleine letters: de bestaande regel hierboven is hoofdlettergevoelig
+[[redirects]]
+  from = "/energetische-ondersteuning-van-het-menselijk-lichaam/"
+  to = "/onze-bewust-makers/"
+  status = 301
+
 # Verwijderde of testprofielen: alle profielen die niet meer bestaan naar het overzicht
 [[redirects]]
   from = "/bewust-makers/*"
