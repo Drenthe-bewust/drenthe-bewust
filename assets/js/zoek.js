@@ -9,6 +9,38 @@
     return R * 2 * Math.asin(Math.sqrt(a));
   }
 
+  // Aantal letterfouten (invoegen, weglaten, vervangen) tussen twee woorden
+  function levenshtein(a, b) {
+    var rij = [], i, j;
+    for (j = 0; j <= b.length; j++) rij[j] = j;
+    for (i = 1; i <= a.length; i++) {
+      var vorig = rij[0];
+      rij[0] = i;
+      for (j = 1; j <= b.length; j++) {
+        var tijdelijk = rij[j];
+        rij[j] = Math.min(rij[j] + 1, rij[j - 1] + 1, vorig + (a[i - 1] === b[j - 1] ? 0 : 1));
+        vorig = tijdelijk;
+      }
+    }
+    return rij[b.length];
+  }
+
+  // Zoekt op de exacte tekst, en daarna per woord met tolerantie voor typefouten.
+  // Woorden korter dan 4 letters moeten exact voorkomen; langere woorden mogen 1 fout hebben
+  // (2 fouten vanaf 8 letters).
+  function past(zoek, tekst) {
+    if (!zoek || tekst.indexOf(zoek) !== -1) return true;
+    var tokens = tekst.split(/[^a-z0-9à-ÿ]+/).filter(Boolean);
+    return zoek.split(/\s+/).filter(Boolean).every(function (woord) {
+      if (tekst.indexOf(woord) !== -1) return true;
+      if (woord.length < 4) return false;
+      var max = woord.length >= 8 ? 2 : 1;
+      return tokens.some(function (t) {
+        return Math.abs(t.length - woord.length) <= max && levenshtein(t, woord) <= max;
+      });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var zoekInput    = document.getElementById('zoek-naam');
     if (!zoekInput) return;
@@ -24,6 +56,8 @@
     var afstandLabel = document.getElementById('afstand-label');
     var afstandWis   = document.getElementById('afstand-wis');
     var locatieKnop  = document.getElementById('gebruik-locatie');
+    var suggestieEl  = document.getElementById('zoek-suggestie');
+    var suggesties   = document.querySelectorAll('#zoek-suggesties option');
 
     // Alleen op de homepage: CTA-blok, "alle bewust-makers"-knop en de willekeurige selectie
     var ctaEl      = document.getElementById('homepage-zoek-cta');
@@ -72,7 +106,7 @@
           item.dataset.klachten || ''
         ].join(' ').toLowerCase();
 
-        var naamMatch = !naam || zoekVeld.indexOf(naam) !== -1;
+        var naamMatch = past(naam, zoekVeld);
         var tagMatch = tag === 'alles' || (item.dataset.tags || '').indexOf(tag) !== -1;
 
         var afstandMatch = true;
@@ -96,6 +130,7 @@
           : '';
       }
       if (wisBtn) wisBtn.style.display = gefilterd ? 'inline-block' : 'none';
+      toonSuggestie(naam, zichtbaar);
 
       if (isHomepage) {
         if (!gefilterd) {
@@ -114,6 +149,40 @@
         }
         if (ctaEl) ctaEl.style.display = 'block';
       }
+    }
+
+    // Bij geen resultaat: zoek de dichtstbijzijnde suggestie uit de lijst ("Bedoelde je ...?")
+    function toonSuggestie(naam, zichtbaar) {
+      if (!suggestieEl) return;
+      suggestieEl.textContent = '';
+      var beste = null, beste_afstand = Infinity;
+      if (naam && zichtbaar === 0) {
+        Array.prototype.forEach.call(suggesties, function (o) {
+          var kandidaat = o.value.toLowerCase();
+          var d = levenshtein(naam, kandidaat);
+          if (d > 0 && d <= Math.max(1, Math.floor(naam.length / 4)) && d < beste_afstand) {
+            beste = o.value;
+            beste_afstand = d;
+          }
+        });
+      }
+      if (!beste) {
+        suggestieEl.style.display = 'none';
+        return;
+      }
+      suggestieEl.appendChild(document.createTextNode('Bedoelde je '));
+      var knop = document.createElement('button');
+      knop.type = 'button';
+      knop.className = 'js-suggestie-knop';
+      knop.style.cssText = 'background:none; border:none; padding:0; color:var(--groen-donker); font-weight:700; text-decoration:underline; cursor:pointer; font-size:inherit;';
+      knop.textContent = beste;
+      knop.addEventListener('click', function () {
+        zoekInput.value = beste;
+        filter();
+      });
+      suggestieEl.appendChild(knop);
+      suggestieEl.appendChild(document.createTextNode('?'));
+      suggestieEl.style.display = 'block';
     }
 
     function setLocatie(lat, lon) {

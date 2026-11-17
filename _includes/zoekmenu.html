@@ -13,7 +13,14 @@ const STEDEN_COORDS = {
       <div class="zoek-rij">
         <div class="zoek-veld">
           <label for="zoek-naam">Zoek op naam, methode of klacht</label>
-          <input type="text" id="zoek-naam" placeholder="Bijv. massage, stress, voetreflex..." autocomplete="off">
+          <input type="text" id="zoek-naam" list="zoek-suggesties" placeholder="Bijv. massage, stress, voetreflex..." autocomplete="off">
+          <datalist id="zoek-suggesties">
+            {% for cat in site.data.categorieen.categorieen %}<option value="{{ cat.naam | downcase }}">{% endfor %}
+            {% assign klachten_lijst = site.bewust-makers | where: "gepubliceerd", true | map: "klachten" | flatten | compact | uniq | sort %}
+            {% for k in klachten_lijst %}<option value="{{ k | downcase }}">{% endfor %}
+            {% assign methoden_lijst = site.bewust-makers | where: "gepubliceerd", true | map: "methoden" | flatten | compact | uniq | sort %}
+            {% for m in methoden_lijst %}<option value="{{ m | downcase }}">{% endfor %}
+          </datalist>
         </div>
         <div class="zoek-veld">
           <label for="zoek-woonplaats">Jouw woonplaats</label>
@@ -67,6 +74,7 @@ const STEDEN_COORDS = {
 
       <div style="margin-top:1rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
         <p class="zoek-resultaat-info" id="zoek-resultaat" style="margin:0; flex:1;"></p>
+        <p id="zoek-suggestie" style="display:none; margin:0; font-size:0.9rem; color:var(--tekst-licht); width:100%;"></p>
         <button type="button" id="wis-filters" class="knop knop--omlijnd" style="display:none; font-size:0.82rem; padding:0.5rem 1rem; white-space:nowrap;">✕ Verwijder filters</button>
       </div>
     </div>
