@@ -1,0 +1,75 @@
+<!-- Gedeeld zoekmenu (optie 2): gebruikt op de homepage en op de pagina bewust-makers.
+     Wijzig het menu alleen hier; de logica staat in assets/js/zoek.js. -->
+<script>
+const STEDEN_COORDS = {
+  {% for stad in site.data.steden %}"{{ stad[0] | escape }}":{"lat":{{ stad[1].lat }},"lon":{{ stad[1].lon }}}{% unless forloop.last %},{% endunless %}{% endfor %}
+};
+</script>
+<section class="zoek-sectie">
+  <div class="container">
+    <div class="zoek-wrap">
+      {% if include.titel %}<h3>{{ include.titel }}</h3>{% endif %}
+
+      <div class="zoek-rij">
+        <div class="zoek-veld">
+          <label for="zoek-naam">Zoek op naam, methode of klacht</label>
+          <input type="text" id="zoek-naam" placeholder="Bijv. massage, stress, voetreflex..." autocomplete="off">
+        </div>
+        <div class="zoek-veld">
+          <label for="zoek-woonplaats">Jouw woonplaats</label>
+          <input type="text" id="zoek-woonplaats" list="steden-list"
+            placeholder="Bijv. Emmen, Assen, Groningen..." autocomplete="off">
+          <datalist id="steden-list">
+            {% for stad in site.data.steden %}<option value="{{ stad[0] }}">{% endfor %}
+          </datalist>
+        </div>
+        <div class="zoek-veld">
+          <label style="opacity:0; display:block; font-size:0.85rem;">&nbsp;</label>
+          <button id="gebruik-locatie" type="button" class="knop knop--groen" style="width:100%; padding:0.65rem 1rem; font-size:0.85rem;">📍 Zoek op afstand</button>
+        </div>
+      </div>
+
+      <!-- AFSTAND SLIDER -->
+      <div id="afstand-wrap" style="display:none; margin-top:1rem; background:var(--creme); border-radius:12px; padding:1rem 1.2rem;">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.5rem;">
+          <label for="afstand-slider" style="font-weight:600; font-size:0.9rem;">📍 Afstand vanaf jouw locatie</label>
+          <button type="button" id="afstand-wis" style="background:none; border:none; color:var(--groen); cursor:pointer; font-size:0.85rem; text-decoration:underline;">Verwijder locatiefilter</button>
+        </div>
+        <input type="range" id="afstand-slider" min="5" max="75" step="5" value="20"
+          style="width:100%; accent-color:var(--groen);">
+        <div style="display:flex; justify-content:space-between; font-size:0.78rem; color:var(--tekst-licht); margin-top:0.2rem;">
+          <span>5 km</span><span>15 km</span><span>25 km</span><span>35 km</span><span>45 km</span><span>55 km</span><span>65 km</span><span>75 km</span>
+        </div>
+        <p id="afstand-label" style="text-align:center; margin-top:0.6rem; font-weight:600; color:var(--groen-donker); font-size:0.95rem;">Binnen 20 km</p>
+      </div>
+
+      <div style="margin-top:1rem;">
+        <p style="font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--tekst-licht); margin-bottom:0.4rem;">Veelgezocht</p>
+        <div class="zoek-filters">
+          <button type="button" class="zoek-filter-tag js-zoek-chip" data-zoek="massage">Massage</button>
+          <button type="button" class="zoek-filter-tag js-zoek-chip" data-zoek="coaching">Coaching</button>
+          <button type="button" class="zoek-filter-tag js-zoek-chip" data-zoek="stress">Stress</button>
+          <button type="button" class="zoek-filter-tag js-zoek-chip" data-zoek="voeding">Voeding</button>
+          <button type="button" class="zoek-filter-tag js-zoek-chip" data-zoek="meditatie">Meditatie</button>
+          <button type="button" class="zoek-filter-tag js-zoek-chip" data-zoek="burnout">Burnout</button>
+        </div>
+      </div>
+
+      <div class="zoek-rij" style="grid-template-columns: 1fr; margin-top:1rem;">
+        <div class="zoek-veld">
+          <label for="zoek-onderwerp">Of kies een soort hulp</label>
+          <select id="zoek-onderwerp">
+            <option value="alles">Alle onderwerpen</option>
+            {% for cat in site.data.categorieen.categorieen %}<option value="{{ cat.naam | downcase }}">{{ cat.naam }}</option>{% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-top:1rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+        <p class="zoek-resultaat-info" id="zoek-resultaat" style="margin:0; flex:1;"></p>
+        <button type="button" id="wis-filters" class="knop knop--omlijnd" style="display:none; font-size:0.82rem; padding:0.5rem 1rem; white-space:nowrap;">✕ Verwijder filters</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="{{ '/assets/js/zoek.js' | relative_url }}"></script>

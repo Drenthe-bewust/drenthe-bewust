@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Op de homepage regelt index.html de zoekfilters zelf. Hier niet dubbel uitvoeren:
   // beide handlers zetten de klachtknop dan aan en weer uit, waardoor geen filter actief blijft.
-  if (document.getElementById('homepage-zoek-cta')) return;
+  if (document.getElementById('zoek-naam')) return; // zoekmenu draait in assets/js/zoek.js
 
   // ===================== ZOEK & FILTER =====================
   const zoekInput       = document.getElementById('zoek-naam');
