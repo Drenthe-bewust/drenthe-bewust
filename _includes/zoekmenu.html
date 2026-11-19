@@ -10,7 +10,7 @@ const STEDEN_COORDS = {
     <div class="zoek-wrap">
       {% if include.titel %}<h3>{{ include.titel }}</h3>{% endif %}
 
-      <div class="zoek-rij">
+      <form id="zoek-form" class="zoek-rij" role="search" style="margin:0;">
         <div class="zoek-veld">
           <label for="zoek-naam">Zoek op naam, methode of klacht</label>
           <input type="text" id="zoek-naam" list="zoek-suggesties" placeholder="Bijv. massage, stress, voetreflex..." autocomplete="off">
@@ -29,12 +29,14 @@ const STEDEN_COORDS = {
           <datalist id="steden-list">
             {% for stad in site.data.steden %}<option value="{{ stad[0] }}">{% endfor %}
           </datalist>
+          <button id="gebruik-locatie" type="button" style="background:none; border:none; padding:0.35rem 0; color:var(--groen-donker); font-size:0.85rem; font-weight:700; text-decoration:underline; cursor:pointer;">📍 Gebruik mijn locatie</button>
         </div>
         <div class="zoek-veld">
           <label style="opacity:0; display:block; font-size:0.85rem;">&nbsp;</label>
-          <button id="gebruik-locatie" type="button" class="knop knop--groen" style="width:100%; padding:0.65rem 1rem; font-size:0.85rem;">📍 Zoek op afstand</button>
+          <button type="submit" id="zoek-knop" class="knop knop--groen" style="width:100%; padding:0.65rem 1rem; font-size:0.85rem;">🔍 Zoek</button>
         </div>
-      </div>
+      </form>
+      <p style="margin:0.5rem 0 0; font-size:0.82rem; color:var(--tekst-licht);">Typ en de resultaten verschijnen direct, of druk op Zoek.</p>
 
       <!-- AFSTAND SLIDER -->
       <div id="afstand-wrap" style="display:none; margin-top:1rem; background:var(--creme); border-radius:12px; padding:1rem 1.2rem;">

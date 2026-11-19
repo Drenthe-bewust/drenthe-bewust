@@ -212,7 +212,7 @@
       gebruikerLon = null;
       if (afstandWrap) afstandWrap.style.display = 'none';
       if (woonplaats) woonplaats.value = '';
-      if (locatieKnop) locatieKnop.textContent = '📍 Zoek op afstand';
+      if (locatieKnop) locatieKnop.textContent = '📍 Gebruik mijn locatie';
     }
 
     // Woonplaats: bekende stad → coördinaten en afstandsfilter
@@ -242,7 +242,7 @@
           locatieKnop.disabled = false;
         }, function () {
           alert('Kon locatie niet ophalen. Voer je woonplaats handmatig in.');
-          locatieKnop.textContent = '📍 Zoek op afstand';
+          locatieKnop.textContent = '📍 Gebruik mijn locatie';
           locatieKnop.disabled = false;
         });
       });
@@ -262,7 +262,24 @@
       });
     }
 
-    zoekInput.addEventListener('input', filter);
+    // Tijdens het typen filteren we met een kleine vertraging, zodat de kaarten niet knipperen
+    var wachtTimer = null;
+    zoekInput.addEventListener('input', function () {
+      clearTimeout(wachtTimer);
+      wachtTimer = setTimeout(filter, 300);
+    });
+
+    // Enter of de knop Zoek: direct filteren en naar de resultaten scrollen
+    var zoekForm = document.getElementById('zoek-form');
+    if (zoekForm) {
+      zoekForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        clearTimeout(wachtTimer);
+        filter();
+        var doel = resultaatTxt || document.getElementById('makers-grid');
+        if (doel && doel.scrollIntoView) doel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
 
     if (onderwerp) onderwerp.addEventListener('change', filter);
 
