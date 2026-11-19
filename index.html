@@ -32,12 +32,13 @@ beschrijving: "Drenthe-Bewust: jouw gouden gids voor een bewuster leven. Vind de
       {% assign doelgroepen_tekst = maker.doelgroepen | join: ' ' %}
       {% assign categorieen_tekst = maker.categorieen | join: ' ' | downcase %}
       {% assign klachten_tekst = maker.klachten | join: ' ' | downcase %}
+      {% assign methoden_tekst = maker.methoden | join: ' ' | downcase %}
       {% assign stad_coords = site.data.steden[maker.stad] %}
       {% if maker.lat and maker.lat != "" %}{% assign use_lat = maker.lat %}{% assign use_lon = maker.lon %}{% elsif stad_coords %}{% assign use_lat = stad_coords.lat %}{% assign use_lon = stad_coords.lon %}{% else %}{% assign use_lat = "" %}{% assign use_lon = "" %}{% endif %}
       <div class="maker-kaart js-maker"
         data-naam="{{ maker.naam | append: ' ' | append: maker.praktijk | downcase | escape }}"
         data-provincie="{{ maker.provincie | escape }}"
-        data-methoden="{{ categorieen_tekst | escape }}"
+        data-methoden="{{ methoden_tekst | escape }}"
         data-tags="{{ categorieen_tekst | escape }}"
         data-omschrijving="{{ maker.bio | append: ' ' | append: doelgroepen_tekst | downcase | escape }}"
         data-klachten="{{ klachten_tekst | escape }}"

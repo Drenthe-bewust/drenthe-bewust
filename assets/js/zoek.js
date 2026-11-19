@@ -139,16 +139,30 @@
           return;
         }
         if (allesKnop) allesKnop.style.display = 'none';
-        var q = naam ? '?zoek=' + encodeURIComponent(naam) : '';
+        // Link naar het gewone overzicht, zonder zoekterm (die geeft op dat overzicht hetzelfde resultaat)
         if (zichtbaar === 0) {
           if (ctaTekst) ctaTekst.textContent = 'Geen bewust-makers gevonden. Er zijn er wel meer — zoek verder in het volledige overzicht.';
-          if (ctaLink) { ctaLink.href = ctaBasis + q; ctaLink.textContent = 'Zoek verder tussen alle bewust-makers'; }
+          if (ctaLink) { ctaLink.href = ctaBasis; ctaLink.textContent = 'Zoek verder tussen alle bewust-makers'; }
         } else {
           if (ctaTekst) ctaTekst.textContent = 'Er zijn meer bewust-makers beschikbaar in het volledige overzicht.';
-          if (ctaLink) { ctaLink.href = ctaBasis + q; ctaLink.textContent = 'Bekijk alle ' + makerItems.length + '+ bewust-makers'; }
+          if (ctaLink) { ctaLink.href = ctaBasis; ctaLink.textContent = 'Bekijk alle ' + makerItems.length + '+ bewust-makers'; }
         }
         if (ctaEl) ctaEl.style.display = 'block';
       }
+    }
+
+    // Geeft alleen suggesties die ook echt een bewust-maker opleveren (categorieën zonder profiel tellen niet)
+    function heeftResultaat(term) {
+      return Array.prototype.some.call(makerItems, function (item) {
+        var veld = [
+          item.dataset.naam || '',
+          item.dataset.omschrijving || '',
+          item.dataset.methoden || '',
+          item.dataset.tags || '',
+          item.dataset.klachten || ''
+        ].join(' ').toLowerCase();
+        return past(term, veld);
+      });
     }
 
     // Bij geen resultaat: zoek de dichtstbijzijnde suggestie uit de lijst ("Bedoelde je ...?")
@@ -160,7 +174,7 @@
         Array.prototype.forEach.call(suggesties, function (o) {
           var kandidaat = o.value.toLowerCase();
           var d = levenshtein(naam, kandidaat);
-          if (d > 0 && d <= Math.max(1, Math.floor(naam.length / 4)) && d < beste_afstand) {
+          if (d > 0 && d <= Math.max(1, Math.floor(naam.length / 4)) && d < beste_afstand && heeftResultaat(kandidaat)) {
             beste = o.value;
             beste_afstand = d;
           }
